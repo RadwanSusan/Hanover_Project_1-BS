@@ -9,7 +9,6 @@
 html {
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
-
 }
 
 ul {
@@ -17,8 +16,6 @@ ul {
 }
 
 .container {
-    /* padding-left: 15px;
-    padding-right: 15px; */
     margin-left: auto;
     margin-right: auto;
 }
@@ -78,12 +75,10 @@ header .logo p {
     font-weight: 700;
     font-size: 30px;
     color: #D1D1D1;
-    /* text-decoration: none; */
 }
 
 header nav {
     flex: 1;
-    /* text-align: right; */
     display: flex;
     justify-content: flex-end;
 }
@@ -158,7 +153,6 @@ header nav ul li a:hover {
     background: rgba(255, 255, 255, 0.6);
     box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(4px);
-    /* Note: backdrop-filter has minimal browser support */
     border-radius: 8px;
     display: flex;
     justify-content: flex-end;
@@ -174,7 +168,6 @@ header nav ul li a:hover {
     font-weight: 600;
     font-size: 24px;
     line-height: 1.5;
-
 }
 
 .landing .text .content h2 {
@@ -204,7 +197,6 @@ header nav ul li a:hover {
     font-weight: 500;
     font-size: 22px;
     color: #363636;
-    ;
 }
 
 @media (max-width: 767px) {
@@ -224,7 +216,6 @@ header nav ul li a:hover {
     .landing .text .content h2 {
         font-size: 26px;
     }
-
 }
 
 .main-heading {
@@ -239,7 +230,6 @@ header nav ul li a:hover {
     font-style: normal;
     font-weight: 500;
     color: #000000;
-
     text-shadow: 1px 4px 6px rgba(72, 45, 45, 0.34);
 }
 
@@ -252,7 +242,6 @@ header nav ul li a:hover {
     background-color: #333;
     bottom: -16px;
     width: 120px;
-
 }
 
 .main-heading h2::after {
@@ -285,19 +274,14 @@ header nav ul li a:hover {
 .services .srv-box {
     display: flex;
     margin: 25px 85px;
-
     background: #F7F5F5;
-    /* border: 1px solid #000000; */
     border-radius: 9px;
-
-
 }
 
 .services .srv-box img {
     margin-right: 50px;
     width: 400px;
     border-radius: 9px;
-
 }
 
 .services .srv-box .text h3 {
@@ -309,7 +293,6 @@ header nav ul li a:hover {
     line-height: 1.5;
     text-align: end;
     padding: 15px;
-
 }
 
 .services .srv-box .text button {
@@ -322,12 +305,10 @@ header nav ul li a:hover {
     background: #D9D9D9;
     box-shadow: 1px 4px 4px 1px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
-
     font-family: 'Italiana';
     font-style: normal;
     font-weight: 400;
     font-size: 22px;
-
     color: #000000;
     position: relative;
     top: 35px;
@@ -340,8 +321,6 @@ header nav ul li a:hover {
     padding: 6px 18px;
     border-radius: 10px;
 }
-
-
 
 @media (max-width: 767px) {
     .services .srv-box {
@@ -378,28 +357,24 @@ header nav ul li a:hover {
 @media (min-width: 767px) and (max-width: 991px) {
     .services .srv-box {
         margin: 25px 0;
-
     }
 
     .services .srv-box .text button {
         position: relative;
         top: -14px;
         left: -124px;
-
     }
 }
 
 @media (min-width: 991px) and (max-width: 1199px) {
     .services .srv-box {
         margin: 25px 0;
-
     }
 
     .services .srv-box .text button {
         position: relative;
         top: -14px;
         left: -124px;
-
     }
 }
 
@@ -408,29 +383,17 @@ header nav ul li a:hover {
     padding-bottom: 50px;
     height: 600px;
     position: relative;
-    /* background-color: #D9D9D9; */
     background: #FFFAFA;
     display: flex;
     align-items: center;
     overflow: hidden;
     transform: translateY(-100px);
     z-index: -1;
-    /* background-image: url(../MEDIA/image/forYou.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%; */
 }
 
 .DIR {
     transform: translateY(20px);
 }
-
-/* @media (max-width: 767px) {
-    .design {
-        display: flex;
-        flex-direction: column;
-    }
-} */
 
 .design .image,
 .design .text {
@@ -459,10 +422,8 @@ header nav ul li a:hover {
     color: #000000;
     padding: 7px;
     padding-right: 45px;
-    /* background-color: #6f6464; */
     background: rgba(255, 255, 255, 0.6);
     box-shadow: -2px 2px 1px rgb(0 0 0 / 25%), 0px -2px 1px rgb(0 0 0 / 25%);
-    /* filter: blur(1px); */
 }
 
 .design .text h2 {
@@ -532,7 +493,6 @@ header nav ul li a:hover {
     font-style: normal;
     font-weight: 1200;
     font-size: 28px;
-    /* line-height: 44px; */
     color: #000000;
 }
 
@@ -591,8 +551,6 @@ header nav ul li a:hover {
     animation: scale-up-tl 0.8s linear both;
 }
 
-
-
 @keyframes scale-up-tl {
     0% {
         -webkit-transform: scale(0.5);
@@ -621,7 +579,6 @@ header nav ul li a:hover {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 30px;
     text-align: center;
-
 }
 
 .footer .container .box-footer h3 {
@@ -646,7 +603,6 @@ header nav ul li a:hover {
 
 .footer .container .box-footer p {
     color: #000000;
-
     font-style: normal;
     font-weight: 670;
     font-size: 16px;
