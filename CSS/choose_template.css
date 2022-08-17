@@ -1,0 +1,583 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic&family=Roboto:wght@100&display=swap');
+
+* {
+   margin: 0;
+   padding: 0;
+   -webkit-user-drag: none;
+   -khtml-user-drag: none;
+   -moz-user-drag: none;
+   -o-user-drag: none;
+   user-drag: none;
+   user-select: none;
+   box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-family: 'Noto Sans Arabic', sans-serif;
+}
+
+body {
+   min-width: 370px;
+}
+
+::-webkit-scrollbar-track {
+   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+   background-color: #F5F5F5;
+   border-radius: 10px;
+}
+
+::-webkit-scrollbar {
+   width: 10px;
+   background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+   border-radius: 10px;
+   background-image: -webkit-gradient(linear,
+         left bottom,
+         left top,
+         color-stop(0.44, rgb(129, 129, 129)),
+         color-stop(0.72, rgb(55, 55, 55)),
+         color-stop(0.86, rgb(30, 30, 30)));
+}
+
+.navBar_box {
+   position: fixed;
+   width: 100%;
+   height: 91px;
+   background: linear-gradient(180deg, rgba(0, 0, 0, 0.11) 0%, rgba(235, 237, 239, 0) 100%);
+   z-index: 10;
+}
+
+.logoBox {
+   position: fixed;
+   width: 300px;
+   height: 91px;
+   display: flex;
+   justify-items: flex-start;
+   align-items: center;
+   margin-left: 20px;
+}
+
+.logoBox img {
+   width: 50px;
+   height: 57.16px;
+   margin-top: 10px;
+}
+
+.logoBox a {
+   font-family: 'Roboto', sans-serif;
+   font-style: normal;
+   list-style: none;
+   font-weight: 700;
+   text-decoration: none;
+   font-size: 30px;
+   color: #424242;
+   margin-left: 10px;
+}
+
+.navBar_buttons {
+   position: fixed;
+   top: 0px;
+   right: 0px;
+   display: inline;
+   width: 500px;
+   height: 91px;
+   justify-items: flex-end;
+   align-items: center;
+   margin-right: 20px;
+}
+
+.navBar_buttons ul {
+   width: 500px;
+   height: 91px;
+   display: flex;
+   list-style: none;
+   margin-right: 20px;
+}
+
+.navBar_buttons ul li {
+   list-style: none;
+   display: flex;
+   justify-items: center;
+   align-items: center;
+   width: 101px;
+   height: 45px;
+   background: rgba(255, 255, 255, 0.95);
+   border: 1px solid #000000;
+   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+   border-radius: 7px;
+   margin: auto;
+}
+
+.navBar_buttons ul li:hover {
+   background: rgba(195, 195, 195, 0.9);
+}
+
+.navBar_buttons ul li a {
+   font-family: 'Noto Sans Arabic', sans-serif;
+   font-style: normal;
+   font-weight: 500;
+   font-size: 19px;
+   color: #000000;
+   text-decoration: none;
+   margin: auto;
+}
+
+.mobileDropMenu {
+   position: fixed;
+   top: 22px;
+   right: 25px;
+   display: none;
+}
+
+.mobileDropMenu img {
+   width: 40px;
+   height: 40px;
+}
+
+@media screen and (max-width: 900px) {
+   .navBar_buttons ul li {
+      width: 80px;
+      height: 40px;
+   }
+
+   .navBar_buttons ul li a {
+      font-size: 17px;
+   }
+}
+
+@media screen and (max-width: 800px) {
+   .navBar_box {
+      height: 80px;
+   }
+
+   .navBar_buttons {
+      height: 80px;
+   }
+
+   .navBar_buttons ul li {
+      display: none;
+   }
+
+   .navBar_buttons ul li a {
+      display: none;
+   }
+
+   .logoBox {
+      height: 80px;
+   }
+
+   .logoBox img {
+      width: 37px;
+      height: 42.3px;
+      margin-top: 10px;
+   }
+
+   .logoBox a {
+      font-size: 24px;
+   }
+
+   .mobileDropMenu {
+      display: block;
+   }
+}
+
+.header {
+   display: flex;
+   justify-items: center;
+   justify-content: flex-start;
+   align-items: center;
+   width: 100%;
+   padding-top: 120px;
+   margin-right: 10%;
+   direction: rtl;
+}
+
+.header p {
+   font-family: 'Noto Sans Arabic';
+   font-style: normal;
+   font-weight: 600;
+   font-size: 46px;
+   line-height: 116px;
+   color: #000000;
+   text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+   margin-right: 10%;
+   text-decoration: underline;
+   text-underline-offset: 22px;
+}
+
+@media screen and (max-width: 800px) {
+   .header {
+      justify-content: center;
+      padding-top: 120px;
+   }
+
+   .header p {
+      font-size: 40px;
+      margin-right: 0;
+   }
+}
+
+.HeaderBoxesContainer {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   flex-wrap: wrap;
+   direction: rtl;
+}
+
+.HeaderBoxesContainer .box {
+   width: 419px;
+   height: 478px;
+   background: #F8F8F8;
+   box-shadow: 4px 5px 5px rgba(0, 0, 0, 0.25);
+   border-radius: 50px;
+   margin: 46px;
+}
+
+
+.serviceBox {
+   font-family: "Montserrat", sans-serif;
+   text-align: center;
+   padding-top: 10px;
+}
+
+.serviceBox p {
+   font-family: 'Noto Sans Arabic';
+   font-style: normal;
+   font-weight: 500;
+   font-size: 20px;
+   line-height: 42px;
+   display: flex;
+   align-items: center;
+   text-align: center;
+   color: #272727;
+}
+
+.serviceBox .service-icon {
+   color: #fff;
+   background: #fff;
+   font-size: 45px;
+   line-height: 100px;
+   width: 100px;
+   height: 100px;
+   margin: 0 auto 30px;
+   border-radius: 50%;
+   box-shadow: 5px 0 5px rgba(0, 0, 0, 0.2);
+   position: relative;
+   z-index: 1;
+}
+
+.service-icon .firstImage {
+   width: 60%;
+   margin-bottom: 10px;
+   margin-right: 4px;
+}
+
+.service-icon .secImage {
+   width: 50%;
+   margin-bottom: 10px;
+   margin-right: 4px;
+}
+
+.service-icon .thirdImage {
+   width: 50%;
+   margin-bottom: 10px;
+   margin-right: 4px;
+}
+
+.serviceBox .service-icon:before,
+.serviceBox .service-icon:after {
+   content: "";
+   background: linear-gradient(to right, #FFBD80 50%, transparent 50%);
+   border-radius: 50%;
+   position: absolute;
+   top: -10px;
+   left: -10px;
+   right: -10px;
+   bottom: -10px;
+   z-index: -1;
+   transition: all ease 0.8s;
+}
+
+.two .service-icon:before,
+.two .service-icon:after {
+   background: linear-gradient(to right, #009393 50%, transparent 50%);
+}
+
+.three .service-icon:before,
+.three .service-icon:after {
+   background: linear-gradient(to right, #606060 50%, transparent 50%);
+}
+
+.serviceBox:hover .service-icon:before,
+.serviceBox:hover .service-icon:after {
+   transform: rotateZ(180deg);
+}
+
+.serviceBox:hover .service-icon {
+   box-shadow: -5px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.serviceBox .service-icon:after {
+   background: #FFBD80;
+   box-shadow: 0 7px 15px rgba(0, 0, 0, 0.3);
+   top: 10px;
+   left: 10px;
+   right: 10px;
+   bottom: 10px;
+}
+
+.two .service-icon:after {
+   background: #009393;
+}
+
+.three .service-icon:after {
+   background: #606060;
+}
+
+
+.serviceBox {
+   padding: 40px;
+   border-radius: 20px;
+   position: relative;
+   z-index: 1;
+}
+
+@media only screen and (max-width: 990px) {
+   .serviceBox {
+      margin: 0 0 30px;
+   }
+}
+
+.topWaveBox {
+   padding-top: 215px;
+   width: 100%;
+}
+
+.topWaveBox img {
+   width: 100%;
+}
+
+.header2 {
+   display: flex;
+   width: 100%;
+   direction: rtl;
+   background: #393939;
+}
+
+.header2 p {
+   margin-right: 10%;
+   padding-top: 40px;
+   font-family: 'Noto Sans Arabic';
+   font-style: normal;
+   font-weight: 600;
+   font-size: 50px;
+   color: #FFFFFF;
+   text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+   text-decoration: underline;
+   text-underline-offset: 15px;
+   text-align: right;
+   margin-bottom: 0 !important;
+}
+
+@media screen and (max-width: 800px) {
+   .header2 {
+      justify-content: center;
+   }
+
+   .header2 p {
+      font-size: 40px;
+      margin-right: 0;
+   }
+}
+
+.chooseTbox {
+   display: flex;
+   width: 100%;
+   background: #393939;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   padding-top: 70px;
+}
+
+.templateBox {
+   min-width: 555px;
+   height: 655px;
+   border: 2px solid #FFFAFA;
+   filter: drop-shadow(3px 6px 4px rgba(0, 0, 0, 0.5));
+   border-radius: 12px;
+   margin: 150px;
+   margin-bottom: 55px;
+}
+
+.chooseT {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 487px;
+   height: 77px;
+   background: rgba(255, 91, 91, 0.82);
+   border: 1px solid #FFFFFF;
+   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+   border-radius: 15px;
+   margin: auto;
+   margin-top: 30px;
+}
+
+.chooseT:hover {
+   background: rgba(255, 51, 51, 0.82);
+}
+
+.chooseT p {
+   font-family: 'Noto Sans Arabic';
+   font-style: normal;
+   font-weight: 500;
+   font-size: 42px;
+   line-height: 101px;
+   display: flex;
+   align-items: center;
+   text-align: center;
+   color: #FFFFFF;
+   margin-top: 8px;
+}
+
+.showT {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 487px;
+   height: 77px;
+   background: rgba(103, 103, 103, 0.74);
+   border: 1px solid #FFFFFF;
+   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+   border-radius: 15px;
+   margin: auto;
+   margin-top: 20px;
+}
+
+.showT:hover {
+   background: rgba(59, 59, 59, 0.74);
+}
+
+.showT p {
+   font-family: 'Noto Sans Arabic';
+   font-style: normal;
+   font-weight: 500;
+   font-size: 36px;
+   line-height: 101px;
+   display: flex;
+   align-items: center;
+   text-align: center;
+   color: #FFFFFF;
+   margin-top: 8px;
+}
+
+.botWaveBox {
+   width: 100%;
+}
+
+.botWaveBox img {
+   width: 100%;
+}
+
+.contactContainer {
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   flex-wrap: wrap-reverse;
+}
+
+.contactContainer img {
+   width: 589px;
+   height: 589px;
+   border-radius: 34px;
+}
+
+.contactBox {
+   width: 589px;
+   height: 589px;
+   padding-top: 10px;
+   background: #F4F4F4;
+   border: 1px solid #000000;
+   border-radius: 17px;
+   margin: 50px;
+}
+
+.contactBox form {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: flex-start;
+   width: 100%;
+   height: 100%;
+}
+
+.contactBox form input {
+   width: 555px;
+   height: 77px;
+   background: #393939;
+   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+   border-radius: 10px;
+   text-align: right;
+   font-family: 'Noto Sans Arabic';
+   font-style: normal;
+   font-weight: 400;
+   font-size: 24px;
+   padding: 15px;
+   margin: 20px;
+   color: rgba(255, 255, 255, 0.878);
+   outline: none;
+   border: none;
+}
+
+.contactBox form input:focus {
+   border: none;
+   outline: none;
+}
+
+.contactBox form textarea {
+   width: 555px;
+   height: 210px;
+   background: #393939;
+   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+   border-radius: 10px;
+   text-align: right;
+   font-family: 'Noto Sans Arabic';
+   font-style: normal;
+   font-weight: 400;
+   font-size: 24px;
+   padding: 15px;
+   margin: 20px;
+   color: rgba(255, 255, 255, 0.878);
+   outline: none;
+   border: none;
+}
+
+.contactBox form textarea:focus {
+   border: none;
+   outline: none;
+}
+
+.contactBox form button {
+   width: 214px;
+   height: 70px;
+   background: #FFFFFF;
+   border: 2px solid #000000;
+   box-shadow: 4px 4px 4px rgb(0 0 0 / 25%);
+   border-radius: 8px;
+   font-family: 'Noto Sans Arabic';
+   font-style: normal;
+   font-weight: 600;
+   font-size: 34px;
+   text-align: center;
+   color: rgba(0, 0, 0, 0.73);
+}
