@@ -1,4 +1,12 @@
 // jshint esversion: 6
+
+function removeFirst(arr, idx) {
+	if (idx > -1) {
+		delete arr[idx];
+	}
+	return arr;
+}
+
 let title22 = document.querySelector(".toggle-menu");
 let list = document.getElementsByClassName("list");
 let list1 = document.getElementsByClassName("list1");
@@ -12,9 +20,10 @@ title22.onclick = () => {
 		arf[i].classList.toggle("show3");
 	}
 };
-let l=0;
+let l = 0;
+let array = [];
 let a = document.querySelector(".add_Askill");
-a.onclick = () => {
+a.addEventListener("click", () => {
 	const b = document.querySelector(".Artistic_skills_input").value;
 	if (b != "") {
 		const list_form = document.createElement("li");
@@ -24,8 +33,9 @@ a.onclick = () => {
 		list_form.innerHTML = b;
 		document.querySelector(".Artistic_skills").appendChild(list_form);
 		document.querySelector(".HiddenInput1").value += b;
-		document.querySelector(".HiddenInput1").value += ",";
-		let array = document.querySelector(".HiddenInput1").value.split(",");
+		document.querySelector(".HiddenInput1").value += "-";
+		array = document.querySelector(".HiddenInput1").value.split("-");
+		array.pop();
 		console.log(array);
 		document.querySelector(".Artistic_skills_input").value = "";
 		const minusAskill = document.createElement("div");
@@ -35,27 +45,16 @@ a.onclick = () => {
 		minusIcon.classList.add("fa-minus");
 		list_form.appendChild(minusAskill);
 		minusAskill.appendChild(minusIcon);
-		 
-		function removeItemAll(array, class2) {
-			var i = 0;
-			while (i < array.length) {
-			  if (indexof(array[i]) === class2) {
-				array.splice(i, 1);
-			  } else {
-				++i;
-			  }
-			}	
-		  }
-		  minusAskill.onclick = () => {
-			minusAskill.parentElement.remove();
-			let class2=minusAskill.parentElement.classList[1];
-			console.log(class2)
-			removeItemAll(array, class2);
+		minusAskill.addEventListener("click", () => {
+			let class2 = minusAskill.parentElement.classList[1];
+			console.log(class2);
+			array = removeFirst(array, class2);
 			console.log(array);
-		};
-		  
+			document.querySelector(".HiddenInput1").value = array;
+			minusAskill.parentElement.remove();
+		});
 	}
-};
+});
 
 let a2 = document.querySelector(".add_Pskill");
 a2.onclick = () => {
