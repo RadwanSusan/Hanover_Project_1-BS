@@ -126,14 +126,19 @@ session_start();
             <form class="form2" action="#">
                 <div class="user-details2">
                     <div class="input-box2">
+                        <div class="add-skills_input2">
                         <input class="Artistic_skills_input" type="text" placeholder="المهارات الفنية" required>
                         <div class="add_Askill"><i class="fa-solid fa-plus"></i></div>
+                        </div>
                         <ul class="Artistic_skills">
                             <!-- <li class="list-form">السفر</li> -->
                         </ul>
                     </div>
                     <div class="input-box2">
+                    <div class="add-skills_input2">
                         <input type="text" placeholder="المهارات الشخصية" required>
+                        <div class="add_Askill"><i class="fa-solid fa-plus"></i></div>
+                    </div>
                         <ul>
                             <!-- <li class="list-form">السفر</li> -->
                         </ul>
