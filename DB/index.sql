@@ -25,7 +25,7 @@ CREATE TABLE `contact_users` (
   `message_ID` bigint(10) NOT NULL,
   `email` varchar(30) DEFAULT NULL,
   `phone_number` bigint(10) DEFAULT NULL,
-  `message` varchar(500) DEFAULT NULL
+  `message2` varchar(500) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
