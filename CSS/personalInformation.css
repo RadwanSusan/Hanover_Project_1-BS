@@ -328,7 +328,7 @@ header nav ul li a:hover {
   padding: 10px;
 }
 
-.input-box2 .add-skills_input2 {
+.input-box2 .add-skills_input2 , .add-skills_input2 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -610,4 +610,7 @@ header nav ul li a:hover {
     grid-gap: 37px;
     text-align: center;
   }
+}
+.HiddenInput1,.HiddenInput2,.HiddenInput3,.HiddenInput4,.HiddenInput5 {
+  display: none;
 }

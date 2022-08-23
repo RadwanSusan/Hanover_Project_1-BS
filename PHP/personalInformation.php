@@ -136,6 +136,7 @@ session_start();
             <div class="input-box2">
                 <div class="add-skills_input2">
                     <input class="Personal_skills_input" type="text" placeholder="المهارات الشخصية" required>
+                    <input class="HiddenInput2" type="text" placeholder="Danger">
                     <div class="add_Pskill"><i class="fa-solid fa-plus"></i></div>
                 </div>
                 <ul class="Personal_skills"></ul>
@@ -145,17 +146,23 @@ session_start();
     <form class="form5" action="#">
         <div class="user-details5">
             <div class="input-box5">
-                <input type="text" placeholder="الهوايات والأهتمامات" required>
-                <ul>
-                    <li class="list-form">السفر</li>
+            <div class="add-skills_input2">
+                <input class="important" type="text" placeholder="الهوايات والأهتمامات" required>
+                <input class="HiddenInput3" type="text" placeholder="Danger">
+                <div class="add_vskill"><i class="fa-solid fa-plus"></i></div>
+            </div>
+                <ul class="important_skill">
                 </ul>
             </div>
         </div>
         <div class="user-details5">
             <div class="input-box5">
-                <input type="text" placeholder="اللغة" required>
-                <ul>
-                    <li class="list-form">العربية</li>
+            <div class="add-skills_input2">
+                <input class="lang" type="text" placeholder="اللغة" required>
+                <input class="HiddenInput4" type="text" placeholder="Danger">
+                <div class="add_kskill"><i class="fa-solid fa-plus"></i></div>
+            </div>
+                <ul class="lang_skill">
                 </ul>
             </div>
         </div>
@@ -164,9 +171,12 @@ session_start();
         <p>الخبرات العملية</p>
         <div class="user-details3">
             <div class="input-box3 threeAria">
-                <input type="text" placeholder="الإنجازات والمسؤليات" required>
-                <ul>
-                    <li class="list-form">السفر</li>
+            <div class="add-skills_input2">
+                <input class="resp" type="text" placeholder="الإنجازات والمسؤليات" required>
+                <input class="HiddenInput5" type="text" placeholder="Danger">
+                <div class="add_fskill"><i class="fa-solid fa-plus"></i></div>
+            </div>
+                <ul class="resp_skill">
                 </ul>
             </div>
             <div class="input-box3">
