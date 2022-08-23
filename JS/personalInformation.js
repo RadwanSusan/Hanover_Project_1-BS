@@ -12,13 +12,15 @@ title22.onclick = () => {
 		arf[i].classList.toggle("show3");
 	}
 };
-
+let l=0;
 let a = document.querySelector(".add_Askill");
 a.onclick = () => {
 	const b = document.querySelector(".Artistic_skills_input").value;
 	if (b != "") {
 		const list_form = document.createElement("li");
 		list_form.classList.add("list-form");
+		list_form.classList.add(l);
+		++l;
 		list_form.innerHTML = b;
 		document.querySelector(".Artistic_skills").appendChild(list_form);
 		document.querySelector(".HiddenInput1").value += b;
@@ -33,9 +35,25 @@ a.onclick = () => {
 		minusIcon.classList.add("fa-minus");
 		list_form.appendChild(minusAskill);
 		minusAskill.appendChild(minusIcon);
-		minusAskill.onclick = () => {
+		 
+		function removeItemAll(array, class2) {
+			var i = 0;
+			while (i < array.length) {
+			  if (indexof(array[i]) === class2) {
+				array.splice(i, 1);
+			  } else {
+				++i;
+			  }
+			}	
+		  }
+		  minusAskill.onclick = () => {
 			minusAskill.parentElement.remove();
+			let class2=minusAskill.parentElement.classList[1];
+			console.log(class2)
+			removeItemAll(array, class2);
+			console.log(array);
 		};
+		  
 	}
 };
 
