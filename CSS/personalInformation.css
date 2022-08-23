@@ -50,7 +50,7 @@ html {
 }
 
 ul {
-  list-style-type: none;
+  list-style: none;
 }
 
 .container {
@@ -327,7 +327,8 @@ header nav ul li a:hover {
   color: #8F8F8F;
   padding: 10px;
 }
- .input-box2 .add-skills_input2 {
+
+.input-box2 .add-skills_input2 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -481,6 +482,8 @@ header nav ul li a:hover {
 
 .list-form {
   padding: 10px;
+  list-style: inside;
+  direction: rtl;
 }
 
 .form3 p,
@@ -608,4 +611,3 @@ header nav ul li a:hover {
     text-align: center;
   }
 }
-

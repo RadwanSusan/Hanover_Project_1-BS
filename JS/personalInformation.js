@@ -15,8 +15,38 @@ title22.onclick = () => {
 
 let a = document.querySelector(".add_Askill");
 a.onclick = () => {
-	let b = document.querySelector(".Artistic_skills_input").innerHTML;
-	console.log(b);
+	const b = document.querySelector(".Artistic_skills_input").value;
+	if (b != "") {
+		const list_form = document.createElement("li");
+		list_form.classList.add("list-form");
+		list_form.innerHTML = b;
+		document.querySelector(".Artistic_skills").appendChild(list_form);
+		document.querySelector(".HiddenInput1").value += b;
+		document.querySelector(".HiddenInput1").value += ",";
+		let array = document.querySelector(".HiddenInput1").value.split(",");
+		console.log(array);
+		document.querySelector(".Artistic_skills_input").value = "";
+		const minusAskill = document.createElement("div");
+		const minusIcon = document.createElement("i");
+		minusAskill.classList.add("add_Askill");
+		minusIcon.classList.add("fa-solid");
+		minusIcon.classList.add("fa-minus");
+		list_form.appendChild(minusAskill);
+		minusAskill.appendChild(minusIcon);
+		minusAskill.onclick = () => {
+			minusAskill.parentElement.remove();
+		};
+	}
 };
 
-console.log("test");
+let a2 = document.querySelector(".add_Pskill");
+a2.onclick = () => {
+	let b2 = document.querySelector(".Personal_skills_input").value;
+	if (b2 != "") {
+		const list_form = document.createElement("li");
+		list_form.classList.add("list-form");
+		list_form.innerHTML = b2;
+		document.querySelector(".Personal_skills").appendChild(list_form);
+		document.querySelector(".Personal_skills_input").value = "";
+	}
+};

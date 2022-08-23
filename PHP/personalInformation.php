@@ -120,84 +120,81 @@ session_start();
                         <input type="text" name="university" placeholder="الجامعة" required>
                     </div>
                 </div>
-                <button type="submit" name="imageUpload">upload</button>
-            </form>
-            <div class="line"></div>
-            <form class="form2" action="#">
-                <div class="user-details2">
-                    <div class="input-box2">
-                        <div class="add-skills_input2">
-                        <input class="Artistic_skills_input" type="text" placeholder="المهارات الفنية" required>
-                        <div class="add_Askill"><i class="fa-solid fa-plus"></i></div>
+                <div class="line"></div>
+                <div class="form2" action="#">
+                    <div class="user-details2">
+                        <div class="input-box2">
+                            <div class="add-skills_input2">
+                                <input class="Artistic_skills_input" type="text" placeholder="المهارات الفنية" required>
+                                <input class="HiddenInput1" type="text" placeholder="Danger">
+                                <div class="add_Askill"><i class="fa-solid fa-plus"></i></div>
+                            </div>
+                            <ul class="Artistic_skills"></ul>
                         </div>
-                        <ul class="Artistic_skills">
-                            <!-- <li class="list-form">السفر</li> -->
-                        </ul>
-                    </div>
-                    <div class="input-box2">
-                    <div class="add-skills_input2">
-                        <input type="text" placeholder="المهارات الشخصية" required>
-                        <div class="add_Askill"><i class="fa-solid fa-plus"></i></div>
-                    </div>
-                        <ul>
-                            <!-- <li class="list-form">السفر</li> -->
-                        </ul>
-                    </div>
-                </div>
+                        <button type="submit" name="imageUpload">upload</button>
             </form>
-            <form class="form5" action="#">
-                <div class="user-details5">
-                    <div class="input-box5">
-                        <input type="text" placeholder="الهوايات والأهتمامات" required>
-                        <ul>
-                            <li class="list-form">السفر</li>
-                        </ul>
-                    </div>
+            <div class="input-box2">
+                <div class="add-skills_input2">
+                    <input class="Personal_skills_input" type="text" placeholder="المهارات الشخصية" required>
+                    <div class="add_Pskill"><i class="fa-solid fa-plus"></i></div>
                 </div>
-                <div class="user-details5">
-                    <div class="input-box5">
-                        <input type="text" placeholder="اللغة" required>
-                        <ul>
-                            <li class="list-form">العربية</li>
-                        </ul>
-                    </div>
-                </div>
-            </form>
-            <form class="form3" action="#">
-                <p>الخبرات العملية</p>
-                <div class="user-details3">
-                    <div class="input-box3 threeAria">
-                        <input type="text" placeholder="الإنجازات والمسؤليات" required>
-                        <ul>
-                            <li class="list-form">السفر</li>
-                        </ul>
-                    </div>
-                    <div class="input-box3">
-                        <input type="text" placeholder="الوظيفة" required>
-                    </div>
-                    <div class="input-box3">
-                        <input type="text" placeholder="الشركة" required>
-                    </div>
-                    <div class="input-box3">
-                        <input type="text" placeholder="التاريخ" required>
-                    </div>
-                </div>
-            </form>
-            <form class="form4" action="#">
-                <p>المشاريع الشخصية</p>
-                <div class="user-details4">
-                    <div class="input-box4 towAria">
-                        <input class="tow-aria" type="text" placeholder="الوصف" required>
-                    </div>
-                    <div class="input-box4">
-                        <input type="text" placeholder="الأسم" required>
-                    </div>
-                    <div class="input-box4">
-                        <input type="text" placeholder="التاريخ" required>
-                    </div>
-                </div>
-            </form>
+                <ul class="Personal_skills"></ul>
+            </div>
         </div>
+    </div>
+    <form class="form5" action="#">
+        <div class="user-details5">
+            <div class="input-box5">
+                <input type="text" placeholder="الهوايات والأهتمامات" required>
+                <ul>
+                    <li class="list-form">السفر</li>
+                </ul>
+            </div>
+        </div>
+        <div class="user-details5">
+            <div class="input-box5">
+                <input type="text" placeholder="اللغة" required>
+                <ul>
+                    <li class="list-form">العربية</li>
+                </ul>
+            </div>
+        </div>
+    </form>
+    <form class="form3" action="#">
+        <p>الخبرات العملية</p>
+        <div class="user-details3">
+            <div class="input-box3 threeAria">
+                <input type="text" placeholder="الإنجازات والمسؤليات" required>
+                <ul>
+                    <li class="list-form">السفر</li>
+                </ul>
+            </div>
+            <div class="input-box3">
+                <input type="text" placeholder="الوظيفة" required>
+            </div>
+            <div class="input-box3">
+                <input type="text" placeholder="الشركة" required>
+            </div>
+            <div class="input-box3">
+                <input type="text" placeholder="التاريخ" required>
+            </div>
+        </div>
+    </form>
+    <form class="form4" action="#">
+        <p>المشاريع الشخصية</p>
+        <div class="user-details4">
+            <div class="input-box4 towAria">
+                <input class="tow-aria" type="text" placeholder="الوصف" required>
+            </div>
+            <div class="input-box4">
+                <input type="text" placeholder="الأسم" required>
+            </div>
+            <div class="input-box4">
+                <input type="text" placeholder="التاريخ" required>
+            </div>
+        </div>
+    </form>
+    </div>
     </div>
     <div class="footer">
         <div class="container">
