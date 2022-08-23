@@ -122,30 +122,24 @@ session_start();
    </div>
    <div class="contactContainer">
       <div data-aos="fade-down" data-aos-anchor-placement="top-center" class="contactBox">
-      <?php
-         if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["SignUpInfo"])) {
+         <?php
+         if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["ContactInfo"])) {
             $email = $_POST["emailUser"];
             $phoneNumber = $_POST["phone"];
-            $message2 = $_POST["message"];
-            $sql2 = "Select * from user_info where user_email='$email'";
-            $result = mysqli_query($conn, $sql2);
-            $row = mysqli_fetch_assoc($result);
-            $num = mysqli_num_rows($result);
-                  $sql3 = "INSERT INTO contact_users (email,phone_number,message2) VALUES ('$email','$phoneNumber','$message2')";
-                  mysqli_query($conn, $sql3);
-                  echo '<script type="text/javascript">alert("Account Created Successfully");</script>';
-               } 
-         
+            $message2 = $_POST["message5"];
+            $sql3 = "INSERT INTO contact_users (email,phone_number,message2) VALUES ('$email','$phoneNumber','$message2')";
+            mysqli_query($conn, $sql3);
+            echo '<script type="text/javascript">alert("Account Created Successfully");</script>';
+         }
          ?>
          <form action="" method="POST">
             <input type="text" placeholder="الإيميل" name="emailUser" dir="rtl">
             <input type="text" placeholder="رقم الهاتف" name="phone" dir="rtl">
-            <textarea dir="rtl" name="" id="" cols="30"  name="message" rows="20" placeholder="الرسالة"></textarea>
-            <button type="submit" name="SignUpInfo">إرسال</button>
+            <textarea dir="rtl" id="" cols="30" name="message5" rows="20" placeholder="الرسالة"></textarea>
+            <button type="submit" name="ContactInfo">إرسال</button>
          </form>
       </div>
-      <img data-aos="fade-down" data-aos-anchor-placement="top-center" src="../MEDIA/contactImg(chooseT).png" alt=""
-         srcset="">
+      <img data-aos="fade-down" data-aos-anchor-placement="top-center" src="../MEDIA/contactImg(chooseT).png" alt="" srcset="">
    </div>
    <div class="footer">
       <div class="container">
