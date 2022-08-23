@@ -1,3 +1,4 @@
+// jshint esversion: 6
 let title22 = document.querySelector(".toggle-menu");
 let list = document.getElementsByClassName("list");
 let list1 = document.getElementsByClassName("list1");
@@ -11,3 +12,11 @@ title22.onclick = () => {
 		arf[i].classList.toggle("show3");
 	}
 };
+
+let a = document.querySelector(".add_Askill");
+a.onclick = () => {
+	let b = document.querySelector(".Artistic_skills_input").innerHTML;
+	console.log(b);
+};
+
+console.log("test");

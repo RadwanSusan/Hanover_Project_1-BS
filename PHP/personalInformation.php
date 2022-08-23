@@ -1,3 +1,7 @@
+<?php
+include_once "connection.php";
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,6 +10,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal-info</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../CSS/personalInformation.css">
 </head>
 
@@ -32,57 +38,104 @@
     <div class="landing-info">
         <div class="container">
             <div class="title">اكتب معلوماتك الشخصية</div>
-            <form class="form1" action="#">
-                <img class="imageCV" src="../MEDIA/image/imageCV.svg" alt="imageCV">
+            <?php
+            if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["imageUpload"])) {
+                $file = $_FILES['fileimg'];
+                $fileName = $_FILES['fileimg']['name'];
+                $fileTmpName = $_FILES['fileimg']['tmp_name'];
+                $fileSize = $_FILES['fileimg']['size'];
+                $fileError = $_FILES['fileimg']['error'];
+                $fileExt = explode('.', $fileName);
+                $fileActualExt = strtolower(end($fileExt));
+                $ext = $fileActualExt;
+                $fileDestination = "s";
+                if ($fileError === 0) {
+                    if ($fileSize < 100000000) {
+                        $fileNameNew = uniqid('', true) . "." . $fileActualExt;
+                        $fileDestination = '../db_images/' . $fileNameNew;
+                        move_uploaded_file($fileTmpName, $fileDestination);
+                    } else {
+                        echo "<script>alert('Your file is too big!')</script>";
+                    }
+                } else {
+                    echo "<script>alert('There was an error uploading your file!')</script>";
+                }
+                /////////////////////////////////////////////////////////////
+                $user_name = $_POST["user_name"];
+                $birth_date = $_POST["birth_date"];
+                $nationality = $_POST["nationality"];
+                $city = $_POST["city"];
+                $user_email = $_POST["user_email"];
+                $phone_number = $_POST["phone_number"];
+                $speciality = $_POST["speciality"];
+                $Degree = $_POST["Degree"];
+                $user_bio = $_POST["user_bio"];
+                $Degree_date_start = $_POST["Degree_date_start"];
+                $Degree_date_end = $_POST["Degree_date_end"];
+                $university = $_POST["university"];
+                $sql3 = "INSERT INTO cv_form (img_path,user_name,birth_date,nationality,city,user_email,phone_number,speciality,Degree,user_bio,Degree_date_start,Degree_date_end,university) VALUES ('$fileDestination', '$user_name' , '$birth_date', '$nationality' ,'$city' , '$user_email' , '$phone_number' , '$speciality' , '$Degree' , '$user_bio' , '$Degree_date_start','$Degree_date_end','$university')";
+                mysqli_query($conn, $sql3);
+            }
+            ?>
+            <form class="form1" action="" method="POST" enctype="multipart/form-data">
+                <label for="fileimg">
+                    <img class="imageCV" src="../MEDIA/image/imageCV.svg" alt="imageCV">
+                </label>
+                <input type="file" name="fileimg" id="fileimg" accept=".jpg,.png,.gif,jpeg" hidden />
                 <div class="user-details">
                     <div class="input-box">
-                        <input type="text" placeholder="الجنسية" required>
+                        <input type="text" name="nationality" placeholder="الجنسية" required>
                     </div>
                     <div class="input-box">
-                        <input type="text" placeholder="تاريخ الميلاد" required>
+                        <input type="text" name="birth_date" placeholder="تاريخ الميلاد" required>
                     </div>
                     <div class="input-box">
-                        <input type="text" placeholder="الأسم" required>
+                        <input type="text" name="user_name" placeholder="الأسم" required>
                     </div>
                     <div class="input-box">
-                        <input type="text" placeholder="رقم الهاتف" required>
+                        <input type="text" name="phone_number" placeholder="رقم الهاتف" required>
                     </div>
                     <div class="input-box">
-                        <input type="email" placeholder="الايميل" required>
+                        <input type="email" name="user_email" placeholder="الايميل" required>
                     </div>
                     <div class="input-box">
-                        <input type="text" placeholder="المدينة" required>
+                        <input type="text" name="city" placeholder="المدينة" required>
                     </div>
                     <div class="input-box personal-desc">
-                        <input class="row-2" type="text" placeholder="الوصف الشخصي" required>
+                        <input class="row-2" type="text" name="user_bio" placeholder="الوصف الشخصي" required>
                     </div>
                     <div class="input-box">
-                        <input type="text" placeholder="الدرجة العلمية" required>
+                        <input type="text" name="Degree" placeholder="الدرجة العلمية" required>
                     </div>
                     <div class="input-box">
-                        <input type="text" placeholder="التخصص" required>
+                        <input type="text" name="speciality" placeholder="التخصص" required>
                     </div>
                     <div class="input-box">
-                        <input type="text" placeholder="التاريخ الدراسي" required>
+                        <input type="text" name="Degree_date_end" placeholder="2التاريخ الدراسي" required>
                     </div>
                     <div class="input-box">
-                        <input type="text" placeholder="الجامعة" required>
+                        <input type="text" name="Degree_date_start" placeholder="1التاريخ الدراسي" required>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" name="university" placeholder="الجامعة" required>
                     </div>
                 </div>
+                <button type="submit" name="imageUpload">upload</button>
             </form>
             <div class="line"></div>
             <form class="form2" action="#">
                 <div class="user-details2">
                     <div class="input-box2">
-                        <input type="text" placeholder="المهارات الفنية" required>
-                        <ul>
-                            <li class="list-form">السفر</li>
+                        <input class="Artistic_skills_input" type="text" placeholder="المهارات الفنية" required>
+                        <div class="add_Askill"><i class="fa-solid fa-plus"></i></div>
+                        <ul class="Artistic_skills">
+                            <!-- <li class="list-form">السفر</li> -->
                         </ul>
                     </div>
                     <div class="input-box2">
                         <input type="text" placeholder="المهارات الشخصية" required>
                         <ul>
-                            <li class="list-form">السفر</li>
+                            <!-- <li class="list-form">السفر</li> -->
                         </ul>
                     </div>
                 </div>
