@@ -22,6 +22,7 @@ title22.onclick = () => {
 };
 let l = 0;
 let array = [];
+let class2;
 let a = document.querySelector(".add_Askill");
 a.addEventListener("click", () => {
 	const b = document.querySelector(".Artistic_skills_input").value;
@@ -33,8 +34,8 @@ a.addEventListener("click", () => {
 		list_form.innerHTML = b;
 		document.querySelector(".Artistic_skills").appendChild(list_form);
 		document.querySelector(".HiddenInput1").value += b;
-		document.querySelector(".HiddenInput1").value += "-";
-		array = document.querySelector(".HiddenInput1").value.split("-");
+		document.querySelector(".HiddenInput1").value += " ";
+		array = document.querySelector(".HiddenInput1").value.split(" ");
 		array.pop();
 		console.log(array);
 		document.querySelector(".Artistic_skills_input").value = "";
@@ -46,11 +47,12 @@ a.addEventListener("click", () => {
 		list_form.appendChild(minusAskill);
 		minusAskill.appendChild(minusIcon);
 		minusAskill.addEventListener("click", () => {
-			let class2 = minusAskill.parentElement.classList[1];
+			class2 = minusAskill.parentElement.classList[1];
 			console.log(class2);
 			array = removeFirst(array, class2);
 			console.log(array);
-			document.querySelector(".HiddenInput1").value = array;
+			const arrayString = array.join(" ");
+			document.querySelector(".HiddenInput1").value = arrayString;
 			minusAskill.parentElement.remove();
 		});
 	}
