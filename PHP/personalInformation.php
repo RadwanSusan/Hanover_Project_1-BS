@@ -57,8 +57,6 @@ session_start();
                     } else {
                         echo "<script>alert('Your file is too big!')</script>";
                     }
-                } else {
-                    echo "<script>alert('There was an error uploading your file!')</script>";
                 }
                 /////////////////////////////////////////////////////////////
                 $user_name = $_POST["user_name"];
@@ -73,7 +71,11 @@ session_start();
                 $Degree_date_start = $_POST["Degree_date_start"];
                 $Degree_date_end = $_POST["Degree_date_end"];
                 $university = $_POST["university"];
-                $sql3 = "INSERT INTO cv_form (img_path,user_name,birth_date,nationality,city,user_email,phone_number,speciality,Degree,user_bio,Degree_date_start,Degree_date_end,university) VALUES ('$fileDestination', '$user_name' , '$birth_date', '$nationality' ,'$city' , '$user_email' , '$phone_number' , '$speciality' , '$Degree' , '$user_bio' , '$Degree_date_start','$Degree_date_end','$university')";
+                $Artistic_skills = $_POST["HiddenInput1"];
+                $Personal_skills = $_POST["HiddenInput2"];
+                $hobbies = $_POST["HiddenInput3"];
+                $user_language = $_POST["HiddenInput4"];
+                $sql3 = "INSERT INTO cv_form (img_path,user_name,birth_date,nationality,city,user_email,phone_number,speciality,Degree,user_bio,Degree_date_start,Degree_date_end,university,Artistic_skills,Personal_skills,hobbies,user_language) VALUES ('$fileDestination', '$user_name' , '$birth_date', '$nationality' ,'$city' , '$user_email' , '$phone_number' , '$speciality' , '$Degree' , '$user_bio' , '$Degree_date_start','$Degree_date_end','$university','$Artistic_skills','$Personal_skills','$hobbies','$user_language')";
                 mysqli_query($conn, $sql3);
             }
             ?>
@@ -121,90 +123,182 @@ session_start();
                     </div>
                 </div>
                 <div class="line"></div>
-                <div class="form2" action="#">
+                <div class="form2">
                     <div class="user-details2">
                         <div class="input-box2">
                             <div class="add-skills_input2">
-                                <input class="Artistic_skills_input" type="text" placeholder="المهارات الفنية" required>
-                                <input class="HiddenInput1" type="text" placeholder="Danger">
+                                <input class="Artistic_skills_input" type="text" placeholder="المهارات الفنية">
+                                <input class="HiddenInput1" type="text" name="HiddenInput1" placeholder="Danger">
                                 <div class="add_Askill"><i class="fa-solid fa-plus"></i></div>
                             </div>
                             <ul class="Artistic_skills"></ul>
                         </div>
                         <button type="submit" name="imageUpload">upload</button>
-            </form>
-            <div class="input-box2">
-                <div class="add-skills_input2">
-                    <input class="Personal_skills_input" type="text" placeholder="المهارات الشخصية" required>
-                    <input class="HiddenInput2" type="text" placeholder="Danger">
-                    <div class="add_Pskill"><i class="fa-solid fa-plus"></i></div>
+                        <div class="input-box2">
+                            <div class="add-skills_input2">
+                                <input class="Personal_skills_input" type="text" placeholder="المهارات الشخصية">
+                                <input class="HiddenInput2" name="HiddenInput2" type="text" placeholder="Danger">
+                                <div class="add_Pskill"><i class="fa-solid fa-plus"></i></div>
+                            </div>
+                            <ul class="Personal_skills"></ul>
+                        </div>
+                    </div>
                 </div>
-                <ul class="Personal_skills"></ul>
-            </div>
+                <div class="form5">
+                    <div class="user-details5">
+                        <div class="input-box5">
+                            <div class="add-skills_input2">
+                                <input class="important" type="text" placeholder="الهوايات والأهتمامات">
+                                <input class="HiddenInput3" name="HiddenInput3" type="text" placeholder="Danger">
+                                <div class="add_vskill"><i class="fa-solid fa-plus"></i></div>
+                            </div>
+                            <ul class="important_skill">
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="user-details5">
+                        <div class="input-box5">
+                            <div class="add-skills_input2">
+                                <input class="lang" type="text" placeholder="اللغة">
+                                <input class="HiddenInput4" name="HiddenInput4" type="text" placeholder="Danger">
+                                <div class="add_kskill"><i class="fa-solid fa-plus"></i></div>
+                            </div>
+                            <ul class="lang_skill">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="form3">
+                    <p> الخبرات العملية #1 </p>
+                    <div class="user-details3">
+                        <div class="input-box3 threeAria">
+                            <div class="add-skills_input2">
+                                <input class="resp" type="text" placeholder="الإنجازات والمسؤليات">
+                                <input class="HiddenInput5" type="text" placeholder="Danger" name="HiddenInput51">
+                                <div class="add_fskill"><i class="fa-solid fa-plus"></i></div>
+                            </div>
+                            <ul class="resp_skill">
+                            </ul>
+                        </div>
+                        <div class="input-box3">
+                            <input type="text" placeholder="الوظيفة" name="job1">
+                        </div>
+                        <div class="input-box3">
+                            <input type="text" placeholder="الشركة" name="company1">
+                        </div>
+                        <div class="input-box3">
+                            <input type="text" placeholder="التاريخ" name="job_date_start1">
+                        </div>
+                        <div class="input-box3">
+                            <input type="text" placeholder="التاريخ" name="job_date_end1">
+                        </div>
+                    </div>
+                </div>
+                <div class="form3">
+                    <p> #2 الخبرات العملية</p>
+                    <div class="user-details3">
+                        <div class="input-box3 threeAria">
+                            <div class="add-skills_input2">
+                                <input class="resp" type="text" placeholder="الإنجازات والمسؤليات">
+                                <input class="HiddenInput5" type="text" placeholder="Danger" name="HiddenInput52">
+                                <div class="add_fskill"><i class="fa-solid fa-plus"></i></div>
+                            </div>
+                            <ul class="resp_skill">
+                            </ul>
+                        </div>
+                        <div class="input-box3">
+                            <input type="text" placeholder="الوظيفة" name="job2">
+                        </div>
+                        <div class="input-box3">
+                            <input type="text" placeholder="الشركة" name="company2">
+                        </div>
+                        <div class="input-box3">
+                            <input type="text" placeholder="التاريخ" name="job_date_start2">
+                        </div>
+                        <div class="input-box3">
+                            <input type="text" placeholder="التاريخ" name="job_date_end2">
+                        </div>
+                    </div>
+                </div>
+                <div class="form3">
+                    <p> #3 الخبرات العملية </p>
+                    <div class="user-details3">
+                        <div class="input-box3 threeAria">
+                            <div class="add-skills_input2">
+                                <input class="resp" type="text" placeholder="الإنجازات والمسؤليات">
+                                <input class="HiddenInput5" type="text" placeholder="Danger" name="HiddenInput53">
+                                <div class="add_fskill"><i class="fa-solid fa-plus"></i></div>
+                            </div>
+                            <ul class="resp_skill">
+                            </ul>
+                        </div>
+                        <div class="input-box3">
+                            <input type="text" placeholder="الوظيفة" name="job3">
+                        </div>
+                        <div class="input-box3">
+                            <input type="text" placeholder="الشركة" name="company3">
+                        </div>
+                        <div class="input-box3">
+                            <input type="text" placeholder="التاريخ" name="job_date_start3">
+                        </div>
+                        <div class="input-box3">
+                            <input type="text" placeholder="التاريخ" name="job_date_end3">
+                        </div>
+                    </div>
+                </div>
+                <div class="form4">
+                    <p> #1 المشاريع الشخصية</p>
+                    <div class="user-details4">
+                        <div class="input-box4 towAria">
+                            <input class="tow-aria" type="text" placeholder="الوصف" name="project_bio1">
+                        </div>
+                        <div class="input-box4">
+                            <input type="text" placeholder="الأسم" name="project_name1">
+                        </div>
+                        <div class="input-box4">
+                            <input type="text" placeholder="التاريخ" name="project_date_start1">
+                        </div>
+                        <div class="input-box3">
+                            <input type="text" placeholder="التاريخ" name="project_date_end1">
+                        </div>
+                    </div>
+                </div>
+                <div class="form4">
+                    <p> #2 المشاريع الشخصية</p>
+                    <div class="user-details4">
+                        <div class="input-box4 towAria">
+                            <input class="tow-aria" type="text" placeholder="الوصف" name="project_bio1">
+                        </div>
+                        <div class="input-box4">
+                            <input type="text" placeholder="الأسم" name="project_name2">
+                        </div>
+                        <div class="input-box4">
+                            <input type="text" placeholder="التاريخ" name="project_date_start2">
+                        </div>
+                        <div class="input-box3">
+                            <input type="text" placeholder="التاريخ" name="project_date_end2">
+                        </div>
+                    </div>
+                </div>
+                <div class="form4">
+                    <p>المشاريع الشخصية #3</p>
+                    <div class="user-details4">
+                        <div class="input-box4 towAria">
+                            <input class="tow-aria" type="text" placeholder="الوصف" name="project_bio1">
+                        </div>
+                        <div class="input-box4">
+                            <input type="text" placeholder="الأسم" name="project_name3">
+                        </div>
+                        <div class="input-box4">
+                            <input type="text" placeholder="التاريخ" name="project_date_start3">
+                        </div>
+                        <div class="input-box3">
+                            <input type="text" placeholder="التاريخ" name="project_date_end3">
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
-    </div>
-    <form class="form5" action="#">
-        <div class="user-details5">
-            <div class="input-box5">
-            <div class="add-skills_input2">
-                <input class="important" type="text" placeholder="الهوايات والأهتمامات" required>
-                <input class="HiddenInput3" type="text" placeholder="Danger">
-                <div class="add_vskill"><i class="fa-solid fa-plus"></i></div>
-            </div>
-                <ul class="important_skill">
-                </ul>
-            </div>
-        </div>
-        <div class="user-details5">
-            <div class="input-box5">
-            <div class="add-skills_input2">
-                <input class="lang" type="text" placeholder="اللغة" required>
-                <input class="HiddenInput4" type="text" placeholder="Danger">
-                <div class="add_kskill"><i class="fa-solid fa-plus"></i></div>
-            </div>
-                <ul class="lang_skill">
-                </ul>
-            </div>
-        </div>
-    </form>
-    <form class="form3" action="#">
-        <p>الخبرات العملية</p>
-        <div class="user-details3">
-            <div class="input-box3 threeAria">
-            <div class="add-skills_input2">
-                <input class="resp" type="text" placeholder="الإنجازات والمسؤليات" required>
-                <input class="HiddenInput5" type="text" placeholder="Danger">
-                <div class="add_fskill"><i class="fa-solid fa-plus"></i></div>
-            </div>
-                <ul class="resp_skill">
-                </ul>
-            </div>
-            <div class="input-box3">
-                <input type="text" placeholder="الوظيفة" required>
-            </div>
-            <div class="input-box3">
-                <input type="text" placeholder="الشركة" required>
-            </div>
-            <div class="input-box3">
-                <input type="text" placeholder="التاريخ" required>
-            </div>
-        </div>
-    </form>
-    <form class="form4" action="#">
-        <p>المشاريع الشخصية</p>
-        <div class="user-details4">
-            <div class="input-box4 towAria">
-                <input class="tow-aria" type="text" placeholder="الوصف" required>
-            </div>
-            <div class="input-box4">
-                <input type="text" placeholder="الأسم" required>
-            </div>
-            <div class="input-box4">
-                <input type="text" placeholder="التاريخ" required>
-            </div>
-        </div>
-    </form>
-    </div>
     </div>
     <div class="footer">
         <div class="container">
