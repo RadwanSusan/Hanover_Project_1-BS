@@ -58,7 +58,6 @@ session_start();
                         echo "<script>alert('Your file is too big!')</script>";
                     }
                 }
-                /////////////////////////////////////////////////////////////
                 $user_name = $_POST["user_name"];
                 $birth_date = $_POST["birth_date"];
                 $nationality = $_POST["nationality"];
@@ -75,7 +74,53 @@ session_start();
                 $Personal_skills = $_POST["HiddenInput2"];
                 $hobbies = $_POST["HiddenInput3"];
                 $user_language = $_POST["HiddenInput4"];
-                $sql3 = "INSERT INTO cv_form (img_path,user_name,birth_date,nationality,city,user_email,phone_number,speciality,Degree,user_bio,Degree_date_start,Degree_date_end,university,Artistic_skills,Personal_skills,hobbies,user_language) VALUES ('$fileDestination', '$user_name' , '$birth_date', '$nationality' ,'$city' , '$user_email' , '$phone_number' , '$speciality' , '$Degree' , '$user_bio' , '$Degree_date_start','$Degree_date_end','$university','$Artistic_skills','$Personal_skills','$hobbies','$user_language')";
+                $job1 = $_POST["job1"];
+                $job2 = $_POST["job2"];
+                $job3 = $_POST["job3"];
+                $combinedJobs = [$job1, $job2, $job3];
+                $combinedJobs = join(",", $combinedJobs);
+                $company1 = $_POST["company1"];
+                $company2 = $_POST["company1"];
+                $company3 = $_POST["company1"];
+                $combinedcompanys = [$company1, $company2, $company3];
+                $combinedcompanys = join(",", $combinedcompanys);
+                $job_date_start1 = $_POST["job_date_start1"];
+                $job_date_start2 = $_POST["job_date_start2"];
+                $job_date_start3 = $_POST["job_date_start3"];
+                $job_date_start_Combined = [$job_date_start1, $job_date_start2, $job_date_start3];
+                $job_date_start_Combined = join(",", $job_date_start_Combined);
+                $job_date_end1 = $_POST["job_date_end1"];
+                $job_date_end2 = $_POST["job_date_end2"];
+                $job_date_end3 = $_POST["job_date_end3"];
+                $job_date_end_Combined = [$job_date_end1, $job_date_end2, $job_date_end3];
+                $job_date_end_Combined = join(",", $job_date_end_Combined);
+                $achievements1 = $_POST["HiddenInput51"];
+                $achievements2 = $_POST["HiddenInput52"];
+                $achievements3 = $_POST["HiddenInput53"];
+                $achievements_Combined = [$achievements1, $achievements2, $achievements3];
+                $achievements_Combined = join(",", $achievements_Combined);
+                $project_name1 = $_POST["project_name1"];
+                $project_name2 = $_POST["project_name2"];
+                $project_name3 = $_POST["project_name3"];
+                $project_name_Combined = [$project_name1, $project_name2, $project_name3];
+                $project_name_Combined = join(",", $project_name_Combined);
+                $project_date_start1 = $_POST["project_date_start1"];
+                $project_date_start2 = $_POST["project_date_start2"];
+                $project_date_start3 = $_POST["project_date_start3"];
+                $project_date_start_Combined = [$project_date_start1, $project_date_start2, $project_date_start3];
+                $project_date_start_Combined = join(",", $project_date_start_Combined);
+                $project_date_end1 = $_POST["project_date_end1"];
+                $project_date_end2 = $_POST["project_date_end2"];
+                $project_date_end3 = $_POST["project_date_end3"];
+                $project_date_end_Combined = [$project_date_end1, $project_date_end2, $project_date_end3];
+                $project_date_end_Combined = join(",", $project_date_end_Combined);
+                $project_bio1 = $_POST["project_bio1"];
+                $project_bio2 = $_POST["project_bio2"];
+                $project_bio3 = $_POST["project_bio3"];
+                $project_bio_Combined = [$project_bio1, $project_bio2, $project_bio3];
+                $project_bio_Combined = join(",", $project_bio_Combined);
+                $sql3 = "INSERT INTO cv_form (img_path,user_name,birth_date,nationality,city,user_email,phone_number,speciality,Degree,user_bio,Degree_date_start,Degree_date_end,university,Artistic_skills,Personal_skills,hobbies,user_language,jobs,company,job_date_start,job_date_end,achievements,project_name,project_date_start,project_date_end,project_bio) VALUES
+                ('$fileDestination', '$user_name' , '$birth_date', '$nationality' ,'$city' , '$user_email' , '$phone_number' , '$speciality' , '$Degree' , '$user_bio' , '$Degree_date_start','$Degree_date_end','$university','$Artistic_skills','$Personal_skills','$hobbies','$user_language','$combinedJobs','$combinedcompanys','$job_date_start_Combined','$job_date_end_Combined','$achievements_Combined','$project_name_Combined','$project_date_start_Combined','$project_date_end_Combined','$project_bio_Combined')";
                 mysqli_query($conn, $sql3);
             }
             ?>
@@ -133,7 +178,6 @@ session_start();
                             </div>
                             <ul class="Artistic_skills"></ul>
                         </div>
-                        <button type="submit" name="imageUpload">upload</button>
                         <div class="input-box2">
                             <div class="add-skills_input2">
                                 <input class="Personal_skills_input" type="text" placeholder="المهارات الشخصية">
@@ -173,11 +217,11 @@ session_start();
                     <div class="user-details3">
                         <div class="input-box3 threeAria">
                             <div class="add-skills_input2">
-                                <input class="resp" type="text" placeholder="الإنجازات والمسؤليات">
-                                <input class="HiddenInput5" type="text" placeholder="Danger" name="HiddenInput51">
-                                <div class="add_fskill"><i class="fa-solid fa-plus"></i></div>
+                                <input class="resp1" type="text" placeholder="الإنجازات والمسؤليات">
+                                <input class="HiddenInput51" type="text" placeholder="Danger" name="HiddenInput51">
+                                <div class="add_fskill g1"><i class="fa-solid fa-plus"></i></div>
                             </div>
-                            <ul class="resp_skill">
+                            <ul class="resp_skill v1">
                             </ul>
                         </div>
                         <div class="input-box3">
@@ -199,11 +243,11 @@ session_start();
                     <div class="user-details3">
                         <div class="input-box3 threeAria">
                             <div class="add-skills_input2">
-                                <input class="resp" type="text" placeholder="الإنجازات والمسؤليات">
-                                <input class="HiddenInput5" type="text" placeholder="Danger" name="HiddenInput52">
-                                <div class="add_fskill"><i class="fa-solid fa-plus"></i></div>
+                                <input class="resp2" type="text" placeholder="الإنجازات والمسؤليات">
+                                <input class="HiddenInput52" type="text" placeholder="Danger" name="HiddenInput52">
+                                <div class="add_fskill g2"><i class="fa-solid fa-plus"></i></div>
                             </div>
-                            <ul class="resp_skill">
+                            <ul class="resp_skill v2">
                             </ul>
                         </div>
                         <div class="input-box3">
@@ -225,11 +269,11 @@ session_start();
                     <div class="user-details3">
                         <div class="input-box3 threeAria">
                             <div class="add-skills_input2">
-                                <input class="resp" type="text" placeholder="الإنجازات والمسؤليات">
-                                <input class="HiddenInput5" type="text" placeholder="Danger" name="HiddenInput53">
-                                <div class="add_fskill"><i class="fa-solid fa-plus"></i></div>
+                                <input class="resp3" type="text" placeholder="الإنجازات والمسؤليات">
+                                <input class="HiddenInput53" type="text" placeholder="Danger" name="HiddenInput53">
+                                <div class="add_fskill g3"><i class="fa-solid fa-plus"></i></div>
                             </div>
-                            <ul class="resp_skill">
+                            <ul class="resp_skill v3">
                             </ul>
                         </div>
                         <div class="input-box3">
@@ -267,7 +311,7 @@ session_start();
                     <p> #2 المشاريع الشخصية</p>
                     <div class="user-details4">
                         <div class="input-box4 towAria">
-                            <input class="tow-aria" type="text" placeholder="الوصف" name="project_bio1">
+                            <input class="tow-aria" type="text" placeholder="الوصف" name="project_bio2">
                         </div>
                         <div class="input-box4">
                             <input type="text" placeholder="الأسم" name="project_name2">
@@ -284,7 +328,7 @@ session_start();
                     <p>المشاريع الشخصية #3</p>
                     <div class="user-details4">
                         <div class="input-box4 towAria">
-                            <input class="tow-aria" type="text" placeholder="الوصف" name="project_bio1">
+                            <input class="tow-aria" type="text" placeholder="الوصف" name="project_bio3">
                         </div>
                         <div class="input-box4">
                             <input type="text" placeholder="الأسم" name="project_name3">
@@ -297,6 +341,7 @@ session_start();
                         </div>
                     </div>
                 </div>
+                <button type="submit" name="imageUpload">upload</button>
             </form>
         </div>
     </div>
