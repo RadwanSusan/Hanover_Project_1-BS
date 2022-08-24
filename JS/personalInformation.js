@@ -1,12 +1,10 @@
 // jshint esversion: 6
-
 function removeFirst(arr, idx) {
 	if (idx > -1) {
 		delete arr[idx];
 	}
 	return arr;
 }
-
 let title22 = document.querySelector(".toggle-menu");
 let list = document.getElementsByClassName("list");
 let list1 = document.getElementsByClassName("list1");
@@ -62,6 +60,7 @@ a.addEventListener("click", () => {
 let l2 = 0;
 let array2 = [];
 let class3;
+
 let a2 = document.querySelector(".add_Pskill");
 a2.addEventListener("click", () => {
 	const b = document.querySelector(".Personal_skills_input").value;
