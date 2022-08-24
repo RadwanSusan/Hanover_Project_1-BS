@@ -158,10 +158,10 @@ session_start();
                         <input type="text" name="speciality" placeholder="التخصص" required>
                     </div>
                     <div class="input-box">
-                        <input type="text" name="Degree_date_end" placeholder="2التاريخ الدراسي" required>
+                        <input type="text" name="Degree_date_end" placeholder="نهاية التاريخ الدراسي" required>
                     </div>
                     <div class="input-box">
-                        <input type="text" name="Degree_date_start" placeholder="1التاريخ الدراسي" required>
+                        <input type="text" name="Degree_date_start" placeholder="بداية التاريخ الدراسي" required>
                     </div>
                     <div class="input-box">
                         <input type="text" name="university" placeholder="الجامعة" required>
@@ -220,21 +220,23 @@ session_start();
                                 <input class="resp1" type="text" placeholder="الإنجازات والمسؤليات">
                                 <input class="HiddenInput51" type="text" placeholder="Danger" name="HiddenInput51">
                                 <div class="add_fskill g1"><i class="fa-solid fa-plus"></i></div>
+  
                             </div>
                             <ul class="resp_skill v1">
                             </ul>
+                            
                         </div>
                         <div class="input-box3">
                             <input type="text" placeholder="الوظيفة" name="job1">
                         </div>
                         <div class="input-box3">
-                            <input type="text" placeholder="الشركة" name="company1">
+                            <input type="text" placeholder="نهاية التاريخ" name="company1">
                         </div>
                         <div class="input-box3">
-                            <input type="text" placeholder="التاريخ" name="job_date_start1">
+                            <input type="text" placeholder="بداية التاريخ" name="job_date_start1">
                         </div>
-                        <div class="input-box3">
-                            <input type="text" placeholder="التاريخ" name="job_date_end1">
+                        <div class="input-box3 history">
+                            <input type="text" placeholder="الشركة" name="job_date_end1">
                         </div>
                     </div>
                 </div>
@@ -254,13 +256,13 @@ session_start();
                             <input type="text" placeholder="الوظيفة" name="job2">
                         </div>
                         <div class="input-box3">
-                            <input type="text" placeholder="الشركة" name="company2">
+                            <input type="text" placeholder="نهاية التاريخ" name="company2">
                         </div>
                         <div class="input-box3">
-                            <input type="text" placeholder="التاريخ" name="job_date_start2">
+                            <input type="text" placeholder="بداية التاريخ" name="job_date_start2">
                         </div>
-                        <div class="input-box3">
-                            <input type="text" placeholder="التاريخ" name="job_date_end2">
+                        <div class="input-box3 history">
+                            <input type="text" placeholder="الشركة" name="job_date_end2">
                         </div>
                     </div>
                 </div>
@@ -280,13 +282,13 @@ session_start();
                             <input type="text" placeholder="الوظيفة" name="job3">
                         </div>
                         <div class="input-box3">
-                            <input type="text" placeholder="الشركة" name="company3">
+                            <input type="text" placeholder="نهاية التاريخ" name="company3">
                         </div>
                         <div class="input-box3">
-                            <input type="text" placeholder="التاريخ" name="job_date_start3">
+                            <input type="text" placeholder="بداية التاريخ" name="job_date_start3">
                         </div>
-                        <div class="input-box3">
-                            <input type="text" placeholder="التاريخ" name="job_date_end3">
+                        <div class="input-box3 history">
+                            <input type="text" placeholder="الشركة" name="job_date_end3">
                         </div>
                     </div>
                 </div>
@@ -300,10 +302,10 @@ session_start();
                             <input type="text" placeholder="الأسم" name="project_name1">
                         </div>
                         <div class="input-box4">
-                            <input type="text" placeholder="التاريخ" name="project_date_start1">
+                            <input type="text" placeholder="بداية التاريخ" name="project_date_start1">
                         </div>
-                        <div class="input-box3">
-                            <input type="text" placeholder="التاريخ" name="project_date_end1">
+                        <div class="input-box4 personal-history">
+                            <input type="text" placeholder="نهاية التاريخ" name="project_date_end1">
                         </div>
                     </div>
                 </div>
@@ -317,10 +319,10 @@ session_start();
                             <input type="text" placeholder="الأسم" name="project_name2">
                         </div>
                         <div class="input-box4">
-                            <input type="text" placeholder="التاريخ" name="project_date_start2">
+                            <input type="text" placeholder="بداية التاريخ" name="project_date_start2">
                         </div>
-                        <div class="input-box3">
-                            <input type="text" placeholder="التاريخ" name="project_date_end2">
+                        <div class="input-box4 personal-history">
+                            <input type="text" placeholder="نهاية التاريخ" name="project_date_end2">
                         </div>
                     </div>
                 </div>
@@ -334,17 +336,20 @@ session_start();
                             <input type="text" placeholder="الأسم" name="project_name3">
                         </div>
                         <div class="input-box4">
-                            <input type="text" placeholder="التاريخ" name="project_date_start3">
+                            <input type="text" placeholder="بداية التاريخ" name="project_date_start3">
                         </div>
-                        <div class="input-box3">
-                            <input type="text" placeholder="التاريخ" name="project_date_end3">
+                        <div class="input-box4 personal-history">
+                            <input type="text" placeholder="نهاية التاريخ" name="project_date_end3">
                         </div>
                     </div>
                 </div>
                 <button type="submit" name="imageUpload">upload</button>
             </form>
+    <button type="submit" name="imageUpload">upload</button>
+
         </div>
     </div>
+
     <div class="footer">
         <div class="container">
             <div class="box-footer">
