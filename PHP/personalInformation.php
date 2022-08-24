@@ -220,11 +220,11 @@ session_start();
                                 <input class="resp1" type="text" placeholder="الإنجازات والمسؤليات">
                                 <input class="HiddenInput51" type="text" placeholder="Danger" name="HiddenInput51">
                                 <div class="add_fskill g1"><i class="fa-solid fa-plus"></i></div>
-  
+
                             </div>
                             <ul class="resp_skill v1">
                             </ul>
-                            
+
                         </div>
                         <div class="input-box3">
                             <input type="text" placeholder="الوظيفة" name="job1">
@@ -345,11 +345,8 @@ session_start();
                 </div>
                 <button type="submit" name="imageUpload">upload</button>
             </form>
-    <button type="submit" name="imageUpload">upload</button>
-
         </div>
     </div>
-
     <div class="footer">
         <div class="container">
             <div class="box-footer">
