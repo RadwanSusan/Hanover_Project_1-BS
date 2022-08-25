@@ -8,7 +8,6 @@ $form_id = $row1["form_id"];
 $sql2 = "SELECT * FROM cv_form WHERE form_ID = '" . $form_id . "' ";
 $result2 = mysqli_query($conn, $sql2);
 $row2 = mysqli_fetch_array($result2);
-echo "<script>console.log( " . $_SESSION["ID"] . ")</script>";
 $img_path = $row2["img_path"];
 $name = $row2["user_name"];
 $user_name = $row2["user_name"];
@@ -20,22 +19,23 @@ $phone_number = $row2["phone_number"];
 $speciality = $row2["speciality"];
 $Degree = $row2["Degree"];
 $user_bio = $row2["user_bio"];
+$university = $row2["university"];
 $Degree_date_start = $row2["Degree_date_start"];
 $Degree_date_end = $row2["Degree_date_end"];
-$university = $row2["university"];
-$Artistic_skills = $row2["Artistic_skills"];
-$Personal_skills = $row2["Personal_skills"];
-$jobs = $row2["jobs"];
-$company = $row2["company"];
-$job_date_start = $row2["job_date_start"];
-$job_date_end = $row2["job_date_end"];
-$achievements = $row2["achievements"];
-$project_name = $row2["project_name"];
-$project_date_start = $row2["project_date_start"];
-$project_date_end = $row2["project_date_end"];
-$project_bio = $row2["project_bio"];
-$hobbies = $row2["hobbies"];
-$user_language = $row2["user_language"];
+$Artistic_skills = $row2["Artistic_skills"]; // -
+$Artistic_skills = explode(",", $Artistic_skills);
+$Personal_skills = $row2["Personal_skills"]; // -
+$jobs = $row2["jobs"]; // -
+$company = $row2["company"]; // -
+$job_date_start = $row2["job_date_start"]; // -
+$job_date_end = $row2["job_date_end"]; // -
+$achievements = $row2["achievements"]; // -
+$project_name = $row2["project_name"]; // -
+$project_date_start = $row2["project_date_start"]; // -
+$project_date_end = $row2["project_date_end"]; // -
+$project_bio = $row2["project_bio"]; // -
+$hobbies = $row2["hobbies"]; // -
+$user_language = $row2["user_language"]; // -
 ?>
 <!DOCTYPE html>
 <html lang="en-US">
