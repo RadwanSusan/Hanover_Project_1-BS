@@ -30,6 +30,7 @@ session_start();
             $result = mysqli_query($conn, $sql);
             $row = mysqli_fetch_assoc($result);
             $count = mysqli_num_rows($result);
+            $_SESSION["ID"] = $row["ID"];
             if ($count == 1) {
                echo "<script>alert('تم تسجيل الدخول بنجاح')</script>";
             } else {

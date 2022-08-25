@@ -119,9 +119,23 @@ session_start();
                 $project_bio3 = $_POST["project_bio3"];
                 $project_bio_Combined = [$project_bio1, $project_bio2, $project_bio3];
                 $project_bio_Combined = join(",", $project_bio_Combined);
-                $sql3 = "INSERT INTO cv_form (img_path,user_name,birth_date,nationality,city,user_email,phone_number,speciality,Degree,user_bio,Degree_date_start,Degree_date_end,university,Artistic_skills,Personal_skills,hobbies,user_language,jobs,company,job_date_start,job_date_end,achievements,project_name,project_date_start,project_date_end,project_bio) VALUES
-                ('$fileDestination', '$user_name' , '$birth_date', '$nationality' ,'$city' , '$user_email' , '$phone_number' , '$speciality' , '$Degree' , '$user_bio' , '$Degree_date_start','$Degree_date_end','$university','$Artistic_skills','$Personal_skills','$hobbies','$user_language','$combinedJobs','$combinedcompanys','$job_date_start_Combined','$job_date_end_Combined','$achievements_Combined','$project_name_Combined','$project_date_start_Combined','$project_date_end_Combined','$project_bio_Combined')";
+                $form_id = rand(100000000, 999999999);
+                $sql = "Select * from user_info where form_id='$form_id'";
+                $result4 = mysqli_query($conn, $sql);
+                $num2 = mysqli_num_rows($result4);
+                while ($num2 != 0) {
+                    $form_id = rand(100000000, 999999999);
+                    $sql2 = "Select * from user_info where form_id='$form_id'";
+                    $result = mysqli_query($conn, $sql2);
+                    $num = mysqli_num_rows($result);
+                }
+                $sql3 = "INSERT INTO cv_form (form_id,img_path,user_name,birth_date,nationality,city,user_email,phone_number,speciality,Degree,user_bio,Degree_date_start,Degree_date_end,university,Artistic_skills,Personal_skills,hobbies,user_language,jobs,company,job_date_start,job_date_end,achievements,project_name,project_date_start,project_date_end,project_bio) VALUES
+                ('$form_id','$fileDestination', '$user_name' , '$birth_date', '$nationality' ,'$city' , '$user_email' , '$phone_number' , '$speciality' , '$Degree' , '$user_bio' , '$Degree_date_start','$Degree_date_end','$university','$Artistic_skills','$Personal_skills','$hobbies','$user_language','$combinedJobs','$combinedcompanys','$job_date_start_Combined','$job_date_end_Combined','$achievements_Combined','$project_name_Combined','$project_date_start_Combined','$project_date_end_Combined','$project_bio_Combined')";
                 mysqli_query($conn, $sql3);
+                $sql4 = "UPDATE user_info SET form_id = '$form_id ' WHERE ID = '" . $_SESSION["ID"] . "'";
+                $sql5 = "UPDATE user_info SET CV_done = 1 WHERE ID = '" . $_SESSION["ID"] . "'";
+                mysqli_query($conn, $sql4);
+                mysqli_query($conn, $sql5);
             }
             ?>
             <form class="form1" action="" method="POST" enctype="multipart/form-data">
