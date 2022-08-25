@@ -22,20 +22,32 @@ $user_bio = $row2["user_bio"];
 $university = $row2["university"];
 $Degree_date_start = $row2["Degree_date_start"];
 $Degree_date_end = $row2["Degree_date_end"];
-$Artistic_skills = $row2["Artistic_skills"]; // -
-$Artistic_skills = explode(",", $Artistic_skills);
-$Personal_skills = $row2["Personal_skills"]; // -
-$jobs = $row2["jobs"]; // -
-$company = $row2["company"]; // -
-$job_date_start = $row2["job_date_start"]; // -
-$job_date_end = $row2["job_date_end"]; // -
-$achievements = $row2["achievements"]; // -
-$project_name = $row2["project_name"]; // -
-$project_date_start = $row2["project_date_start"]; // -
-$project_date_end = $row2["project_date_end"]; // -
-$project_bio = $row2["project_bio"]; // -
-$hobbies = $row2["hobbies"]; // -
-$user_language = $row2["user_language"]; // -
+$Artistic_skills = $row2["Artistic_skills"];
+$Artistic_skills = explode(" ", $Artistic_skills);
+$Personal_skills = $row2["Personal_skills"];
+$Personal_skills = explode(" ", $Personal_skills);
+$jobs = $row2["jobs"];
+$jobs = explode(",", $jobs);
+$company = $row2["company"];
+$company = explode(",", $company);
+$job_date_start = $row2["job_date_start"];
+$job_date_start = explode(",", $job_date_start);
+$job_date_end = $row2["job_date_end"];
+$job_date_end = explode(",", $job_date_end);
+$achievements = $row2["achievements"];
+$achievements = explode(",", $achievements);
+$project_name = $row2["project_name"];
+$project_name = explode(",", $project_name);
+$project_date_start = $row2["project_date_start"];
+$project_date_start = explode(",", $project_date_start);
+$project_date_end = $row2["project_date_end"];
+$project_date_end = explode(",", $project_date_end);
+$project_bio = $row2["project_bio"];
+$project_bio = explode(",", $project_bio);
+$user_language = $row2["user_language"];
+$user_language = explode(",", $user_language);
+$hobbies = $row2["hobbies"];
+$hobbies = explode(",", $hobbies);
 ?>
 <!DOCTYPE html>
 <html lang="en-US">
@@ -110,10 +122,16 @@ $user_language = $row2["user_language"]; // -
             <div class="col-md-5 offset-md-1">
               <div class="row mt-2">
                 <div class="col-sm-4">
-                  <div class="pb-1">Age</div>
+                  <div class="pb-1">Nationality</div>
                 </div>
                 <div class="col-sm-8">
-                  <div class="pb-1 text-secondary">28</div>
+                  <div class="pb-1 text-secondary"><?php echo $nationality; ?></div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="pb-1">Birth-date</div>
+                </div>
+                <div class="col-sm-8">
+                  <div class="pb-1 text-secondary"><?php echo $birth_date; ?></div>
                 </div>
                 <div class="col-sm-4">
                   <div class="pb-1">Email</div>
@@ -127,28 +145,77 @@ $user_language = $row2["user_language"]; // -
                 <div class="col-sm-8">
                   <div class="pb-1 text-secondary"><?php echo $phone_number; ?></div>
                 </div>
+                <div class="col-sm-4">
+                  <div class="pb-1">Address</div>
+                </div>
+                <div class="col-sm-8">
+                  <div class="pb-1 text-secondary"><?php echo $city; ?></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <hr class="d-print-none" />
         <div class="skills-section px-3 px-lg-4">
-          <h2 class="h3 mb-3">Professional Skills</h2>
+          <h2 class="h3 mb-3">Artistic Skills</h2>
           <div class="row">
             <div class="col-md-6">
-              <div class="mb-2"><span>HTML</span>
-              </div>
-              <div class="mb-2"><span>CSS</span>
-              </div>
-              <div class="mb-2"><span>JavaScript</span>
-              </div>
+              <?php
+              foreach ($Artistic_skills as $Skill) {
+                echo  "<div class='mb-2'><span>$Skill</span></div>";
+              }
+              ?>
             </div>
+          </div>
+        </div>
+        <hr class="d-print-none" />
+        <div class="skills-section px-3 px-lg-4">
+          <h2 class="h3 mb-3">Personal Skills</h2>
+          <div class="row">
             <div class="col-md-6">
-              <div class="mb-2"><span>Adobe Photoshop</span>
-              </div>
-              <div class="mb-2"><span>Sketch</span>
-              </div>
-              <div class="mb-2"><span>Adobe XD</span>
+              <?php
+              foreach ($Personal_skills as $Skill) {
+                echo  "<div class='mb-2'><span>$Skill</span></div>";
+              }
+              ?>
+            </div>
+          </div>
+        </div>
+        <hr class="d-print-none" />
+        <div class="skills-section px-3 px-lg-4">
+          <h2 class="h3 mb-3">Languages</h2>
+          <div class="row">
+            <div class="col-md-6">
+              <?php
+              foreach ($user_language as $lang) {
+                echo  "<div class='mb-2'><span>$lang</span></div>";
+              }
+              ?>
+            </div>
+          </div>
+        </div>
+        <hr class="d-print-none" />
+        <div class="skills-section px-3 px-lg-4">
+          <h2 class="h3 mb-3">Hobbies</h2>
+          <div class="row">
+            <div class="col-md-6">
+              <?php
+              foreach ($hobbies as $h) {
+                echo  "<div class='mb-2'><span>$h</span></div>";
+              }
+              ?>
+            </div>
+          </div>
+        </div>
+        <hr class="d-print-none" />
+        <div class="page-break"></div>
+        <div class="education-section px-3 px-lg-4">
+          <h2 class="h3 mb-4">Education</h2>
+          <div class="timeline">
+            <div class="timeline-card timeline-card-success card shadow-sm">
+              <div class="card-body">
+                <div class="h5 mb-1"><?php echo $Degree; ?> in <?php echo $speciality; ?><span class="text-muted h6"> from <?php echo $university; ?></span></div>
+                <div class="text-muted text-small mb-2"><?php echo $Degree_date_start; ?> - <?php echo $Degree_date_end; ?></div>
               </div>
             </div>
           </div>
@@ -157,69 +224,97 @@ $user_language = $row2["user_language"]; // -
         <div class="work-experience-section px-3 px-lg-4">
           <h2 class="h3 mb-4">Work Experience</h2>
           <div class="timeline">
-            <div class="timeline-card timeline-card-primary card shadow-sm">
+            <?php
+            if ($jobs[0] != "") {
+              echo '<div class="timeline-card timeline-card-primary card shadow-sm">
               <div class="card-body">
-                <div class="h5 mb-1">Frontend Developer <span class="text-muted h6">at Creative Agency</span></div>
-                <div class="text-muted text-small mb-2">May, 2015 - Present</div>
-                <div>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative
-                  approaches to corporate strategy foster collaborative thinking to further the overall value
-                  proposition.</div>
+                <div class="h5 mb-1">' . $jobs[0] . '<span class="text-muted h6"> at ' . $company[0] . '</span></div>
+                <div class="text-muted text-small mb-2">' . $job_date_start[0] . ' - ' . $job_date_end[0] . '</div>';
+              $a1 = explode(" ", $achievements[0]);
+              foreach ($a1 as $ach1) {
+                echo  "<div>$ach1</div>";
+              }
+              echo '
               </div>
-            </div>
-            <div class="timeline-card timeline-card-primary card shadow-sm">
+            </div>';
+            }
+            if ($jobs[1] != "") {
+              echo '<div class="timeline-card timeline-card-primary card shadow-sm">
               <div class="card-body">
-                <div class="h5 mb-1">Graphic Designer <span class="text-muted h6">at Design Studio</span></div>
-                <div class="text-muted text-small mb-2">June, 2013 - May, 2015</div>
-                <div>Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion
-                  along the information highway will close the loop on focusing solely on the bottom line.</div>
+                <div class="h5 mb-1">' . $jobs[1] . '<span class="text-muted h6"> at ' . $company[1] . '</span></div>
+                <div class="text-muted text-small mb-2">' . $job_date_start[1] . ' - ' . $job_date_end[1] . '</div>';
+              $a2 = explode(" ", $achievements[1]);
+              foreach ($a2 as $ach2) {
+                echo  "<div>$ach2</div>";
+              }
+              echo '
               </div>
-            </div>
-            <div class="timeline-card timeline-card-primary card shadow-sm">
+            </div>';
+            }
+            if ($jobs[2] != "") {
+              echo '<div class="timeline-card timeline-card-primary card shadow-sm">
               <div class="card-body">
-                <div class="h5 mb-1">Junior Web Developer <span class="text-muted h6">at Indie Studio</span></div>
-                <div class="text-muted text-small mb-2">Jan, 2011 - May, 2013</div>
-                <div>User generated content in real-time will have multiple touchpoints for offshoring. Organically grow
-                  the holistic world view of disruptive innovation via workplace diversity and empowerment.</div>
+                <div class="h5 mb-1">' . $jobs[2] . '<span class="text-muted h6"> at ' . $company[2] . '</span></div>
+                <div class="text-muted text-small mb-2">' . $job_date_start[2] . ' - ' . $job_date_end[2] . '</div>';
+              $a3 = explode(" ", $achievements[2]);
+              foreach ($a3 as $ach3) {
+                echo  "<div>$ach3</div>";
+              }
+              echo '
               </div>
-            </div>
+            </div>';
+            }
+            ?>
           </div>
         </div>
         <hr class="d-print-none" />
         <div class="page-break"></div>
         <div class="education-section px-3 px-lg-4 pb-4">
-          <h2 class="h3 mb-4">Education</h2>
+          <h2 class="h3 mb-4">Projects</h2>
           <div class="timeline">
-            <div class="timeline-card timeline-card-success card shadow-sm">
+            <?php
+            if ($project_name[0] != "") {
+              echo '<div class="timeline-card timeline-card-primary card shadow-sm">
               <div class="card-body">
-                <div class="h5 mb-1">Masters in Information Technology <span class="text-muted h6">from International
-                    University</span></div>
-                <div class="text-muted text-small mb-2">2011 - 2013</div>
-                <div>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative
-                  approaches to corporate strategy foster collaborative thinking to further the overall value
-                  proposition.</div>
+                <div class="h5 mb-1">' . $project_name[0] . '</div>
+                <div class="text-muted text-small mb-2">' . $project_date_start[0] . ' - ' . $project_date_end[0] . '</div>';
+              $b1 = explode(" ", $project_bio[0]);
+              foreach ($b1 as $bch1) {
+                echo  "<div>$bch1</div>";
+              }
+              echo '
               </div>
-            </div>
-            <div class="timeline-card timeline-card-success card shadow-sm">
+            </div>';
+            }
+            if ($project_name[1] != "") {
+              echo '<div class="timeline-card timeline-card-primary card shadow-sm">
               <div class="card-body">
-                <div class="h5 mb-1">Bachelor of Computer Science <span class="text-muted h6">from Regional
-                    College</span></div>
-                <div class="text-muted text-small mb-2">2007 - 2011</div>
-                <div>Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion
-                  along the information highway will close the loop on focusing solely on the bottom line.</div>
+                <div class="h5 mb-1">' . $project_name[1] . '</div>
+                <div class="text-muted text-small mb-2">' . $project_date_start[1] . ' - ' . $project_date_end[1] . '</div>';
+              $b2 = explode(" ", $project_bio[1]);
+              foreach ($b2 as $bch2) {
+                echo  "<div>$bch2</div>";
+              }
+              echo '
               </div>
-            </div>
-            <div class="timeline-card timeline-card-success card shadow-sm">
+            </div>';
+            }
+            if ($project_name[2] != "") {
+              echo '<div class="timeline-card timeline-card-primary card shadow-sm">
               <div class="card-body">
-                <div class="h5 mb-1">Science and Mathematics <span class="text-muted h6">from Mt. High Scool</span>
-                </div>
-                <div class="text-muted text-small mb-2">1995 - 2007</div>
-                <div>User generated content in real-time will have multiple touchpoints for offshoring. Organically grow
-                  the holistic world view of disruptive innovation via workplace diversity and empowerment.</div>
+                <div class="h5 mb-1">' . $project_name[2] . '</div>
+                <div class="text-muted text-small mb-2">' . $project_date_start[2] . ' - ' . $project_date_end[2] . '</div>';
+              $b3 = explode(" ", $project_bio[2]);
+              foreach ($b3 as $bch3) {
+                echo  "<div>$bch3</div>";
+              }
+              echo '
               </div>
-            </div>
+            </div>';
+            }
+            ?>
           </div>
         </div>
-        <hr class="d-print-none" />
       </div>
     </div>
   </div>
