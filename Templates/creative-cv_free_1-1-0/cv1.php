@@ -8,7 +8,6 @@ $form_id = $row1["form_id"];
 $sql2 = "SELECT * FROM cv_form WHERE form_ID = '" . $form_id . "' ";
 $result2 = mysqli_query($conn, $sql2);
 $row2 = mysqli_fetch_array($result2);
-echo "<script>console.log( " . $_SESSION["ID"] . ")</script>";
 $img_path = $row2["img_path"];
 $name = $row2["user_name"];
 $user_name = $row2["user_name"];
@@ -20,22 +19,35 @@ $phone_number = $row2["phone_number"];
 $speciality = $row2["speciality"];
 $Degree = $row2["Degree"];
 $user_bio = $row2["user_bio"];
+$university = $row2["university"];
 $Degree_date_start = $row2["Degree_date_start"];
 $Degree_date_end = $row2["Degree_date_end"];
-$university = $row2["university"];
 $Artistic_skills = $row2["Artistic_skills"];
+$Artistic_skills = explode(" ", $Artistic_skills);
 $Personal_skills = $row2["Personal_skills"];
+$Personal_skills = explode(" ", $Personal_skills);
 $jobs = $row2["jobs"];
+$jobs = explode(",", $jobs);
 $company = $row2["company"];
+$company = explode(",", $company);
 $job_date_start = $row2["job_date_start"];
+$job_date_start = explode(",", $job_date_start);
 $job_date_end = $row2["job_date_end"];
+$job_date_end = explode(",", $job_date_end);
 $achievements = $row2["achievements"];
+$achievements = explode(",", $achievements);
 $project_name = $row2["project_name"];
+$project_name = explode(",", $project_name);
 $project_date_start = $row2["project_date_start"];
+$project_date_start = explode(",", $project_date_start);
 $project_date_end = $row2["project_date_end"];
+$project_date_end = explode(",", $project_date_end);
 $project_bio = $row2["project_bio"];
-$hobbies = $row2["hobbies"];
+$project_bio = explode(",", $project_bio);
 $user_language = $row2["user_language"];
+$user_language = explode(",", $user_language);
+$hobbies = $row2["hobbies"];
+$hobbies = explode(",", $hobbies);
 ?>
 
 <!DOCTYPE html>
@@ -129,9 +141,14 @@ $user_language = $row2["user_language"];
               <div class="col-sm-4"><strong class="text-uppercase">Address:</strong></div>
               <div class="col-sm-8"><?php echo $city; ?></div>
             </div>
+            
             <div class="row mt-3">
               <div class="col-sm-4"><strong class="text-uppercase">Language:</strong></div>
-              <div class="col-sm-8"><?php echo $user_language; ?></div>
+              <div class="col-sm-8"><?php
+              foreach ($user_language as $lang) {
+                echo  "<div class='mb-2'><span>$lang</span></div>";
+              }
+              ?></div>
             </div>
           </div>
         </div>
@@ -146,38 +163,14 @@ $user_language = $row2["user_language"];
       <div class="card-body">
         <div class="row">
           <div class="col-md-6">
-            <div class="progress-container progress-primary"><span class="progress-badge"><?php echo $Artistic_skills; ?></span>
+            <div class="progress-container progress-primary"><?php
+              foreach ($Artistic_skills as $Skill) {
+                echo  "<div class='mb-2'><span>$Skill</span></div>";
+              }
+              ?>
             </div>
           </div>
-          <div class="col-md-6">
-            <div class="progress-container progress-primary"><span class="progress-badge"><?php echo $Artistic_skills; ?></span>
-              
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="progress-container progress-primary"><span class="progress-badge">JavaScript</span>
-              
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="progress-container progress-primary"><span class="progress-badge">SASS</span>
-              
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="progress-container progress-primary"><span class="progress-badge">Bootstrap</span>
-              
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="progress-container progress-primary"><span class="progress-badge">Photoshop</span>
-              
-            </div>
-          </div>
+          
         </div>
       </div>
     </div>
@@ -186,38 +179,14 @@ $user_language = $row2["user_language"];
       <div class="card-body">
         <div class="row">
           <div class="col-md-6">
-            <div class="progress-container progress-primary"><span class="progress-badge"><?php echo $Personal_skills; ?></span>
+            <div class="progress-container progress-primary"><?php
+              foreach ($Personal_skills as $Skill) {
+                echo  "<div class='mb-2'><span>$Skill</span></div>";
+              }
+              ?>
             </div>
           </div>
-          <div class="col-md-6">
-            <div class="progress-container progress-primary"><span class="progress-badge"><?php echo $Personal_skills; ?></span>
-              
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="progress-container progress-primary"><span class="progress-badge">JavaScript</span>
-              
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="progress-container progress-primary"><span class="progress-badge">SASS</span>
-              
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="progress-container progress-primary"><span class="progress-badge">Bootstrap</span>
-              
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="progress-container progress-primary"><span class="progress-badge">Photoshop</span>
-              
-            </div>
-          </div>
+    
         </div>
       </div>
     </div>
@@ -359,52 +328,81 @@ $user_language = $row2["user_language"];
     <div class="h4 text-center mb-4 title">Work Experience</div>
     <div class="card">
       <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+      <?php
+            if ($jobs[0] != "") {
+        echo '<div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
           <div class="card-body cc-experience-header">
-            <p><?php echo $job_date_start; ?> - <?php echo $job_date_end; ?></p>
-            <div class="h5"><?php echo $company; ?></div>
+            <p>'. $job_date_start[0] . ' - ' . $job_date_end[0] .'</p>
+            <div class="h5">'. $company[0] .'</div>
           </div>
         </div>
         <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
           <div class="card-body">
-            <div class="h5"><?php echo $jobs; ?></div>
-            <p><?php echo $achievements; ?></p>
+            <div class="h5">'. $jobs[0] .'</div>
+            <p>';
+            $a1 = explode(" ", $achievements[0]);
+            foreach ($a1 as $ach1) {
+              echo  "<div>$ach1</div>";
+            }
+            echo '
+            </p>
+          </div>
+        </div>';
+      }
+      ?>
+      </div>
+    </div>
+      
+    <div class="card">
+      <div class="row">
+      <?php
+            if ($jobs[1] != "") {
+        echo '<div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-experience-header">
+            <p>'. $job_date_start[1] . ' - ' . $job_date_end[1] .'</p>
+            <div class="h5">'. $company[1] .'</div>
           </div>
         </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5">'. $jobs[1] .'</div>
+            <p>';
+            $a2 = explode(" ", $achievements[1]);
+            foreach ($a2 as $ach2) {
+              echo  "<div>$ach2</div>";
+            }
+            echo '
+            </p>
+          </div>
+        </div>';
+      }
+      ?>
       </div>
     </div>
     <div class="card">
       <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+      <?php
+            if ($jobs[2] != "") {
+        echo '<div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
           <div class="card-body cc-experience-header">
-            <p>April 2014 - March 2016</p>
-            <div class="h5">WebNote</div>
+            <p>'. $job_date_start[2] . ' - ' . $job_date_end[2] .'</p>
+            <div class="h5">'. $company[2] .'</div>
           </div>
         </div>
         <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
           <div class="card-body">
-            <div class="h5">Web Developer</div>
-            <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique sapien taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
+            <div class="h5">'. $jobs[2] .'</div>
+            <p>';
+            $a3 = explode(" ", $achievements[2]);
+            foreach ($a3 as $ach3) {
+              echo  "<div>$ach3</div>";
+            }
+            echo '
+            </p>
           </div>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body cc-experience-header">
-            <p>April 2013 - February 2014</p>
-            <div class="h5">WEBM</div>
-          </div>
-        </div>
-        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-          <div class="card-body">
-            <div class="h5">Intern</div>
-            <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique sapien taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+        </div>';
+      }
+      ?>
   </div>
 </div>
 <div class="section" id="experience">
@@ -412,52 +410,80 @@ $user_language = $row2["user_language"];
     <div class="h4 text-center mb-4 title">Personal Project</div>
     <div class="card">
       <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+      <?php
+            if ($project_name[0] != "") {
+        echo '<div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
           <div class="card-body cc-experience-header">
-            <p>March 2016 - Present</p>
-            <div class="h5">CreativeM</div>
+            <p>'. $project_date_start[0] . ' - ' . $project_date_end[0] .'</p>
+            <div class="h5">'. $project_name[0] .'</div>
           </div>
         </div>
         <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
           <div class="card-body">
-            <div class="h5">Front End Developer</div>
-            <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique sapien taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
+            <div class="h5">'. $project_name[0] .'</div>
+            <p>';
+            $b1 = explode(" ", $project_bio[0]);
+            foreach ($b1 as $bch1) {
+              echo  "<div>$bch1</div>";
+            }
+            echo '
+            </p>
           </div>
-        </div>
+        </div>';
+      }
+           ?>
       </div>
     </div>
     <div class="card">
       <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+      <?php
+            if ($project_name[1] != "") {
+        echo '<div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
           <div class="card-body cc-experience-header">
-            <p>April 2014 - March 2016</p>
-            <div class="h5">WebNote</div>
+            <p>'. $project_date_start[1] . ' - ' . $project_date_end[1] .'</p>
+            <div class="h5">'. $project_name[1] .'</div>
           </div>
         </div>
         <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
           <div class="card-body">
-            <div class="h5">Web Developer</div>
-            <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique sapien taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
+            <div class="h5">'. $project_name[1] .'</div>
+            <p>';
+            $b2 = explode(" ", $project_bio[1]);
+            foreach ($b2 as $bch2) {
+              echo  "<div>$bch2</div>";
+            }
+            echo '
+            </p>
           </div>
-        </div>
+        </div>';
+      }
+           ?>
       </div>
     </div>
     <div class="card">
       <div class="row">
-        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+      <?php
+            if ($project_name[2] != "") {
+        echo '<div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
           <div class="card-body cc-experience-header">
-            <p>April 2013 - February 2014</p>
-            <div class="h5">WEBM</div>
+            <p>'. $project_date_start[2] . ' - ' . $project_date_end[2] .'</p>
+            <div class="h5">'. $project_name[2] .'</div>
           </div>
         </div>
         <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
           <div class="card-body">
-            <div class="h5">Intern</div>
-            <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique sapien taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
+            <div class="h5">'. $project_name[2] .'</div>
+            <p>';
+            $b3 = explode(" ", $project_bio[2]);
+            foreach ($b3 as $bch3) {
+              echo  "<div>$bch3</div>";
+            }
+            echo '
+            </p>
           </div>
-        </div>
-      </div>
-    </div>
+        </div>';
+      }
+           ?>
   </div>
 </div>
 <div class="section">
