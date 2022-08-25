@@ -97,7 +97,7 @@ $user_language = $row2["user_language"];
             </div>
             <div class="col-lg-8 col-md-7 text-center text-md-start">
               <h2 class="h1 mt-2" data-aos="fade-left" data-aos-delay="0"><?php echo $name; ?></h2>
-              <p data-aos="fade-left" data-aos-delay="100">Graphic Designer & Web Developer</p>
+              <p data-aos="fade-left" data-aos-delay="100"><?php echo $speciality; ?></p>
             </div>
           </div>
         </div>
@@ -105,8 +105,7 @@ $user_language = $row2["user_language"];
           <div class="row">
             <div class="col-md-6">
               <h2 class="h3 mb-3">About Me</h2>
-              <p>Hello! I’m Joyce Harrison. I am passionate about UI/UX design and Web Design. I am a skilled Front-end
-                Developer and master of Graphic Design tools such as Photoshop and Sketch.</p>
+              <p><?php echo $user_bio; ?></p>
             </div>
             <div class="col-md-5 offset-md-1">
               <div class="row mt-2">
@@ -120,13 +119,13 @@ $user_language = $row2["user_language"];
                   <div class="pb-1">Email</div>
                 </div>
                 <div class="col-sm-8">
-                  <div class="pb-1 text-secondary">Joyce@company.com</div>
+                  <div class="pb-1 text-secondary"><?php echo $user_email; ?></div>
                 </div>
                 <div class="col-sm-4">
                   <div class="pb-1">Phone</div>
                 </div>
                 <div class="col-sm-8">
-                  <div class="pb-1 text-secondary">+0718-111-0011</div>
+                  <div class="pb-1 text-secondary"><?php echo $phone_number; ?></div>
                 </div>
               </div>
             </div>
