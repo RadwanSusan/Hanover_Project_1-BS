@@ -288,6 +288,18 @@ header nav ul li a:hover {
     grid-template-columns: auto;
   }
 }
+@media (max-width: 767px) {
+  .landing-info .container .user-details .input-box-name {
+    grid-row: 1/1;
+  }
+  .landing-info .container .user-details .input-box-phone {
+    grid-row: 2/2;
+  }
+  .landing-info .container .user-details .input-box-start {
+    grid-row: 11/11;
+  }
+
+}
 
 .line {
   width: 100%;
@@ -327,9 +339,12 @@ header nav ul li a:hover {
   color: #8F8F8F;
   padding: 10px;
 }
-.Artistic_skills,.Personal_skills,.important_skill,.lang_skill,.resp_skill {
+.Artistic_skills,.Personal_skills,.important_skill,.lang_skill {
   display: flex;
   flex-wrap: wrap;
+}
+.resp_skill {
+  width: 300px;
 }
 
 .input-box2 .add-skills_input2,
@@ -374,10 +389,18 @@ header nav ul li a:hover {
 }
 
 .user-details3 {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-gap: 37px;
+  display: flex;
+  justify-content: space-between;
+  width: 670px;
 }
+@media (max-width: 767px) {
+  .user-details3 {
+    width: 300px;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
 
 .threeAria {
   grid-row: 1/4;
@@ -400,6 +423,7 @@ header nav ul li a:hover {
   height: 39px;
   background: #FFFFFF;
   border-radius: 7px;
+  margin: 10px;
 }
 
 .form4 {
@@ -542,9 +566,7 @@ height: fit-content;
     background: #FFFFFF;
     box-shadow: 0px 2px 4px rgb(0 0 0 / 25%);
   }
-  .user-details3 .input-box3 input{
-    width: 152px;
-  }
+  
   .user-details4 .input-box4 input {
     width: 152px;
   }
