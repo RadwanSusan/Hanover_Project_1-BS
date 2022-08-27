@@ -156,7 +156,13 @@ session_start();
                 $sql5 = "UPDATE user_info SET CV_done = 1 WHERE ID = '" . $_SESSION["ID"] . "'";
                 mysqli_query($conn, $sql4);
                 mysqli_query($conn, $sql5);
-                header("Location: ../Templates/T1");
+                if ($_GET["type"] == 1) {
+                    header("Location: ../Templates/T1");
+                } elseif ($_GET["type"] == 2) {
+                    header("Location: ../Templates/T2");
+                } else {
+                    header("Location: ../Templates/T3");
+                }
             }
             ?>
             <form class="form1" action="" method="POST" enctype="multipart/form-data">
