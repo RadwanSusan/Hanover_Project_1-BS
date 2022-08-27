@@ -250,8 +250,8 @@ header nav ul li a:hover {
 }
 
 .container .user-details .input-box input {
-  width: 295px;
-  height: 39px;
+  width: 300px;
+  height: 50px;
   background: #FFFFFF;
   border: 1px solid #000000;
   border-radius: 7px;
@@ -263,7 +263,7 @@ header nav ul li a:hover {
   font-family: 'Noto Sans Arabic';
   font-style: normal;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 33px;
   color: #8F8F8F;
   padding: 10px;
@@ -288,13 +288,16 @@ header nav ul li a:hover {
     grid-template-columns: auto;
   }
 }
+
 @media (max-width: 767px) {
   .landing-info .container .user-details .input-box-name {
     grid-row: 1/1;
   }
+
   .landing-info .container .user-details .input-box-phone {
     grid-row: 2/2;
   }
+
   .landing-info .container .user-details .input-box-start {
     grid-row: 11/11;
   }
@@ -339,10 +342,15 @@ header nav ul li a:hover {
   color: #8F8F8F;
   padding: 10px;
 }
-.Artistic_skills,.Personal_skills,.important_skill,.lang_skill {
+
+.Artistic_skills,
+.Personal_skills,
+.important_skill,
+.lang_skill {
   display: flex;
   flex-wrap: wrap;
 }
+
 .resp_skill {
   width: 300px;
 }
@@ -393,6 +401,7 @@ header nav ul li a:hover {
   justify-content: space-between;
   width: 670px;
 }
+
 @media (max-width: 767px) {
   .user-details3 {
     width: 300px;
@@ -486,7 +495,7 @@ header nav ul li a:hover {
   padding: 20px;
   background: #F4F4F4;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-height: fit-content;
+  height: fit-content;
 }
 
 .input-box5 input {
@@ -511,13 +520,14 @@ height: fit-content;
 
 .list-form {
   display: flex;
-    align-items: center;
-    flex-direction: row-reverse;
+  align-items: center;
+  flex-direction: row-reverse;
   border: 2px solid;
   margin: 6px;
   padding: 3px;
-  border-radius: 7px  
+  border-radius: 7px
 }
+
 .history {
   grid-row: 3/1;
 }
@@ -564,11 +574,10 @@ height: fit-content;
     margin-bottom: 100px;
     border: 2px solid #878787;
     border-radius: 10px;
-    padding: 10px;
     background: #FFFFFF;
     box-shadow: 0px 2px 4px rgb(0 0 0 / 25%);
   }
-  
+
   .user-details4 .input-box4 input {
     width: 152px;
   }
@@ -587,11 +596,11 @@ height: fit-content;
     margin-bottom: 100px;
     border: 2px solid #878787;
     border-radius: 10px;
-    padding: 10px;
     background: #FFFFFF;
     box-shadow: 0px 2px 4px rgb(0 0 0 / 25%);
   }
 }
+
 .personal-history {
   grid-column: 2/3;
 }
@@ -667,12 +676,14 @@ height: fit-content;
 .HiddenInput43 {
   display: none;
 }
+
 .add_Askill {
   display: flex;
-    justify-content: center;
-    margin: 10px;
+  justify-content: center;
+  margin: 10px;
 }
- .fa-minus {
+
+.fa-minus {
   height: 20px;
   width: 20px;
   display: flex !important;
@@ -684,12 +695,14 @@ height: fit-content;
   background: coral !important;
   margin-top: 3px;
 }
+
 .inc {
   padding: 4px !important;
   border: 1px solid !important;
   border-radius: 50% !important;
   background: aquamarine;
 }
+
 .inc1 {
   margin-left: 4px;
 }

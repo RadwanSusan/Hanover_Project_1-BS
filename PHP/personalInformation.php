@@ -89,52 +89,36 @@ session_start();
                 $job_date_end3 = $_POST["job_date_end3"];
                 $job_date_end_Combined = [$job_date_end1, $job_date_end2, $job_date_end3];
                 $job_date_end_Combined = join(",", $job_date_end_Combined);
-
                 $Degree1 = $_POST["HiddenInput41"];
                 $Degree2 = $_POST["HiddenInput42"];
                 $Degree3 = $_POST["HiddenInput43"];
-                $Degree_Combined=[$Degree1,$Degree2,$Degree3];
-                $Degree_Combined = join(",", $Degree_Combined); 
-
+                $Degree_Combined = [$Degree1, $Degree2, $Degree3];
+                $Degree_Combined = join(",", $Degree_Combined);
                 $speciality1 = $_POST["speciality1"];
                 $speciality2 = $_POST["speciality2"];
                 $speciality3 = $_POST["speciality3"];
                 $speciality_Combined = [$speciality1, $speciality2, $speciality3];
                 $speciality_Combined = join(",", $speciality_Combined);
-
-                $university1=$_POST["university1"];
-                $university2=$_POST["university2"];
-                $university3=$_POST["university3"];
+                $university1 = $_POST["university1"];
+                $university2 = $_POST["university2"];
+                $university3 = $_POST["university3"];
                 $university_Combined = [$speciality1, $speciality2, $speciality3];
                 $university_Combined = join(",", $university_Combined);
-
-                $Degree_date_start1=$_POST["Degree_date_start1"];
-                $Degree_date_start2=$_POST["Degree_date_start2"];
-                $Degree_date_start3=$_POST["Degree_date_start3"];
-                $Degree_date_start_Combined= [$achievements1, $achievements2, $achievements3];
+                $Degree_date_start1 = $_POST["Degree_date_start1"];
+                $Degree_date_start2 = $_POST["Degree_date_start2"];
+                $Degree_date_start3 = $_POST["Degree_date_start3"];
+                $Degree_date_start_Combined = [$Degree_date_start1, $Degree_date_start2, $Degree_date_start3];
                 $Degree_date_start_Combined = join(",", $Degree_date_start_Combined);
-
-                $Degree_date_end1=$_POST["Degree_date_start1"];
-                $Degree_date_end2=$_POST["Degree_date_start2"];
-                $Degree_date_end3=$_POST["Degree_date_start3"];
-                $Degree_date_end_Combined= [$achievements1, $achievements2, $achievements3];
+                $Degree_date_end1 = $_POST["Degree_date_end1"];
+                $Degree_date_end2 = $_POST["Degree_date_end2"];
+                $Degree_date_end3 = $_POST["Degree_date_end3"];
+                $Degree_date_end_Combined = [$Degree_date_end1, $Degree_date_end2, $Degree_date_end3];
                 $Degree_date_end_Combined = join(",", $Degree_date_end_Combined);
-                
-                
-
-
-
-
-
                 $achievements1 = $_POST["HiddenInput51"];
                 $achievements2 = $_POST["HiddenInput52"];
                 $achievements3 = $_POST["HiddenInput53"];
                 $achievements_Combined = [$achievements1, $achievements2, $achievements3];
                 $achievements_Combined = join(",", $achievements_Combined);
-
-                
-
-
                 $project_name1 = $_POST["project_name1"];
                 $project_name2 = $_POST["project_name2"];
                 $project_name3 = $_POST["project_name3"];
@@ -172,6 +156,7 @@ session_start();
                 $sql5 = "UPDATE user_info SET CV_done = 1 WHERE ID = '" . $_SESSION["ID"] . "'";
                 mysqli_query($conn, $sql4);
                 mysqli_query($conn, $sql5);
+                header()
             }
             ?>
             <form class="form1" action="" method="POST" enctype="multipart/form-data">
@@ -201,8 +186,6 @@ session_start();
                     <div class="input-box personal-desc">
                         <input class="row-2" type="text" name="user_bio" placeholder="الوصف الشخصي" required>
                     </div>
-                   
-                    
                 </div>
                 <div class="line"></div>
                 <div class="form2">
@@ -249,10 +232,6 @@ session_start();
                         </div>
                     </div>
                 </div>
-                
-                
-                
-                
                 <div class="form3">
                     <p> التعليم #1 </p>
                     <div class="user-details3">
@@ -269,16 +248,16 @@ session_start();
                         </div>
                         <div class="right-user">
                             <div class="input-box3">
-                                <input type="text" name="speciality" placeholder="التخصص">
+                                <input type="text" name="speciality1" placeholder="التخصص">
                             </div>
                             <div class="input-box3">
-                                <input type="text" name="university" placeholder="الجامعة ">
+                                <input type="text" name="university1" placeholder="الجامعة ">
                             </div>
                             <div class="input-box3">
-                                <input type="text" placeholder="بداية التاريخ" name="Degree_date_start">
+                                <input type="text" placeholder="بداية التاريخ" name="Degree_date_start1">
                             </div>
                             <div class="input-box3 history">
-                                <input type="text" placeholder="نهاية التاريخ" name="Degree_date_end">
+                                <input type="text" placeholder="نهاية التاريخ" name="Degree_date_end1">
                             </div>
                         </div>
                     </div>
@@ -299,16 +278,16 @@ session_start();
                         </div>
                         <div class="right-user">
                             <div class="input-box3">
-                                <input type="text" name="speciality" placeholder="التخصص">
+                                <input type="text" name="speciality2" placeholder="التخصص">
                             </div>
                             <div class="input-box3">
-                                <input type="text" name="university" placeholder="الجامعة ">
+                                <input type="text" name="university2" placeholder="الجامعة ">
                             </div>
                             <div class="input-box3">
-                                <input type="text" placeholder="بداية التاريخ" name="Degree_date_start">
+                                <input type="text" placeholder="بداية التاريخ" name="Degree_date_start2">
                             </div>
                             <div class="input-box3 history">
-                                <input type="text" placeholder="نهاية التاريخ" name="Degree_date_end">
+                                <input type="text" placeholder="نهاية التاريخ" name="Degree_date_end2">
                             </div>
                         </div>
                     </div>
@@ -329,16 +308,16 @@ session_start();
                         </div>
                         <div class="right-user">
                             <div class="input-box3">
-                                <input type="text" name="speciality" placeholder="التخصص">
+                                <input type="text" name="speciality3" placeholder="التخصص">
                             </div>
                             <div class="input-box3">
-                                <input type="text" name="university" placeholder="الجامعة ">
+                                <input type="text" name="university3" placeholder="الجامعة ">
                             </div>
                             <div class="input-box3">
-                                <input type="text" placeholder="بداية التاريخ" name="Degree_date_start">
+                                <input type="text" placeholder="بداية التاريخ" name="Degree_date_start3">
                             </div>
                             <div class="input-box3 history">
-                                <input type="text" placeholder="نهاية التاريخ" name="Degree_date_end">
+                                <input type="text" placeholder="نهاية التاريخ" name="Degree_date_end3">
                             </div>
                         </div>
                     </div>
