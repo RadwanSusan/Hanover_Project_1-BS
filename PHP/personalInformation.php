@@ -39,6 +39,18 @@ session_start();
         <div class="container">
             <div class="title">اكتب معلوماتك الشخصية</div>
             <?php
+            $sqlCvCheck = "select * from user_info where ID = '" . $_SESSION["ID"] . "'  ";
+            $result66 = mysqli_query($conn, $sqlCvCheck);
+            $row66 = mysqli_fetch_array($result66);
+            if ($row66["CV_done"] == 1) {
+                $sql = "select * from cv_form where form_ID = '" . $row66["form_id"] . "'";
+                $result = mysqli_query($conn, $sql);
+                $rowV = mysqli_fetch_assoc($result);
+            } else {
+                $sql = "select * from cv_form where form_ID = '" . $row66["form_id"] . "'";
+                $result = mysqli_query($conn, $sql);
+                $rowV = mysqli_fetch_assoc($result);
+            }
             if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["imageUpload"])) {
                 $file = $_FILES['fileimg'];
                 $fileName = $_FILES['fileimg']['name'];
@@ -172,25 +184,25 @@ session_start();
                 <input type="file" name="fileimg" id="fileimg" accept=".jpg,.png,.gif,jpeg" hidden />
                 <div class="user-details">
                     <div class="input-box">
-                        <input type="text" name="nationality" placeholder="الجنسية" required>
+                        <input type="text" name="nationality" placeholder="الجنسية" required value="<?php echo $rowV['nationality'] = $rowV['nationality'] ?? ''; ?>">
                     </div>
                     <div class="input-box">
-                        <input type="text" name="birth_date" placeholder="العمر" required>
+                        <input type="text" name="birth_date" placeholder="العمر" required value="<?php echo $rowV['birth_date'] = $rowV['birth_date'] ?? ''; ?>">
                     </div>
                     <div class="input-box input-box-name ">
-                        <input type="text" name="user_name" placeholder="الأسم" required>
+                        <input type="text" name="user_name" placeholder="الأسم" required value="<?php echo $rowV['user_name'] = $rowV['user_name'] ?? ''; ?>">
                     </div>
                     <div class="input-box input-box-phone">
-                        <input type="text" name="phone_number" placeholder="رقم الهاتف" required>
+                        <input type="text" name="phone_number" placeholder="رقم الهاتف" required value="<?php echo $rowV['phone_number'] = $rowV['phone_number'] ?? ''; ?>">
                     </div>
                     <div class="input-box">
-                        <input type="email" name="user_email" placeholder="الايميل" required>
+                        <input type="email" name="user_email" placeholder="الايميل" required value="<?php echo $rowV['user_email'] = $rowV['user_email'] ?? ''; ?>">
                     </div>
                     <div class="input-box">
-                        <input type="text" name="city" placeholder="المدينة" required>
+                        <input type="text" name="city" placeholder="المدينة" required value="<?php echo $rowV['city'] = $rowV['city'] ?? ''; ?>">
                     </div>
                     <div class="input-box personal-desc">
-                        <input class="row-2" type="text" name="user_bio" placeholder="الوصف الشخصي" required>
+                        <input class="row-2" type="text" name="user_bio" placeholder="الوصف الشخصي" required value="<?php echo $rowV['user_bio'] = $rowV['user_bio'] ?? ''; ?>">
                     </div>
                 </div>
                 <div class="line"></div>
