@@ -64,12 +64,7 @@ session_start();
                 $city = $_POST["city"];
                 $user_email = $_POST["user_email"];
                 $phone_number = $_POST["phone_number"];
-                $speciality = $_POST["speciality"];
-                $Degree = $_POST["Degree"];
                 $user_bio = $_POST["user_bio"];
-                $Degree_date_start = $_POST["Degree_date_start"];
-                $Degree_date_end = $_POST["Degree_date_end"];
-                $university = $_POST["university"];
                 $Artistic_skills = $_POST["HiddenInput1"];
                 $Personal_skills = $_POST["HiddenInput2"];
                 $hobbies = $_POST["HiddenInput3"];
@@ -94,11 +89,52 @@ session_start();
                 $job_date_end3 = $_POST["job_date_end3"];
                 $job_date_end_Combined = [$job_date_end1, $job_date_end2, $job_date_end3];
                 $job_date_end_Combined = join(",", $job_date_end_Combined);
+
+                $Degree1 = $_POST["HiddenInput41"];
+                $Degree2 = $_POST["HiddenInput42"];
+                $Degree3 = $_POST["HiddenInput43"];
+                $Degree_Combined=[$Degree1,$Degree2,$Degree3];
+                $Degree_Combined = join(",", $Degree_Combined); 
+
+                $speciality1 = $_POST["speciality1"];
+                $speciality2 = $_POST["speciality2"];
+                $speciality3 = $_POST["speciality3"];
+                $speciality_Combined = [$speciality1, $speciality2, $speciality3];
+                $speciality_Combined = join(",", $speciality_Combined);
+
+                $university1=$_POST["university1"];
+                $university2=$_POST["university2"];
+                $university3=$_POST["university3"];
+                $university_Combined = [$speciality1, $speciality2, $speciality3];
+                $university_Combined = join(",", $university_Combined);
+
+                $Degree_date_start1=$_POST["Degree_date_start1"];
+                $Degree_date_start2=$_POST["Degree_date_start2"];
+                $Degree_date_start3=$_POST["Degree_date_start3"];
+                $Degree_date_start_Combined= [$achievements1, $achievements2, $achievements3];
+                $Degree_date_start_Combined = join(",", $Degree_date_start_Combined);
+
+                $Degree_date_end1=$_POST["Degree_date_start1"];
+                $Degree_date_end2=$_POST["Degree_date_start2"];
+                $Degree_date_end3=$_POST["Degree_date_start3"];
+                $Degree_date_end_Combined= [$achievements1, $achievements2, $achievements3];
+                $Degree_date_end_Combined = join(",", $Degree_date_end_Combined);
+                
+                
+
+
+
+
+
                 $achievements1 = $_POST["HiddenInput51"];
                 $achievements2 = $_POST["HiddenInput52"];
                 $achievements3 = $_POST["HiddenInput53"];
                 $achievements_Combined = [$achievements1, $achievements2, $achievements3];
                 $achievements_Combined = join(",", $achievements_Combined);
+
+                
+
+
                 $project_name1 = $_POST["project_name1"];
                 $project_name2 = $_POST["project_name2"];
                 $project_name3 = $_POST["project_name3"];
@@ -130,7 +166,7 @@ session_start();
                     $num = mysqli_num_rows($result);
                 }
                 $sql3 = "INSERT INTO cv_form (form_id,img_path,user_name,birth_date,nationality,city,user_email,phone_number,speciality,Degree,user_bio,Degree_date_start,Degree_date_end,university,Artistic_skills,Personal_skills,hobbies,user_language,jobs,company,job_date_start,job_date_end,achievements,project_name,project_date_start,project_date_end,project_bio) VALUES
-                ('$form_id','$fileDestination', '$user_name' , '$birth_date', '$nationality' ,'$city' , '$user_email' , '$phone_number' , '$speciality' , '$Degree' , '$user_bio' , '$Degree_date_start','$Degree_date_end','$university','$Artistic_skills','$Personal_skills','$hobbies','$user_language','$combinedJobs','$combinedcompanys','$job_date_start_Combined','$job_date_end_Combined','$achievements_Combined','$project_name_Combined','$project_date_start_Combined','$project_date_end_Combined','$project_bio_Combined')";
+                ('$form_id','$fileDestination', '$user_name' , '$birth_date', '$nationality' ,'$city' , '$user_email' , '$phone_number' , '$speciality_Combined' , '$Degree_Combined' , '$user_bio' , '$Degree_date_start_Combined','$Degree_date_end_Combined','$university_Combined','$Artistic_skills','$Personal_skills','$hobbies','$user_language','$combinedJobs','$combinedcompanys','$job_date_start_Combined','$job_date_end_Combined','$achievements_Combined','$project_name_Combined','$project_date_start_Combined','$project_date_end_Combined','$project_bio_Combined')";
                 mysqli_query($conn, $sql3);
                 $sql4 = "UPDATE user_info SET form_id = '$form_id ' WHERE ID = '" . $_SESSION["ID"] . "'";
                 $sql5 = "UPDATE user_info SET CV_done = 1 WHERE ID = '" . $_SESSION["ID"] . "'";
@@ -148,7 +184,7 @@ session_start();
                         <input type="text" name="nationality" placeholder="الجنسية" required>
                     </div>
                     <div class="input-box">
-                        <input type="text" name="birth_date" placeholder="تاريخ الميلاد" required>
+                        <input type="text" name="birth_date" placeholder="العمر" required>
                     </div>
                     <div class="input-box input-box-name ">
                         <input type="text" name="user_name" placeholder="الأسم" required>
@@ -165,21 +201,8 @@ session_start();
                     <div class="input-box personal-desc">
                         <input class="row-2" type="text" name="user_bio" placeholder="الوصف الشخصي" required>
                     </div>
-                    <div class="input-box">
-                        <input type="text" name="Degree" placeholder="الدرجة العلمية" required>
-                    </div>
-                    <div class="input-box">
-                        <input type="text" name="speciality" placeholder="التخصص" required>
-                    </div>
-                    <div class="input-box">
-                        <input type="text" name="Degree_date_end" placeholder="نهاية التاريخ الدراسي" required>
-                    </div>
-                    <div class="input-box input-box-start">
-                        <input type="text" name="Degree_date_start" placeholder="بداية التاريخ الدراسي" required>
-                    </div>
-                    <div class="input-box">
-                        <input type="text" name="university" placeholder="الجامعة" required>
-                    </div>
+                   
+                    
                 </div>
                 <div class="line"></div>
                 <div class="form2">
@@ -188,7 +211,7 @@ session_start();
                             <div class="add-skills_input2">
                                 <input class="Artistic_skills_input" type="text" placeholder="المهارات الفنية">
                                 <input class="HiddenInput1" type="text" name="HiddenInput1" placeholder="Danger">
-                                <div class="add_Askill"><i class="fa-solid fa-plus"></i></div>
+                                <div class="add_Askill"><i class="fa-solid fa-plus inc inc1"></i></div>
                             </div>
                             <ul class="Artistic_skills"></ul>
                         </div>
@@ -196,7 +219,7 @@ session_start();
                             <div class="add-skills_input2">
                                 <input class="Personal_skills_input" type="text" placeholder="المهارات الشخصية">
                                 <input class="HiddenInput2" name="HiddenInput2" type="text" placeholder="Danger">
-                                <div class="add_Pskill"><i class="fa-solid fa-plus"></i></div>
+                                <div class="add_Pskill"><i class="fa-solid fa-plus inc inc1"></i></div>
                             </div>
                             <ul class="Personal_skills"></ul>
                         </div>
@@ -208,7 +231,7 @@ session_start();
                             <div class="add-skills_input2">
                                 <input class="important" type="text" placeholder="الهوايات والأهتمامات">
                                 <input class="HiddenInput3" name="HiddenInput3" type="text" placeholder="Danger">
-                                <div class="add_vskill"><i class="fa-solid fa-plus"></i></div>
+                                <div class="add_vskill"><i class="fa-solid fa-plus inc inc1"></i></div>
                             </div>
                             <ul class="important_skill">
                             </ul>
@@ -219,10 +242,104 @@ session_start();
                             <div class="add-skills_input2">
                                 <input class="lang" type="text" placeholder="اللغة">
                                 <input class="HiddenInput4" name="HiddenInput4" type="text" placeholder="Danger">
-                                <div class="add_kskill"><i class="fa-solid fa-plus"></i></div>
+                                <div class="add_kskill"><i class="fa-solid fa-plus inc inc1"></i></div>
                             </div>
                             <ul class="lang_skill">
                             </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+                
+                <div class="form3">
+                    <p> التعليم #1 </p>
+                    <div class="user-details3">
+                        <div class="left-user">
+                            <div class="input-box3 threeAria">
+                                <div class="add-skills_input2">
+                                    <input class="resp4" name="Degree1" type="text" placeholder="الدرجة العلمية">
+                                    <input class="HiddenInput41" type="text" placeholder="Danger" name="HiddenInput41">
+                                    <div class="add_fskill g4"><i class="fa-solid fa-plus inc"></i></div>
+                                </div>
+                                <ul class="resp_skill v4">
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="right-user">
+                            <div class="input-box3">
+                                <input type="text" name="speciality" placeholder="التخصص">
+                            </div>
+                            <div class="input-box3">
+                                <input type="text" name="university" placeholder="الجامعة ">
+                            </div>
+                            <div class="input-box3">
+                                <input type="text" placeholder="بداية التاريخ" name="Degree_date_start">
+                            </div>
+                            <div class="input-box3 history">
+                                <input type="text" placeholder="نهاية التاريخ" name="Degree_date_end">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form3">
+                    <p> التعليم #2 </p>
+                    <div class="user-details3">
+                        <div class="left-user">
+                            <div class="input-box3 threeAria">
+                                <div class="add-skills_input2">
+                                    <input class="resp5" name="Degree2" type="text" placeholder="الدرجة العلمية">
+                                    <input class="HiddenInput42" type="text" placeholder="Danger" name="HiddenInput42">
+                                    <div class="add_fskill g5"><i class="fa-solid fa-plus inc"></i></div>
+                                </div>
+                                <ul class="resp_skill v5">
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="right-user">
+                            <div class="input-box3">
+                                <input type="text" name="speciality" placeholder="التخصص">
+                            </div>
+                            <div class="input-box3">
+                                <input type="text" name="university" placeholder="الجامعة ">
+                            </div>
+                            <div class="input-box3">
+                                <input type="text" placeholder="بداية التاريخ" name="Degree_date_start">
+                            </div>
+                            <div class="input-box3 history">
+                                <input type="text" placeholder="نهاية التاريخ" name="Degree_date_end">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form3">
+                    <p> التعليم #3 </p>
+                    <div class="user-details3">
+                        <div class="left-user">
+                            <div class="input-box3 threeAria">
+                                <div class="add-skills_input2">
+                                    <input class="resp6" name="Degree3" type="text" placeholder="الدرجة العلمية">
+                                    <input class="HiddenInput43" type="text" placeholder="Danger" name="HiddenInput43">
+                                    <div class="add_fskill g6"><i class="fa-solid fa-plus inc"></i></div>
+                                </div>
+                                <ul class="resp_skill v6">
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="right-user">
+                            <div class="input-box3">
+                                <input type="text" name="speciality" placeholder="التخصص">
+                            </div>
+                            <div class="input-box3">
+                                <input type="text" name="university" placeholder="الجامعة ">
+                            </div>
+                            <div class="input-box3">
+                                <input type="text" placeholder="بداية التاريخ" name="Degree_date_start">
+                            </div>
+                            <div class="input-box3 history">
+                                <input type="text" placeholder="نهاية التاريخ" name="Degree_date_end">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -234,7 +351,7 @@ session_start();
                                 <div class="add-skills_input2">
                                     <input class="resp1" type="text" placeholder="الإنجازات والمسؤليات">
                                     <input class="HiddenInput51" type="text" placeholder="Danger" name="HiddenInput51">
-                                    <div class="add_fskill g1"><i class="fa-solid fa-plus"></i></div>
+                                    <div class="add_fskill g1"><i class="fa-solid fa-plus inc"></i></div>
                                 </div>
                                 <ul class="resp_skill v1">
                                 </ul>
@@ -264,7 +381,7 @@ session_start();
                                 <div class="add-skills_input2">
                                     <input class="resp2" type="text" placeholder="الإنجازات والمسؤليات">
                                     <input class="HiddenInput52" type="text" placeholder="Danger" name="HiddenInput52">
-                                    <div class="add_fskill g2"><i class="fa-solid fa-plus"></i></div>
+                                    <div class="add_fskill g2"><i class="fa-solid fa-plus inc"></i></div>
                                 </div>
                                 <ul class="resp_skill v2">
                                 </ul>
@@ -294,7 +411,7 @@ session_start();
                                 <div class="add-skills_input2">
                                     <input class="resp3" type="text" placeholder="الإنجازات والمسؤليات">
                                     <input class="HiddenInput53" type="text" placeholder="Danger" name="HiddenInput53">
-                                    <div class="add_fskill g3"><i class="fa-solid fa-plus"></i></div>
+                                    <div class="add_fskill g3"><i class="fa-solid fa-plus inc"></i></div>
                                 </div>
                                 <ul class="resp_skill v3">
                                 </ul>

@@ -262,3 +262,113 @@ a7.addEventListener("click", () => {
 		});
 	}
 });
+
+let l8 = 0;
+let array8 = [];
+let class9;
+let a8 = document.querySelector(".g4");
+a8.addEventListener("click", () => {
+	const b = document.querySelector(".resp4").value;
+	if (b != "") {
+		const list_form = document.createElement("li");
+		list_form.classList.add("list-form");
+		list_form.classList.add(l8);
+		++l8;
+		list_form.innerHTML = b;
+		document.querySelector(".v4").appendChild(list_form);
+		document.querySelector(".HiddenInput41").value += b;
+		document.querySelector(".HiddenInput41").value += " ";
+		array8 = document.querySelector(".HiddenInput41").value.split(" ");
+		array8.pop();
+		document.querySelector(".resp4").value = "";
+		const minusAskill = document.createElement("div");
+		const minusIcon = document.createElement("i");
+		minusAskill.classList.add("g4");
+		minusIcon.classList.add("fa-solid");
+		minusIcon.classList.add("fa-minus");
+		list_form.appendChild(minusAskill);
+		minusAskill.appendChild(minusIcon);
+		minusAskill.addEventListener("click", () => {
+			class9 = minusAskill.parentElement.classList[1];
+			array8 = removeFirst(array8, class9);
+			const array2String = array8.join(" ");
+			document.querySelector(".HiddenInput41").value = array2String;
+			minusAskill.parentElement.remove();
+		});
+	}
+});
+let l9 = 0;
+let array9 = [];
+let class10;
+let a9 = document.querySelector(".g5");
+a9.addEventListener("click", () => {
+	const b = document.querySelector(".resp5").value;
+	if (b != "") {
+		const list_form = document.createElement("li");
+		list_form.classList.add("list-form");
+		list_form.classList.add(l9);
+		++l9;
+		list_form.innerHTML = b;
+		document.querySelector(".v5").appendChild(list_form);
+		document.querySelector(".HiddenInput42").value += b;
+		document.querySelector(".HiddenInput42").value += " ";
+		array9 = document.querySelector(".HiddenInput42").value.split(" ");
+		array9.pop();
+		document.querySelector(".resp5").value = "";
+		const minusAskill = document.createElement("div");
+		const minusIcon = document.createElement("i");
+		minusAskill.classList.add("g5");
+		minusIcon.classList.add("fa-solid");
+		minusIcon.classList.add("fa-minus");
+		list_form.appendChild(minusAskill);
+		minusAskill.appendChild(minusIcon);
+		minusAskill.addEventListener("click", () => {
+			class10 = minusAskill.parentElement.classList[1];
+			array9 = removeFirst(array9, class10);
+			const array2String = array9.join(" ");
+			document.querySelector(".HiddenInput42").value = array2String;
+			minusAskill.parentElement.remove();
+		});
+	}
+});
+let l10 = 0;
+let array10 = [];
+let class11;
+let a10 = document.querySelector(".g6");
+a10.addEventListener("click", () => {
+	const b = document.querySelector(".resp6").value;
+	if (b != "") {
+		const list_form = document.createElement("li");
+		list_form.classList.add("list-form");
+		list_form.classList.add(l10);
+		++l10;
+		list_form.innerHTML = b;
+		document.querySelector(".v6").appendChild(list_form);
+		document.querySelector(".HiddenInput43").value += b;
+		document.querySelector(".HiddenInput43").value += " ";
+		array10 = document.querySelector(".HiddenInput43").value.split(" ");
+		array10.pop();
+		document.querySelector(".resp6").value = "";
+		const minusAskill = document.createElement("div");
+		const minusIcon = document.createElement("i");
+		minusAskill.classList.add("g6");
+		minusIcon.classList.add("fa-solid");
+		minusIcon.classList.add("fa-minus");
+		list_form.appendChild(minusAskill);
+		minusAskill.appendChild(minusIcon);
+		minusAskill.addEventListener("click", () => {
+			class11 = minusAskill.parentElement.classList[1];
+			array10 = removeFirst(array10, class11);
+			const array2String = array10.join(" ");
+			document.querySelector(".HiddenInput43").value = array2String;
+			minusAskill.parentElement.remove();
+		});
+	}
+});
+
+
+
+
+
+
+
