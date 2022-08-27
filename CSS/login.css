@@ -15,6 +15,7 @@ body {
    padding: 50px 0;
    text-align: center;
    letter-spacing: 2px;
+   padding-top: 200px;
 }
 
 .pen-title h1 {
@@ -492,5 +493,148 @@ body {
    0% {
       bottom: 30px;
       opacity: 0;
+   }
+}
+
+
+.navBar_box {
+   position: fixed;
+   width: 100%;
+   height: 91px;
+   background: linear-gradient(180deg, rgba(0, 0, 0, 0.11) 0%, rgba(235, 237, 239, 0) 100%);
+   z-index: 10;
+}
+
+.logoBox {
+   position: fixed;
+   width: 300px;
+   height: 91px;
+   display: flex;
+   justify-items: flex-start;
+   align-items: center;
+   margin-left: 20px;
+}
+
+.logoBox img {
+   width: 50px;
+   height: 57.16px;
+   margin-top: 10px;
+}
+
+.logoBox a {
+   font-family: 'Roboto', sans-serif;
+   font-style: normal;
+   list-style: none;
+   font-weight: 700;
+   text-decoration: none;
+   font-size: 30px;
+   color: #424242;
+   margin-left: 10px;
+}
+
+.navBar_buttons {
+   position: fixed;
+   top: 0px;
+   right: 0px;
+   display: inline;
+   width: 500px;
+   height: 91px;
+   justify-items: flex-end;
+   align-items: center;
+   margin-right: 20px;
+}
+
+.navBar_buttons ul {
+   width: 500px;
+   height: 91px;
+   display: flex;
+   list-style: none;
+   margin-right: 20px;
+}
+
+.navBar_buttons ul li {
+   list-style: none;
+   display: flex;
+   justify-items: center;
+   align-items: center;
+   width: 101px;
+   height: 45px;
+   background: rgba(255, 255, 255, 0.95);
+   border: 1px solid #000000;
+   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+   border-radius: 7px;
+   margin: auto;
+}
+
+.navBar_buttons ul li:hover {
+   background: rgba(195, 195, 195, 0.9);
+}
+
+.navBar_buttons ul li a {
+   font-family: 'Noto Sans Arabic', sans-serif;
+   font-style: normal;
+   font-weight: 500;
+   font-size: 19px;
+   color: #000000;
+   text-decoration: none;
+   margin: auto;
+}
+
+.mobileDropMenu {
+   position: fixed;
+   top: 22px;
+   right: 25px;
+   display: none;
+}
+
+.mobileDropMenu img {
+   width: 40px;
+   height: 40px;
+}
+
+@media screen and (max-width: 900px) {
+   .navBar_buttons ul li {
+      width: 80px;
+      height: 40px;
+   }
+
+   .navBar_buttons ul li a {
+      font-size: 17px;
+   }
+}
+
+@media screen and (max-width: 800px) {
+   .navBar_box {
+      height: 80px;
+   }
+
+   .navBar_buttons {
+      height: 80px;
+   }
+
+   .navBar_buttons ul li {
+      display: none;
+   }
+
+   .navBar_buttons ul li a {
+      display: none;
+   }
+
+   .logoBox {
+      height: 80px;
+   }
+
+   .logoBox img {
+      width: 37px;
+      height: 42.3px;
+      margin-top: 10px;
+   }
+
+   .logoBox a {
+      font-size: 24px;
+   }
+
+   .mobileDropMenu {
+      display: block;
    }
 }

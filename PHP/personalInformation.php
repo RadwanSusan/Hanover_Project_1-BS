@@ -99,9 +99,10 @@ session_start();
                 $speciality3 = $_POST["speciality3"];
                 $speciality_Combined = [$speciality1, $speciality2, $speciality3];
                 $speciality_Combined = join(",", $speciality_Combined);
-                $university1 = $_POST["university1"];
-                $university2 = $_POST["university2"];
-                $university3 = $_POST["university3"];
+
+                $university1=$_POST["university1"];
+                $university2=$_POST["university2"];
+                $university3=$_POST["university3"];
                 $university_Combined = [$speciality1, $speciality2, $speciality3];
                 $university_Combined = join(",", $university_Combined);
                 $Degree_date_start1 = $_POST["Degree_date_start1"];
@@ -496,7 +497,7 @@ session_start();
             </div>
         </div>
     </div>
-    <script src="../JS/personalInformation.js"></script>
+    <script src="../JS/personalInformation.js" defer></script>
 </body>
 
 </html>

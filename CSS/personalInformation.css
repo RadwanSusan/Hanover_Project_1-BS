@@ -677,23 +677,13 @@ header nav ul li a:hover {
   display: none;
 }
 
-.add_Askill {
-  display: flex;
-  justify-content: center;
-  margin: 10px;
-}
-
 .fa-minus {
-  height: 20px;
-  width: 20px;
   display: flex !important;
   justify-content: center !important;
-  align-items: center;
   padding: 4px !important;
   border: 1px solid !important;
   border-radius: 50% !important;
   background: coral !important;
-  margin-top: 3px;
 }
 
 .inc {
@@ -702,6 +692,7 @@ header nav ul li a:hover {
   border-radius: 50% !important;
   background: aquamarine;
 }
+
 
 .inc1 {
   margin-left: 4px;
