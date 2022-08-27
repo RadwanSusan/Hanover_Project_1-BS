@@ -16,6 +16,21 @@ session_start();
 </head>
 
 <body>
+   <div class="navBar_box">
+      <div class="logoBox">
+         <a href=""><img src="../MEDIA/Logo(chooseT).svg" alt="logo" class="logo"></a>
+         <a href="">Business City</a>
+      </div>
+      <div class="navBar_buttons">
+         <ul class="list">
+            <li class="list1"><a class="hvr-pulse-shrink" href="#">النهائية</a></li>
+            <li class="list1"><a class="hvr-pulse-shrink" href="#">من نحن</a></li>
+            <li class="list1"><a class="hvr-pulse-shrink" href="#">خدماتنا</a></li>
+            <li class="list1"><a class="hvr-pulse-shrink" href="../HTML/choose_template.html">الرئيسية</a></li>
+         </ul>
+      </div>
+
+   </div>
    <div class="pen-title">
       <h1>تسجيل الدخول السيرة الذاتية</h1>
    </div>
@@ -32,20 +47,20 @@ session_start();
             $count = mysqli_num_rows($result);
             $_SESSION["ID"] = $row["ID"];
             if ($count == 1) {
-               echo "<script>alert('تم تسجيل الدخول بنجاح')</script>";
+               header("Location: choose_template.php");
             } else {
-               echo "<script>alert('رقم الطالب او كلمة المرور غير صحيحة')</script>";
+               echo "<script>alert('الايميل أو كلمة المرور غير صحيحة')</script>";
             }
          }
          ?>
          <form action="" method="POST">
             <div class="input-container">
                <input type="#{type}" id="#{label}" name="user_name" required="required" />
-               <label for="#{label}">Username</label>
+               <label for="#{label}">Email</label>
                <div class="bar"></div>
             </div>
             <div class="input-container">
-               <input type="#{type}" id="#{label}" name="password" required="required" />
+               <input type="password" id="#{label}" name="password" required="required" />
                <label for="#{label}">Password</label>
                <div class="bar"></div>
             </div>
@@ -85,7 +100,7 @@ session_start();
          <form action="" method="POST">
             <div class="input-container">
                <input type="#{type}" id="#{label}" name="newUser" required="required" />
-               <label for="#{label}">Username</label>
+               <label for="#{label}">Email</label>
                <div class="bar"></div>
             </div>
             <div class="input-container">

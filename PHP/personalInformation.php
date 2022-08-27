@@ -99,10 +99,9 @@ session_start();
                 $speciality3 = $_POST["speciality3"];
                 $speciality_Combined = [$speciality1, $speciality2, $speciality3];
                 $speciality_Combined = join(",", $speciality_Combined);
-
-                $university1=$_POST["university1"];
-                $university2=$_POST["university2"];
-                $university3=$_POST["university3"];
+                $university1 = $_POST["university1"];
+                $university2 = $_POST["university2"];
+                $university3 = $_POST["university3"];
                 $university_Combined = [$speciality1, $speciality2, $speciality3];
                 $university_Combined = join(",", $university_Combined);
                 $Degree_date_start1 = $_POST["Degree_date_start1"];
@@ -157,7 +156,7 @@ session_start();
                 $sql5 = "UPDATE user_info SET CV_done = 1 WHERE ID = '" . $_SESSION["ID"] . "'";
                 mysqli_query($conn, $sql4);
                 mysqli_query($conn, $sql5);
-                header()
+                header("Location: ../Templates/T1");
             }
             ?>
             <form class="form1" action="" method="POST" enctype="multipart/form-data">
@@ -497,6 +496,9 @@ session_start();
             </div>
         </div>
     </div>
+    <div id="particles-js"></div>
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
     <script src="../JS/personalInformation.js" defer></script>
 </body>
 

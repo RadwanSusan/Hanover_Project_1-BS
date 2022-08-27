@@ -21,7 +21,7 @@
         <div class="container">
             <a href="#" class="logo">
                 <img src="../MEDIA/image/Logo.svg" alt="logo">
-                <p>business city</p>
+                <p>Business City</p>
             </a>
             <nav>
                 <i class="toggle-menu">
@@ -32,6 +32,7 @@
                     <li class="list1"><a href="#" class="hvr-pulse-shrink">من نحن</a></li>
                     <li class="list1"><a href="#" class="hvr-pulse-shrink">خدماتنا</a></li>
                     <li class="Active list1"><a href="#" class="hvr-pulse-shrink">الرئيسية</a></li>
+                    <li class=" list1"><a href="login.php" class="hvr-pulse-shrink">تسجيل الدخول</a></li>
                 </ul>
             </nav>
         </div>
@@ -109,8 +110,7 @@
                     </div>
                     <img src="../MEDIA/image/mdi_bow-arrow.svg" alt="">
                 </div>
-                <div class="round round2 hvr-shutter-out-horizontal" data-aos="zoom-in"
-                    data-aos-anchor-placement="top-center">
+                <div class="round round2 hvr-shutter-out-horizontal" data-aos="zoom-in" data-aos-anchor-placement="top-center">
                     <div class="info">
                         <h2>الرؤية</h2>
                         <p>الإنترنت ، وهو ما يعني تمهيد الطريق إلى الأمام للشركات الناشئة أفكار ريادة الأعمال لخلق أسواق

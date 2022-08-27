@@ -6,7 +6,7 @@ title22.onclick = () => {
 	list[0].classList.toggle("show1");
 	list1[0].classList.toggle("show2");
 	arf[0].classList.toggle("show3");
-	for (let i = 1; i < 4; i++) {
+	for (let i = 1; i < 5; i++) {
 		list1[i].classList.toggle("show2");
 		arf[i].classList.toggle("show3");
 	}

@@ -45,9 +45,9 @@ $project_date_end = explode(",", $project_date_end);
 $project_bio = $row2["project_bio"];
 $project_bio = explode(",", $project_bio);
 $user_language = $row2["user_language"];
-$user_language = explode(",", $user_language);
+$user_language = explode(" ", $user_language);
 $hobbies = $row2["hobbies"];
-$hobbies = explode(",", $hobbies);
+$hobbies = explode(" ", $hobbies);
 ?>
 <!DOCTYPE html>
 <html lang="en-US">

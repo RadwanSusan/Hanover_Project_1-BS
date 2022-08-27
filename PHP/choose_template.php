@@ -88,27 +88,34 @@ session_start();
    <div class="chooseTbox">
       <div data-aos="fade-up" data-aos-anchor-placement="top-center" class="templateBox">
          <img src="../MEDIA/TemplatePlaceHolder(chooseT).png" alt="" srcset="">
-         <div class="chooseT">
-            <p>إختار</p>
-         </div>
+         <a href="personalInformation.php?type=1">
+            <div class="chooseT">
+               <p>إختار</p>
+            </div>
+         </a>
+
          <div class="showT">
             <p>عرض النموذج</p>
          </div>
       </div>
       <div data-aos="fade-up" data-aos-anchor-placement="top-center" class="templateBox">
          <img src="../MEDIA/TemplatePlaceHolder(chooseT).png" alt="" srcset="">
-         <div class="chooseT">
-            <p>إختار</p>
-         </div>
+         <a href="personalInformation.php?type=2">
+            <div class="chooseT">
+               <p>إختار</p>
+            </div>
+         </a>
          <div class="showT">
             <p>عرض النموذج</p>
          </div>
       </div>
       <div data-aos="fade-up" data-aos-anchor-placement="top-center" class="templateBox">
          <img src="../MEDIA/TemplatePlaceHolder(chooseT).png" alt="" srcset="">
-         <div class="chooseT">
-            <p>إختار</p>
-         </div>
+         <a href="personalInformation.php?type=3">
+            <div class="chooseT">
+               <p>إختار</p>
+            </div>
+         </a>
          <div class="showT">
             <p>عرض النموذج</p>
          </div>
