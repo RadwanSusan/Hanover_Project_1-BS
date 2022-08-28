@@ -93,7 +93,6 @@ session_start();
                <p>إختار</p>
             </div>
          </a>
-
          <div class="showT">
             <p>عرض النموذج</p>
          </div>
