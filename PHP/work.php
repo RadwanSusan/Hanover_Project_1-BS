@@ -95,9 +95,8 @@
       </div>
    </div>
    <div class="testbox">
-      <h1>تقديم طلب</h1>
+      <h1 class="zaid">تقديم طلب</h1>
 
-      <i class="icon-remove-circle"></i>
       <form action="/">
          <hr>
          <label id="icon" for="name"><i class="icon-envelope"></i></label>

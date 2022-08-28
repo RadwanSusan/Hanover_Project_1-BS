@@ -655,8 +655,15 @@ a.button:hover {
    box-shadow: none;
 }
 
-.icon-remove-circle {
-   position: absolute;
-   top: -50px;
-   right: -314px;
+.zaid {
+   position: relative;
+}
+.zaid::before {
+   content: "\00d7";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    left: 87%;
+    top: 7px;
+    cursor: pointer;
 }
