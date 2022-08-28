@@ -216,7 +216,6 @@ session_start();
                     <div class="input-box">
                         <input type="email" name="user_email" required value="<?php echo $rowV['user_email'] = $rowV['user_email'] ?? ''; ?>">
                         <label class="user-label2">الايميل</label>
-
                     </div>
                     <div class="input-box">
                         <input type="text" name="city" required value="<?php echo $rowV['city'] = $rowV['city'] ?? ''; ?>">
