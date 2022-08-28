@@ -649,7 +649,7 @@ header nav ul li a:hover {
   }
 
   .user-details4 .input-box4 input {
-    width: 152px;
+    width: 130px;
   }
 }
 
@@ -827,8 +827,10 @@ canvas {
 .button {
   position: relative;
   left: -50%
+
 }
 .button {
+  transform: translateX(50%);
   --color: #00A97F;
   padding: 0.8em 1.7em;
   background-color: transparent;
