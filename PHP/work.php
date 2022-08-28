@@ -10,6 +10,8 @@
    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
    <link rel="stylesheet" href="../Hover-css/hover.min.css.css">
+   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+   <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
    <link rel="stylesheet" href="../CSS/work.css">
    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
@@ -91,6 +93,21 @@
             </div>
          </div>
       </div>
+   </div>
+   <div class="testbox">
+      <h1>تقديم طلب</h1>
+
+      <i class="icon-remove-circle"></i>
+      <form action="/">
+         <hr>
+         <label id="icon" for="name"><i class="icon-envelope"></i></label>
+         <input type="text" name="name" id="name" placeholder="الايميل" required />
+         <label id="icon" for="name"><i class="icon-user"></i></label>
+         <input type="text" name="name" id="name" placeholder="الأسم" required />
+         <label id="icon" for="name"><i class="icon-phone"></i></label>
+         <input type="text" name="name" id="name" placeholder="رقم الهاتف" required />
+         <a href="#" class="button">تقديم</a>
+      </form>
    </div>
    <script src="../JS/work.js"></script>
 </body>
