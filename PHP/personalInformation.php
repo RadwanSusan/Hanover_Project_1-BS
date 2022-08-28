@@ -184,25 +184,37 @@ session_start();
                 <input type="file" name="fileimg" id="fileimg" accept=".jpg,.png,.gif,jpeg" hidden />
                 <div class="user-details">
                     <div class="input-box">
-                        <input type="text" name="nationality" placeholder="الجنسية" required value="<?php echo $rowV['nationality'] = $rowV['nationality'] ?? ''; ?>">
+                        <input type="text" autocomplete="off"  name="nationality"  required value="<?php echo $rowV['nationality'] = $rowV['nationality'] ?? ''; ?>">
+                        <label class="user-label">الجنسية</label>
                     </div>
                     <div class="input-box">
-                        <input type="text" name="birth_date" placeholder="العمر" required value="<?php echo $rowV['birth_date'] = $rowV['birth_date'] ?? ''; ?>">
+                        <input type="text" name="birth_date" required value="<?php echo $rowV['birth_date'] = $rowV['birth_date'] ?? ''; ?>">
+                        <label class="user-label2">العمر</label>
                     </div>
                     <div class="input-box input-box-name ">
-                        <input type="text" name="user_name" placeholder="الأسم" required value="<?php echo $rowV['user_name'] = $rowV['user_name'] ?? ''; ?>">
+                        <input type="text" name="user_name" required value="<?php echo $rowV['user_name'] = $rowV['user_name'] ?? ''; ?>">
+                        <label class="user-label3">الأسم</label>
+                        
                     </div>
                     <div class="input-box input-box-phone">
-                        <input type="text" name="phone_number" placeholder="رقم الهاتف" required value="<?php echo $rowV['phone_number'] = $rowV['phone_number'] ?? ''; ?>">
+                        <input type="text" name="phone_number" required value="<?php echo $rowV['phone_number'] = $rowV['phone_number'] ?? ''; ?>">
+                        <label class="user-label">رقم الهاتف</label>
+
                     </div>
                     <div class="input-box">
-                        <input type="email" name="user_email" placeholder="الايميل" required value="<?php echo $rowV['user_email'] = $rowV['user_email'] ?? ''; ?>">
+                        <input type="email" name="user_email" required value="<?php echo $rowV['user_email'] = $rowV['user_email'] ?? ''; ?>">
+                        <label class="user-label2">الايميل</label>
+
                     </div>
                     <div class="input-box">
-                        <input type="text" name="city" placeholder="المدينة" required value="<?php echo $rowV['city'] = $rowV['city'] ?? ''; ?>">
+                        <input type="text" name="city" required value="<?php echo $rowV['city'] = $rowV['city'] ?? ''; ?>">
+                        <label class="user-label3">المدينه</label>
+
                     </div>
                     <div class="input-box personal-desc">
-                        <input class="row-2" type="text" name="user_bio" placeholder="الوصف الشخصي" required value="<?php echo $rowV['user_bio'] = $rowV['user_bio'] ?? ''; ?>">
+                        <input class="row-2" type="text" name="user_bio" required value="<?php echo $rowV['user_bio'] = $rowV['user_bio'] ?? ''; ?>">
+                        <label class="user-label">الوصف الشخصي</label>
+
                     </div>
                 </div>
                 <div class="line"></div>
