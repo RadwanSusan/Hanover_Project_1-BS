@@ -494,7 +494,7 @@ session_start();
                         </div>
                     </div>
                 </div>
-                <button type="submit" name="imageUpload">upload</button>
+                <button class="button" type="submit" name="imageUpload">upload</button>
             </form>
         </div>
     </div>
