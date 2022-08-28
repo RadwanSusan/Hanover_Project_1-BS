@@ -421,3 +421,27 @@ particlesJS("particles-js", {
 	},
 	retina_detect: true,
 });
+
+let arrayPKill = document.querySelector(".HiddenInput2").value.split(" ");
+arrayPKill.pop();
+let numberPKill;
+document.querySelectorAll(".PKill").forEach((element) => {
+	element.addEventListener("click", () => {
+		numberPKill = element.parentElement.classList[1];
+		arrayPKill = removeFirst(arrayPKill, numberPKill);
+		document.querySelector(".HiddenInput2").value = arrayPKill.join(" ");
+		element.parentElement.remove();
+	});
+});
+
+let arrayAKill = document.querySelector(".HiddenInput1").value.split(" ");
+arrayAKill.pop();
+let numberAKill;
+document.querySelectorAll(".AKill").forEach((element) => {
+	element.addEventListener("click", () => {
+		numberAKill = element.parentElement.classList[1];
+		arrayAKill = removeFirst(arrayAKill, numberAKill);
+		document.querySelector(".HiddenInput1").value = arrayAKill.join(" ");
+		element.parentElement.remove();
+	});
+});

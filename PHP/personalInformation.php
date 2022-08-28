@@ -46,6 +46,18 @@ session_start();
                 $sql = "select * from cv_form where form_ID = '" . $row66["form_id"] . "'";
                 $result = mysqli_query($conn, $sql);
                 $rowV = mysqli_fetch_assoc($result);
+                $Personal_skills_array =  $rowV["Personal_skills"];
+                $Personal_skills_array = explode(' ', $Personal_skills_array);
+                array_pop($Personal_skills_array);
+                $Artistic_skills_array =  $rowV["Artistic_skills"];
+                $Artistic_skills_array = explode(' ', $Artistic_skills_array);
+                array_pop($Artistic_skills_array);
+                $hobbies_array =  $rowV["hobbies"];
+                $hobbies_array = explode(' ', $hobbies_array);
+                array_pop($hobbies_array);
+                $user_language_array =  $rowV["user_language"];
+                $user_language_array = explode(' ', $user_language_array);
+                array_pop($user_language_array);
             } else {
                 $sql = "select * from cv_form where form_ID = '" . $row66["form_id"] . "'";
                 $result = mysqli_query($conn, $sql);
@@ -184,7 +196,7 @@ session_start();
                 <input type="file" name="fileimg" id="fileimg" accept=".jpg,.png,.gif,jpeg" hidden />
                 <div class="user-details">
                     <div class="input-box">
-                        <input type="text" autocomplete="off"  name="nationality"  required value="<?php echo $rowV['nationality'] = $rowV['nationality'] ?? ''; ?>">
+                        <input type="text" autocomplete="off" name="nationality" required value="<?php echo $rowV['nationality'] = $rowV['nationality'] ?? ''; ?>">
                         <label class="user-label">الجنسية</label>
                     </div>
                     <div class="input-box">
@@ -194,7 +206,7 @@ session_start();
                     <div class="input-box input-box-name ">
                         <input type="text" name="user_name" required value="<?php echo $rowV['user_name'] = $rowV['user_name'] ?? ''; ?>">
                         <label class="user-label3">الأسم</label>
-                        
+
                     </div>
                     <div class="input-box input-box-phone">
                         <input type="text" name="phone_number" required value="<?php echo $rowV['phone_number'] = $rowV['phone_number'] ?? ''; ?>">
@@ -209,12 +221,10 @@ session_start();
                     <div class="input-box">
                         <input type="text" name="city" required value="<?php echo $rowV['city'] = $rowV['city'] ?? ''; ?>">
                         <label class="user-label3">المدينه</label>
-
                     </div>
                     <div class="input-box personal-desc">
                         <input class="row-2" type="text" name="user_bio" required value="<?php echo $rowV['user_bio'] = $rowV['user_bio'] ?? ''; ?>">
                         <label class="user-label">الوصف الشخصي</label>
-
                     </div>
                 </div>
                 <div class="line"></div>
@@ -223,18 +233,36 @@ session_start();
                         <div class="input-box2">
                             <div class="add-skills_input2">
                                 <input class="Artistic_skills_input" type="text" placeholder="المهارات الفنية">
-                                <input class="HiddenInput1" type="text" name="HiddenInput1" placeholder="Danger">
+                                <input class="HiddenInput1" type="text" name="HiddenInput1" placeholder="Danger" value="<?php echo $rowV['Artistic_skills'] = $rowV['Artistic_skills'] ?? ''; ?>">
                                 <div class="add_Askill"><i class="fa-solid fa-plus inc inc1"></i></div>
                             </div>
-                            <ul class="Artistic_skills"></ul>
+                            <ul class="Artistic_skills">
+                                <?php
+                                $num = 0;
+                                foreach ($Artistic_skills_array as $skill) {
+                                    echo "<li class='list-form $num'>$skill";
+                                    echo '<div class="add_Pskill AKill"><i class="fa-solid fa-minus"></i></div></li>';
+                                    ++$num;
+                                }
+                                ?>
+                            </ul>
                         </div>
                         <div class="input-box2">
                             <div class="add-skills_input2">
                                 <input class="Personal_skills_input" type="text" placeholder="المهارات الشخصية">
-                                <input class="HiddenInput2" name="HiddenInput2" type="text" placeholder="Danger">
+                                <input class="HiddenInput2" name="HiddenInput2" type="text" placeholder="Danger" value="<?php echo $rowV['Personal_skills'] = $rowV['Personal_skills'] ?? ''; ?>">
                                 <div class="add_Pskill"><i class="fa-solid fa-plus inc inc1"></i></div>
                             </div>
-                            <ul class="Personal_skills"></ul>
+                            <ul class="Personal_skills">
+                                <?php
+                                $num = 0;
+                                foreach ($Personal_skills_array as $skill) {
+                                    echo "<li class='list-form $num'>$skill";
+                                    echo '<div class="add_Pskill PKill"><i class="fa-solid fa-minus"></i></div></li>';
+                                    ++$num;
+                                }
+                                ?>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -243,7 +271,7 @@ session_start();
                         <div class="input-box5">
                             <div class="add-skills_input2">
                                 <input class="important" type="text" placeholder="الهوايات والأهتمامات">
-                                <input class="HiddenInput3" name="HiddenInput3" type="text" placeholder="Danger">
+                                <input class="HiddenInput3" name="HiddenInput3" type="text" placeholder="Danger" value="<?php echo $rowV['hobbies'] = $rowV['hobbies'] ?? ''; ?>">
                                 <div class="add_vskill"><i class="fa-solid fa-plus inc inc1"></i></div>
                             </div>
                             <ul class="important_skill">
@@ -254,7 +282,7 @@ session_start();
                         <div class="input-box5">
                             <div class="add-skills_input2">
                                 <input class="lang" type="text" placeholder="اللغة">
-                                <input class="HiddenInput4" name="HiddenInput4" type="text" placeholder="Danger">
+                                <input class="HiddenInput4" name="HiddenInput4" type="text" placeholder="Danger" value="<?php echo $rowV['user_language'] = $rowV['user_language'] ?? ''; ?>">
                                 <div class="add_kskill"><i class="fa-solid fa-plus inc inc1"></i></div>
                             </div>
                             <ul class="lang_skill">
