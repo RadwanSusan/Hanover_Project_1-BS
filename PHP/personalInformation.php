@@ -12,7 +12,18 @@ session_start();
     <title>Personal-info</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
     <link rel="stylesheet" href="../CSS/personalInformation.css">
+    <script type="text/javascript">
+        function alert(message) {
+            alertify.defaults.glossary.title = 'My Title';
+            alertify.alert("Business City", message);
+        }
+    </script>
 </head>
 
 <body>
@@ -22,17 +33,6 @@ session_start();
                 <img src="../MEDIA/image/Logo.svg" alt="logo">
                 <p>business city</p>
             </a>
-            <nav>
-                <i class="toggle-menu">
-                    <img class="image1" src="../MEDIA/image/bi_list.svg" alt="menu">
-                </i>
-                <ul class="list">
-                    <li class="list1"><a href="#" class="hvr-pulse-shrink">تواصل معنا</a></li>
-                    <li class="list1"><a href="#" class="hvr-pulse-shrink">من نحن</a></li>
-                    <li class="list1"><a href="#" class="hvr-pulse-shrink">خدماتنا</a></li>
-                    <li class="Active list1"><a href="#" class="hvr-pulse-shrink">الرئيسية</a></li>
-                </ul>
-            </nav>
         </div>
     </header>
     <div class="landing-info">
@@ -48,22 +48,18 @@ session_start();
                 $rowV = mysqli_fetch_assoc($result);
                 $Personal_skills_array =  $rowV["Personal_skills"];
                 $Personal_skills_array = explode(',', $Personal_skills_array);
-                array_pop($Personal_skills_array);
                 $Artistic_skills_array =  $rowV["Artistic_skills"];
                 $Artistic_skills_array = explode(',', $Artistic_skills_array);
-                array_pop($Artistic_skills_array);
                 $hobbies_array =  $rowV["hobbies"];
                 $hobbies_array = explode(',', $hobbies_array);
-                array_pop($hobbies_array);
                 $user_language_array =  $rowV["user_language"];
                 $user_language_array = explode(',', $user_language_array);
-                array_pop($user_language_array);
             } else {
                 $sql = "select * from cv_form where form_ID = '" . $row66["form_id"] . "'";
                 $result = mysqli_query($conn, $sql);
                 $rowV = mysqli_fetch_assoc($result);
             }
-            if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["imageUpload"])) {
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $file = $_FILES['fileimg'];
                 $fileName = $_FILES['fileimg']['name'];
                 $fileTmpName = $_FILES['fileimg']['tmp_name'];
@@ -189,7 +185,7 @@ session_start();
                 }
             }
             ?>
-            <form class="form1" action="" method="POST" enctype="multipart/form-data">
+            <form class="form1" action="" method="POST" enctype="multipart/form-data" onkeydown="return event.key != 'Enter';">
                 <label for="fileimg">
                     <img class="imageCV" src="../MEDIA/image/imageCV.svg" alt="imageCV">
                 </label>
@@ -252,7 +248,7 @@ session_start();
                             <div class="add-skills_input2">
                                 <input class="Personal_skills_input" type="text" placeholder="المهارات الشخصية">
                                 <input class="HiddenInput2" name="HiddenInput2" type="text" placeholder="Danger" value="<?php echo $rowV['Personal_skills'] = $rowV['Personal_skills'] ?? ''; ?>">
-                                <div class="add_Pskill"><i class="fa-solid fa-plus inc inc1"></i></div>
+                                <div class="add_PskillO"><i class="fa-solid fa-plus inc inc1"></i></div>
                             </div>
                             <ul class="Personal_skills">
                                 <?php

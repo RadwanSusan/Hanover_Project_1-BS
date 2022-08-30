@@ -5,26 +5,16 @@ function removeFirst(arr, idx) {
 	}
 	return arr;
 }
-let title22 = document.querySelector(".toggle-menu");
-let list = document.getElementsByClassName("list");
-let list1 = document.getElementsByClassName("list1");
-let arf = document.getElementsByClassName("hvr-pulse-shrink");
-title22.onclick = () => {
-	list[0].classList.toggle("show1");
-	list1[0].classList.toggle("show2");
-	arf[0].classList.toggle("show3");
-	for (let i = 1; i < 4; i++) {
-		list1[i].classList.toggle("show2");
-		arf[i].classList.toggle("show3");
-	}
-};
+function onlyCommas(str) {
+	return /^[,]+$/.test(str);
+}
 let l = 0;
 let array = [];
 let class2;
 let a = document.querySelector(".add_Askill");
 a.addEventListener("click", () => {
 	const b = document.querySelector(".Artistic_skills_input").value;
-	if (b != "") {
+	if (b != "" && b.replace(/\s/g, "").length) {
 		const list_form = document.createElement("li");
 		list_form.classList.add("list-form");
 		list_form.classList.add(l);
@@ -34,7 +24,6 @@ a.addEventListener("click", () => {
 		document.querySelector(".HiddenInput1").value += b;
 		document.querySelector(".HiddenInput1").value += ",";
 		array = document.querySelector(".HiddenInput1").value.split(",");
-		array.pop();
 		document.querySelector(".Artistic_skills_input").value = "";
 		const minusAskill = document.createElement("div");
 		const minusIcon = document.createElement("i");
@@ -46,20 +35,26 @@ a.addEventListener("click", () => {
 		minusAskill.addEventListener("click", () => {
 			class2 = minusAskill.parentElement.classList[1];
 			array = removeFirst(array, class2);
-			const arrayString = array.join(",");
+			let arrayString = array.join(",");
+			if (onlyCommas(arrayString) == true) {
+				arrayString = "";
+			}
 			document.querySelector(".HiddenInput1").value = arrayString;
 			minusAskill.parentElement.remove();
 		});
+	} else {
+		alertify.defaults.glossary.title = "My Title";
+		alertify.alert("Business City", "Please Enter a value first!");
 	}
 });
 
 let l2 = 0;
 let array2 = [];
 let class3;
-let a2 = document.querySelector(".add_Pskill");
+let a2 = document.querySelector(".add_PskillO");
 a2.addEventListener("click", () => {
 	const b = document.querySelector(".Personal_skills_input").value;
-	if (b != "") {
+	if (b != "" && b.replace(/\s/g, "").length) {
 		const list_form = document.createElement("li");
 		list_form.classList.add("list-form");
 		list_form.classList.add(l2);
@@ -69,7 +64,6 @@ a2.addEventListener("click", () => {
 		document.querySelector(".HiddenInput2").value += b;
 		document.querySelector(".HiddenInput2").value += ",";
 		array2 = document.querySelector(".HiddenInput2").value.split(",");
-		array2.pop();
 		document.querySelector(".Personal_skills_input").value = "";
 		const minusAskill = document.createElement("div");
 		const minusIcon = document.createElement("i");
@@ -81,10 +75,16 @@ a2.addEventListener("click", () => {
 		minusAskill.addEventListener("click", () => {
 			class3 = minusAskill.parentElement.classList[1];
 			array2 = removeFirst(array2, class3);
-			const array2String = array2.join(",");
+			let array2String = array2.join(",");
+			if (onlyCommas(array2String) == true) {
+				array2String = "";
+			}
 			document.querySelector(".HiddenInput2").value = array2String;
 			minusAskill.parentElement.remove();
 		});
+	} else {
+		alertify.defaults.glossary.title = "My Title";
+		alertify.alert("Business City", "Please Enter a value first!");
 	}
 });
 
@@ -94,7 +94,7 @@ let class4;
 let a3 = document.querySelector(".add_Vskill");
 a3.addEventListener("click", () => {
 	const b = document.querySelector(".important").value;
-	if (b != "") {
+	if (b != "" && b.replace(/\s/g, "").length) {
 		const list_form = document.createElement("li");
 		list_form.classList.add("list-form");
 		list_form.classList.add(l3);
@@ -104,7 +104,6 @@ a3.addEventListener("click", () => {
 		document.querySelector(".HiddenInput3").value += b;
 		document.querySelector(".HiddenInput3").value += ",";
 		array3 = document.querySelector(".HiddenInput3").value.split(",");
-		array3.pop();
 		document.querySelector(".important").value = "";
 		const minusAskill = document.createElement("div");
 		const minusIcon = document.createElement("i");
@@ -116,10 +115,16 @@ a3.addEventListener("click", () => {
 		minusAskill.addEventListener("click", () => {
 			class4 = minusAskill.parentElement.classList[1];
 			array3 = removeFirst(array3, class4);
-			const array2String = array3.join(",");
-			document.querySelector(".HiddenInput3").value = array2String;
+			let array3String = array3.join(",");
+			if (onlyCommas(array3String) == true) {
+				array3String = "";
+			}
+			document.querySelector(".HiddenInput3").value = array3String;
 			minusAskill.parentElement.remove();
 		});
+	} else {
+		alertify.defaults.glossary.title = "My Title";
+		alertify.alert("Business City", "Please Enter a value first!");
 	}
 });
 let l4 = 0;
@@ -128,7 +133,7 @@ let class5;
 let a4 = document.querySelector(".add_kskill");
 a4.addEventListener("click", () => {
 	const b = document.querySelector(".lang").value;
-	if (b != "") {
+	if (b != "" && b.replace(/\s/g, "").length) {
 		const list_form = document.createElement("li");
 		list_form.classList.add("list-form");
 		list_form.classList.add(l4);
@@ -138,7 +143,6 @@ a4.addEventListener("click", () => {
 		document.querySelector(".HiddenInput4").value += b;
 		document.querySelector(".HiddenInput4").value += ",";
 		array4 = document.querySelector(".HiddenInput4").value.split(",");
-		array4.pop();
 		document.querySelector(".lang").value = "";
 		const minusAskill = document.createElement("div");
 		const minusIcon = document.createElement("i");
@@ -150,10 +154,16 @@ a4.addEventListener("click", () => {
 		minusAskill.addEventListener("click", () => {
 			class5 = minusAskill.parentElement.classList[1];
 			array4 = removeFirst(array4, class5);
-			const array2String = array4.join(",");
-			document.querySelector(".HiddenInput4").value = array2String;
+			let array4String = array4.join(",");
+			if (onlyCommas(array4String) == true) {
+				array4String = "";
+			}
+			document.querySelector(".HiddenInput4").value = array4String;
 			minusAskill.parentElement.remove();
 		});
+	} else {
+		alertify.defaults.glossary.title = "My Title";
+		alertify.alert("Business City", "Please Enter a value first!");
 	}
 });
 
@@ -173,7 +183,6 @@ a5.addEventListener("click", () => {
 		document.querySelector(".HiddenInput51").value += b;
 		document.querySelector(".HiddenInput51").value += " ";
 		array5 = document.querySelector(".HiddenInput51").value.split(" ");
-		array5.pop();
 		document.querySelector(".resp1").value = "";
 		const minusAskill = document.createElement("div");
 		const minusIcon = document.createElement("i");
@@ -185,7 +194,7 @@ a5.addEventListener("click", () => {
 		minusAskill.addEventListener("click", () => {
 			class6 = minusAskill.parentElement.classList[1];
 			array5 = removeFirst(array5, class6);
-			const array2String = array5.join(" ");
+			let array2String = array5.join(" ");
 			document.querySelector(".HiddenInput51").value = array2String;
 			minusAskill.parentElement.remove();
 		});
@@ -208,7 +217,6 @@ a6.addEventListener("click", () => {
 		document.querySelector(".HiddenInput52").value += b;
 		document.querySelector(".HiddenInput52").value += " ";
 		array6 = document.querySelector(".HiddenInput52").value.split(" ");
-		array6.pop();
 		document.querySelector(".resp2").value = "";
 		const minusAskill = document.createElement("div");
 		const minusIcon = document.createElement("i");
@@ -220,7 +228,7 @@ a6.addEventListener("click", () => {
 		minusAskill.addEventListener("click", () => {
 			class7 = minusAskill.parentElement.classList[1];
 			array6 = removeFirst(array6, class7);
-			const array2String = array6.join(" ");
+			let array2String = array6.join(" ");
 			document.querySelector(".HiddenInput52").value = array2String;
 			minusAskill.parentElement.remove();
 		});
@@ -243,7 +251,6 @@ a7.addEventListener("click", () => {
 		document.querySelector(".HiddenInput53").value += b;
 		document.querySelector(".HiddenInput53").value += " ";
 		array7 = document.querySelector(".HiddenInput53").value.split(" ");
-		array7.pop();
 		document.querySelector(".resp3").value = "";
 		const minusAskill = document.createElement("div");
 		const minusIcon = document.createElement("i");
@@ -255,7 +262,7 @@ a7.addEventListener("click", () => {
 		minusAskill.addEventListener("click", () => {
 			class8 = minusAskill.parentElement.classList[1];
 			array7 = removeFirst(array7, class8);
-			const array2String = array7.join(" ");
+			let array2String = array7.join(" ");
 			document.querySelector(".HiddenInput53").value = array2String;
 			minusAskill.parentElement.remove();
 		});
@@ -278,7 +285,6 @@ a8.addEventListener("click", () => {
 		document.querySelector(".HiddenInput41").value += b;
 		document.querySelector(".HiddenInput41").value += " ";
 		array8 = document.querySelector(".HiddenInput41").value.split(" ");
-		array8.pop();
 		document.querySelector(".resp4").value = "";
 		const minusAskill = document.createElement("div");
 		const minusIcon = document.createElement("i");
@@ -290,7 +296,7 @@ a8.addEventListener("click", () => {
 		minusAskill.addEventListener("click", () => {
 			class9 = minusAskill.parentElement.classList[1];
 			array8 = removeFirst(array8, class9);
-			const array2String = array8.join(" ");
+			let array2String = array8.join(" ");
 			document.querySelector(".HiddenInput41").value = array2String;
 			minusAskill.parentElement.remove();
 		});
@@ -312,7 +318,6 @@ a9.addEventListener("click", () => {
 		document.querySelector(".HiddenInput42").value += b;
 		document.querySelector(".HiddenInput42").value += " ";
 		array9 = document.querySelector(".HiddenInput42").value.split(" ");
-		array9.pop();
 		document.querySelector(".resp5").value = "";
 		const minusAskill = document.createElement("div");
 		const minusIcon = document.createElement("i");
@@ -324,7 +329,7 @@ a9.addEventListener("click", () => {
 		minusAskill.addEventListener("click", () => {
 			class10 = minusAskill.parentElement.classList[1];
 			array9 = removeFirst(array9, class10);
-			const array2String = array9.join(" ");
+			let array2String = array9.join(" ");
 			document.querySelector(".HiddenInput42").value = array2String;
 			minusAskill.parentElement.remove();
 		});
@@ -346,7 +351,6 @@ a10.addEventListener("click", () => {
 		document.querySelector(".HiddenInput43").value += b;
 		document.querySelector(".HiddenInput43").value += " ";
 		array10 = document.querySelector(".HiddenInput43").value.split(" ");
-		array10.pop();
 		document.querySelector(".resp6").value = "";
 		const minusAskill = document.createElement("div");
 		const minusIcon = document.createElement("i");
@@ -358,7 +362,7 @@ a10.addEventListener("click", () => {
 		minusAskill.addEventListener("click", () => {
 			class11 = minusAskill.parentElement.classList[1];
 			array10 = removeFirst(array10, class11);
-			const array2String = array10.join(" ");
+			let array2String = array10.join(" ");
 			document.querySelector(".HiddenInput43").value = array2String;
 			minusAskill.parentElement.remove();
 		});
@@ -422,13 +426,16 @@ particlesJS("particles-js", {
 });
 
 let arrayAKill = document.querySelector(".HiddenInput1").value.split(",");
-arrayAKill.pop();
 let numberAKill;
 document.querySelectorAll(".AKill").forEach((element) => {
 	element.addEventListener("click", () => {
 		numberAKill = element.parentElement.classList[1];
 		arrayAKill = removeFirst(arrayAKill, numberAKill);
-		document.querySelector(".HiddenInput1").value = arrayAKill.join(",");
+		arrayAKill.join(",");
+		if (onlyCommas(arrayAKill) == true) {
+			arrayAKill = "";
+		}
+		document.querySelector(".HiddenInput1").value = arrayAKill;
 		element.parentElement.remove();
 	});
 });
@@ -440,7 +447,11 @@ document.querySelectorAll(".PKill").forEach((element) => {
 	element.addEventListener("click", () => {
 		numberPKill = element.parentElement.classList[1];
 		arrayPKill = removeFirst(arrayPKill, numberPKill);
-		document.querySelector(".HiddenInput2").value = arrayPKill.join(",");
+		arrayPKill.join(",");
+		if (onlyCommas(arrayPKill) == true) {
+			arrayPKill = "";
+		}
+		document.querySelector(".HiddenInput2").value = arrayPKill;
 		element.parentElement.remove();
 	});
 });
@@ -452,7 +463,11 @@ document.querySelectorAll(".VKill").forEach((element) => {
 	element.addEventListener("click", () => {
 		numberVKill = element.parentElement.classList[1];
 		arrayVKill = removeFirst(arrayVKill, numberVKill);
-		document.querySelector(".HiddenInput3").value = arrayVKill.join(",");
+		arrayVKill.join(",");
+		if (onlyCommas(arrayVKill) == true) {
+			arrayVKill = "";
+		}
+		document.querySelector(".HiddenInput3").value = arrayVKill;
 		element.parentElement.remove();
 	});
 });
@@ -464,7 +479,32 @@ document.querySelectorAll(".KKill").forEach((element) => {
 	element.addEventListener("click", () => {
 		numberKKill = element.parentElement.classList[1];
 		arrayKKill = removeFirst(arrayKKill, numberKKill);
-		document.querySelector(".HiddenInput4").value = arrayKKill.join(",");
+		arrayKKill.join(",");
+		if (onlyCommas(arrayKKill) == true) {
+			arrayKKill = "";
+		}
+		document.querySelector(".HiddenInput4").value = arrayKKill;
 		element.parentElement.remove();
 	});
+});
+
+document.querySelector(".button").addEventListener("click", (e) => {
+	e.preventDefault();
+	arrayAKill = document.querySelector(".HiddenInput1").value;
+	arrayAKill = arrayAKill.split(",");
+	arrayAKill = arrayAKill.filter((n) => n);
+	document.querySelector(".HiddenInput1").value = arrayAKill.join(",");
+	arrayPKill = document.querySelector(".HiddenInput2").value;
+	arrayPKill = arrayPKill.split(",");
+	arrayPKill = arrayPKill.filter((n) => n);
+	document.querySelector(".HiddenInput1").value = arrayAKill.join(",");
+	arrayVKill = document.querySelector(".HiddenInput3").value;
+	arrayVKill = arrayVKill.split(",");
+	arrayVKill = arrayVKill.filter((n) => n);
+	document.querySelector(".HiddenInput1").value = arrayAKill.join(",");
+	arrayKKill = document.querySelector(".HiddenInput4").value;
+	arrayKKill = arrayKKill.split(",");
+	arrayKKill = arrayKKill.filter((n) => n);
+	document.querySelector(".HiddenInput1").value = arrayAKill.join(",");
+	document.querySelector(".form1").submit();
 });
