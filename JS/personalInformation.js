@@ -441,7 +441,6 @@ document.querySelectorAll(".AKill").forEach((element) => {
 });
 
 let arrayPKill = document.querySelector(".HiddenInput2").value.split(",");
-arrayPKill.pop();
 let numberPKill;
 document.querySelectorAll(".PKill").forEach((element) => {
 	element.addEventListener("click", () => {
@@ -457,7 +456,6 @@ document.querySelectorAll(".PKill").forEach((element) => {
 });
 
 let arrayVKill = document.querySelector(".HiddenInput3").value.split(",");
-arrayVKill.pop();
 let numberVKill;
 document.querySelectorAll(".VKill").forEach((element) => {
 	element.addEventListener("click", () => {
@@ -473,7 +471,6 @@ document.querySelectorAll(".VKill").forEach((element) => {
 });
 
 let arrayKKill = document.querySelector(".HiddenInput4").value.split(",");
-arrayKKill.pop();
 let numberKKill;
 document.querySelectorAll(".KKill").forEach((element) => {
 	element.addEventListener("click", () => {
