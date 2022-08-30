@@ -54,6 +54,37 @@ session_start();
                 $hobbies_array = explode(',', $hobbies_array);
                 $user_language_array =  $rowV["user_language"];
                 $user_language_array = explode(',', $user_language_array);
+                $speciality_array =  $rowV["speciality"];
+                $speciality_array = explode(',', $speciality_array);
+                $university_array =  $rowV["university"];
+                $university_array = explode(',', $university_array);
+                $Degree_date_start_array =  $rowV["Degree_date_start"];
+                $Degree_date_start_array = explode(',', $Degree_date_start_array);
+                $Degree_date_end_array =  $rowV["Degree_date_end"];
+                $Degree_date_end_array = explode(',', $Degree_date_end_array);
+                $jobs_array =  $rowV["jobs"];
+                $jobs_array = explode(',', $jobs_array);
+                $company_array =  $rowV["company"];
+                $company_array = explode(',', $company_array);
+                $job_date_start_array =  $rowV["job_date_start"];
+                $job_date_start_array = explode(',', $job_date_start_array);
+                $job_date_end_array =  $rowV["job_date_end"];
+                $job_date_end_array = explode(',', $job_date_end_array);
+                $project_name_array =  $rowV["project_name"];
+                $project_name_array = explode(',', $project_name_array);
+                $project_date_start_array =  $rowV["project_date_start"];
+                $project_date_start_array = explode(',', $project_date_start_array);
+                $project_date_end_array =  $rowV["project_date_end"];
+                $project_date_end_array = explode(',', $project_date_end_array);
+                $project_bio_array =  $rowV["project_bio"];
+                $project_bio_array = explode(',', $project_bio_array);
+                $Degree_array =  $rowV["Degree"];
+                $Degree_array = explode(',', $Degree_array);
+                $achievements_array =  $rowV["achievements"];
+                $achievements_array = explode('-', $achievements_array);
+                $achievements_array_seperated_0 = explode(',', $achievements_array[0]);
+                $achievements_array_seperated_1 = explode(',', $achievements_array[1]);
+                $achievements_array_seperated_2 = explode(',', $achievements_array[2]);
             } else {
                 $sql = "select * from cv_form where form_ID = '" . $row66["form_id"] . "'";
                 $result = mysqli_query($conn, $sql);
@@ -109,9 +140,9 @@ session_start();
                 $job_date_end3 = $_POST["job_date_end3"];
                 $job_date_end_Combined = [$job_date_end1, $job_date_end2, $job_date_end3];
                 $job_date_end_Combined = join(",", $job_date_end_Combined);
-                $Degree1 = $_POST["HiddenInput41"];
-                $Degree2 = $_POST["HiddenInput42"];
-                $Degree3 = $_POST["HiddenInput43"];
+                $Degree1 = $_POST["Degree1"];
+                $Degree2 = $_POST["Degree2"];
+                $Degree3 = $_POST["Degree3"];
                 $Degree_Combined = [$Degree1, $Degree2, $Degree3];
                 $Degree_Combined = join(",", $Degree_Combined);
                 $speciality1 = $_POST["speciality1"];
@@ -138,7 +169,7 @@ session_start();
                 $achievements2 = $_POST["HiddenInput52"];
                 $achievements3 = $_POST["HiddenInput53"];
                 $achievements_Combined = [$achievements1, $achievements2, $achievements3];
-                $achievements_Combined = join(",", $achievements_Combined);
+                $achievements_Combined = join("-", $achievements_Combined);
                 $project_name1 = $_POST["project_name1"];
                 $project_name2 = $_POST["project_name2"];
                 $project_name3 = $_POST["project_name3"];
@@ -323,26 +354,22 @@ session_start();
                         <div class="left-user">
                             <div class="input-box3 threeAria">
                                 <div class="add-skills_input2">
-                                    <input class="resp4" name="Degree1" type="text" placeholder="الدرجة العلمية">
-                                    <input class="HiddenInput41" type="text" placeholder="Danger" name="HiddenInput41">
-                                    <div class="add_fskill g4"><i class="fa-solid fa-plus inc"></i></div>
+                                    <input class="resp4" name="Degree1" type="text" placeholder="الدرجة العلمية" value="<?php echo $Degree_array[0] = $Degree_array[0] ?? ''; ?>">
                                 </div>
-                                <ul class="resp_skill v4">
-                                </ul>
                             </div>
                         </div>
                         <div class="right-user">
                             <div class="input-box3">
-                                <input type="text" name="speciality1" placeholder="التخصص">
+                                <input type="text" name="speciality1" placeholder="التخصص" value="<?php echo $speciality_array[0] = $speciality_array[0] ?? ''; ?>">
                             </div>
                             <div class="input-box3">
-                                <input type="text" name="university1" placeholder="الجامعة ">
+                                <input type="text" name="university1" placeholder="الجامعة" value="<?php echo $university_array[0] = $university_array[0] ?? ''; ?>">
                             </div>
                             <div class="input-box3">
-                                <input type="text" placeholder="بداية التاريخ" name="Degree_date_start1">
+                                <input type="text" placeholder="بداية التاريخ" name="Degree_date_start1" value="<?php echo $Degree_date_start_array[0] = $Degree_date_start_array[0] ?? ''; ?>">
                             </div>
                             <div class="input-box3 history">
-                                <input type="text" placeholder="نهاية التاريخ" name="Degree_date_end1">
+                                <input type="text" placeholder="نهاية التاريخ" name="Degree_date_end1" value="<?php echo $Degree_date_end_array[0] = $Degree_date_end_array[0] ?? ''; ?>">
                             </div>
                         </div>
                     </div>
@@ -353,26 +380,22 @@ session_start();
                         <div class="left-user">
                             <div class="input-box3 threeAria">
                                 <div class="add-skills_input2">
-                                    <input class="resp5" name="Degree2" type="text" placeholder="الدرجة العلمية">
-                                    <input class="HiddenInput42" type="text" placeholder="Danger" name="HiddenInput42">
-                                    <div class="add_fskill g5"><i class="fa-solid fa-plus inc"></i></div>
+                                    <input class="resp5" name="Degree2" type="text" placeholder="الدرجة العلمية" value="<?php echo $Degree_array[1] = $Degree_array[1] ?? ''; ?>">
                                 </div>
-                                <ul class="resp_skill v5">
-                                </ul>
                             </div>
                         </div>
                         <div class="right-user">
                             <div class="input-box3">
-                                <input type="text" name="speciality2" placeholder="التخصص">
+                                <input type="text" name="speciality2" placeholder="التخصص" value="<?php echo $speciality_array[1] = $speciality_array[1] ?? ''; ?>">
                             </div>
                             <div class="input-box3">
-                                <input type="text" name="university2" placeholder="الجامعة ">
+                                <input type="text" name="university2" placeholder="الجامعة" value="<?php echo $university_array[1] = $university_array[1] ?? ''; ?>">
                             </div>
                             <div class="input-box3">
-                                <input type="text" placeholder="بداية التاريخ" name="Degree_date_start2">
+                                <input type="text" placeholder="بداية التاريخ" name="Degree_date_start2" value="<?php echo $Degree_date_start_array[1] = $Degree_date_start_array[1] ?? ''; ?>">
                             </div>
                             <div class="input-box3 history">
-                                <input type="text" placeholder="نهاية التاريخ" name="Degree_date_end2">
+                                <input type="text" placeholder="نهاية التاريخ" name="Degree_date_end2" value="<?php echo $Degree_date_end_array[1] = $Degree_date_end_array[1] ?? ''; ?>">
                             </div>
                         </div>
                     </div>
@@ -383,26 +406,22 @@ session_start();
                         <div class="left-user">
                             <div class="input-box3 threeAria">
                                 <div class="add-skills_input2">
-                                    <input class="resp6" name="Degree3" type="text" placeholder="الدرجة العلمية">
-                                    <input class="HiddenInput43" type="text" placeholder="Danger" name="HiddenInput43">
-                                    <div class="add_fskill g6"><i class="fa-solid fa-plus inc"></i></div>
+                                    <input class="resp6" name="Degree3" type="text" placeholder="الدرجة العلمية" value="<?php echo $Degree_array[2] = $Degree_array[2] ?? ''; ?>">
                                 </div>
-                                <ul class="resp_skill v6">
-                                </ul>
                             </div>
                         </div>
                         <div class="right-user">
                             <div class="input-box3">
-                                <input type="text" name="speciality3" placeholder="التخصص">
+                                <input type="text" name="speciality3" placeholder="التخصص" value="<?php echo $speciality_array[2] = $speciality_array[2] ?? ''; ?>">
                             </div>
                             <div class="input-box3">
-                                <input type="text" name="university3" placeholder="الجامعة ">
+                                <input type="text" name="university3" placeholder="الجامعة" value="<?php echo $university_array[2] = $university_array[2] ?? ''; ?>">
                             </div>
                             <div class="input-box3">
-                                <input type="text" placeholder="بداية التاريخ" name="Degree_date_start3">
+                                <input type="text" placeholder="بداية التاريخ" name="Degree_date_start3" value="<?php echo $Degree_date_start_array[2] = $Degree_date_start_array[2] ?? ''; ?>">
                             </div>
                             <div class="input-box3 history">
-                                <input type="text" placeholder="نهاية التاريخ" name="Degree_date_end3">
+                                <input type="text" placeholder="نهاية التاريخ" name="Degree_date_end3" value="<?php echo $Degree_date_end_array[2] = $Degree_date_end_array[2] ?? ''; ?>">
                             </div>
                         </div>
                     </div>
@@ -415,25 +434,37 @@ session_start();
                             <div class="input-box3 threeAria">
                                 <div class="add-skills_input2">
                                     <input class="resp1" type="text" placeholder="الإنجازات والمسؤليات">
-                                    <input class="HiddenInput51" type="text" placeholder="Danger" name="HiddenInput51">
+                                    <input class="HiddenInput51" type="text" placeholder="Danger" name="HiddenInput51" value="<?php echo $achievements_array[0] = $achievements_array[0] ?? ''; ?>">
                                     <div class="add_fskill g1"><i class="fa-solid fa-plus inc"></i></div>
                                 </div>
                                 <ul class="resp_skill v1">
+                                    <?php
+                                    $num = 0;
+                                    if (isset($achievements_array_seperated_0)) {
+                                        foreach ($achievements_array_seperated_0 as $ach) {
+                                            if ($ach && trim($ach)) {
+                                                echo "<li class='list-form $num'>$ach";
+                                                echo '<div class="add_Pskill A1Kill"><i class="fa-solid fa-minus"></i></div></li>';
+                                                ++$num;
+                                            }
+                                        }
+                                    }
+                                    ?>
                                 </ul>
                             </div>
                         </div>
                         <div class="right-user">
                             <div class="input-box3">
-                                <input type="text" placeholder="الوظيفة" name="job1">
+                                <input type="text" placeholder="الوظيفة" name="job1" value="<?php echo $jobs_array[0] = $jobs_array[0] ?? ''; ?>">
                             </div>
                             <div class="input-box3">
-                                <input type="text" placeholder="الشركة" name="company1">
+                                <input type="text" placeholder="الشركة" name="company1" value="<?php echo $company_array[0] = $company_array[0] ?? ''; ?>">
                             </div>
                             <div class="input-box3">
-                                <input type="text" placeholder="بداية التاريخ" name="job_date_start1">
+                                <input type="text" placeholder="بداية التاريخ" name="job_date_start1" value="<?php echo $job_date_start_array[0] = $job_date_start_array[0] ?? ''; ?>">
                             </div>
                             <div class="input-box3 history">
-                                <input type="text" placeholder="نهاية التاريخ" name="job_date_end1">
+                                <input type="text" placeholder="نهاية التاريخ" name="job_date_end1" value="<?php echo $job_date_end_array[0] = $job_date_end_array[0] ?? ''; ?>">
                             </div>
                         </div>
                     </div>
@@ -445,25 +476,37 @@ session_start();
                             <div class="input-box3 threeAria">
                                 <div class="add-skills_input2">
                                     <input class="resp2" type="text" placeholder="الإنجازات والمسؤليات">
-                                    <input class="HiddenInput52" type="text" placeholder="Danger" name="HiddenInput52">
+                                    <input class="HiddenInput52" type="text" placeholder="Danger" name="HiddenInput52" value="<?php echo $achievements_array[1] = $achievements_array[1] ?? ''; ?>">
                                     <div class="add_fskill g2"><i class="fa-solid fa-plus inc"></i></div>
                                 </div>
                                 <ul class="resp_skill v2">
+                                    <?php
+                                    $num = 0;
+                                    if (isset($achievements_array_seperated_1)) {
+                                        foreach ($achievements_array_seperated_1 as $ach) {
+                                            if ($ach && trim($ach)) {
+                                                echo "<li class='list-form $num'>$ach";
+                                                echo '<div class="add_Pskill A2Kill"><i class="fa-solid fa-minus"></i></div></li>';
+                                                ++$num;
+                                            }
+                                        }
+                                    }
+                                    ?>
                                 </ul>
                             </div>
                         </div>
                         <div class="right-user">
                             <div class="input-box3">
-                                <input type="text" placeholder="الوظيفة" name="job2">
+                                <input type="text" placeholder="الوظيفة" name="job2" value="<?php echo $jobs_array[1] = $jobs_array[1] ?? ''; ?>">
                             </div>
                             <div class="input-box3">
-                                <input type="text" placeholder="الشركة" name="company2">
+                                <input type="text" placeholder="الشركة" name="company2" value="<?php echo $company_array[1] = $company_array[1] ?? ''; ?>">
                             </div>
                             <div class="input-box3">
-                                <input type="text" placeholder="بداية التاريخ" name="job_date_start2">
+                                <input type="text" placeholder="بداية التاريخ" name="job_date_start2" value="<?php echo $job_date_start_array[1] = $job_date_start_array[1] ?? ''; ?>">
                             </div>
                             <div class="input-box3 history">
-                                <input type="text" placeholder="نهاية التاريخ" name="job_date_end2">
+                                <input type="text" placeholder="نهاية التاريخ" name="job_date_end2" value="<?php echo $job_date_end_array[1] = $job_date_end_array[1] ?? ''; ?>">
                             </div>
                         </div>
                     </div>
@@ -475,25 +518,37 @@ session_start();
                             <div class="input-box3 threeAria">
                                 <div class="add-skills_input2">
                                     <input class="resp3" type="text" placeholder="الإنجازات والمسؤليات">
-                                    <input class="HiddenInput53" type="text" placeholder="Danger" name="HiddenInput53">
+                                    <input class="HiddenInput53" type="text" placeholder="Danger" name="HiddenInput53" value="<?php echo $achievements_array[2] = $achievements_array[2] ?? ''; ?>">
                                     <div class="add_fskill g3"><i class="fa-solid fa-plus inc"></i></div>
                                 </div>
                                 <ul class="resp_skill v3">
+                                    <?php
+                                    $num = 0;
+                                    if (isset($achievements_array_seperated_2)) {
+                                        foreach ($achievements_array_seperated_2 as $ach) {
+                                            if ($ach && trim($ach)) {
+                                                echo "<li class='list-form $num'>$ach";
+                                                echo '<div class="add_Pskill A3Kill"><i class="fa-solid fa-minus"></i></div></li>';
+                                                ++$num;
+                                            }
+                                        }
+                                    }
+                                    ?>
                                 </ul>
                             </div>
                         </div>
                         <div class="right-user">
                             <div class="input-box3">
-                                <input type="text" placeholder="الوظيفة" name="job3">
+                                <input type="text" placeholder="الوظيفة" name="job3" value="<?php echo $jobs_array[2] = $jobs_array[2] ?? ''; ?>">
                             </div>
                             <div class="input-box3">
-                                <input type="text" placeholder="الشركة" name="company3">
+                                <input type="text" placeholder="الشركة" name="company3" value="<?php echo $company_array[2] = $company_array[2] ?? ''; ?>">
                             </div>
                             <div class="input-box3">
-                                <input type="text" placeholder="بداية التاريخ" name="job_date_start3">
+                                <input type="text" placeholder="بداية التاريخ" name="job_date_start3" value="<?php echo $job_date_start_array[2] = $job_date_start_array[2] ?? ''; ?>">
                             </div>
                             <div class="input-box3 history">
-                                <input type="text" placeholder="نهاية التاريخ" name="job_date_end3">
+                                <input type="text" placeholder="نهاية التاريخ" name="job_date_end3" value="<?php echo $job_date_end_array[2] = $job_date_end_array[2] ?? ''; ?>">
                             </div>
                         </div>
                     </div>
@@ -503,16 +558,16 @@ session_start();
                     <p> #1 المشاريع الشخصية</p>
                     <div class="user-details4">
                         <div class="input-box4 towAria">
-                            <input class="tow-aria" type="text" placeholder="الوصف" name="project_bio1">
+                            <input class="tow-aria" type="text" placeholder="الوصف" name="project_bio1" value="<?php echo $project_bio_array[0] = $project_bio_array[0] ?? ''; ?>">
                         </div>
                         <div class="input-box4">
-                            <input type="text" placeholder="الأسم" name="project_name1">
+                            <input type="text" placeholder="الأسم" name="project_name1" value="<?php echo $project_name_array[0] = $project_name_array[0] ?? ''; ?>">
                         </div>
                         <div class="input-box4">
-                            <input type="text" placeholder="بداية التاريخ" name="project_date_start1">
+                            <input type="text" placeholder="بداية التاريخ" name="project_date_start1" value="<?php echo $project_date_start_array[0] = $project_date_start_array[0] ?? ''; ?>">
                         </div>
                         <div class="input-box4 personal-history">
-                            <input type="text" placeholder="نهاية التاريخ" name="project_date_end1">
+                            <input type="text" placeholder="نهاية التاريخ" name="project_date_end1" value="<?php echo $project_date_end_array[0] = $project_date_end_array[0] ?? ''; ?>">
                         </div>
                     </div>
                 </div>
@@ -520,16 +575,16 @@ session_start();
                     <p> #2 المشاريع الشخصية</p>
                     <div class="user-details4">
                         <div class="input-box4 towAria">
-                            <input class="tow-aria" type="text" placeholder="الوصف" name="project_bio2">
+                            <input class="tow-aria" type="text" placeholder="الوصف" name="project_bio2" value="<?php echo $project_bio_array[1] = $project_bio_array[1] ?? ''; ?>">
                         </div>
                         <div class="input-box4">
-                            <input type="text" placeholder="الأسم" name="project_name2">
+                            <input type="text" placeholder="الأسم" name="project_name2" value="<?php echo $project_name_array[1] = $project_name_array[1] ?? ''; ?>">
                         </div>
                         <div class="input-box4">
-                            <input type="text" placeholder="بداية التاريخ" name="project_date_start2">
+                            <input type="text" placeholder="بداية التاريخ" name="project_date_start2" value="<?php echo $project_date_start_array[1] = $project_date_start_array[1] ?? ''; ?>">
                         </div>
                         <div class="input-box4 personal-history">
-                            <input type="text" placeholder="نهاية التاريخ" name="project_date_end2">
+                            <input type="text" placeholder="نهاية التاريخ" name="project_date_end2" value="<?php echo $project_date_end_array[1] = $project_date_end_array[1] ?? ''; ?>">
                         </div>
                     </div>
                 </div>
@@ -537,22 +592,22 @@ session_start();
                     <p>المشاريع الشخصية #3</p>
                     <div class="user-details4">
                         <div class="input-box4 towAria">
-                            <input class="tow-aria" type="text" placeholder="الوصف" name="project_bio3">
+                            <input class="tow-aria" type="text" placeholder="الوصف" name="project_bio3" value="<?php echo $project_bio_array[2] = $project_bio_array[2] ?? ''; ?>">
                         </div>
                         <div class="input-box4">
-                            <input type="text" placeholder="الأسم" name="project_name3">
+                            <input type="text" placeholder="الأسم" name="project_name3" value="<?php echo $project_name_array[2] = $project_name_array[2] ?? ''; ?>">
                         </div>
                         <div class="input-box4">
-                            <input type="text" placeholder="بداية التاريخ" name="project_date_start3">
+                            <input type="text" placeholder="بداية التاريخ" name="project_date_start3" value="<?php echo $project_date_start_array[2] = $project_date_start_array[2] ?? ''; ?>">
                         </div>
                         <div class="input-box4 personal-history">
-                            <input type="text" placeholder="نهاية التاريخ" name="project_date_end3">
+                            <input type="text" placeholder="نهاية التاريخ" name="project_date_end3" value="<?php echo $project_date_end_array[2] = $project_date_end_array[2] ?? ''; ?>">
                         </div>
                     </div>
                 </div>
                 <hr>
                 <br>
-                <button class="button" type="submit" name="imageUpload">upload</button>
+                <button class="button" type="submit" name="imageUpload">حفظ</button>
             </form>
         </div>
     </div>
