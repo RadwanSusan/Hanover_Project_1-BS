@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic&family=Roboto:wght@100&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+/* input {
+  text-align: right;
+} */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Noto Sans Arabic', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+::-webkit-scrollbar-track {
+  /* -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); */
+  background-color: #F5F5F5;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+  background-image: -webkit-gradient(linear,
+      left bottom,
+      left top,
+      color-stop(0.44, rgb(129, 129, 129)),
+      color-stop(0.72, rgb(55, 55, 55)),
+      color-stop(0.86, rgb(30, 30, 30)));
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+header {
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  background: linear-gradient(180deg, rgba(0, 90, 173, 0.11) -74.71%, rgba(0, 0, 0, 0.11) 25.29%);
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  min-height: 97px;
+}
+
+header .container>a {
+  text-decoration: none;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+}
+
+header .logo img {
+  height: 50px;
+}
+
+header .logo p {
+  font-size: 20px;
+  font-weight: 700;
+  margin-left: 10px;
+  font-family: 'Kantumruy';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  color: black;
+}
+
+header nav {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+header nav .toggle-menu {
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  header nav .toggle-menu {
+    display: none;
+  }
+}
+
+header nav ul {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 767px) {
+  header nav ul {
+    display: none;
+  }
+
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+header nav ul li a {
+  width: 94px;
+  text-align: center;
+  padding: 2px 4px;
+  display: block;
+  text-decoration: none;
+  font-family: 'Noto Sans Arabic';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  transition: 0.3s;
+  position: relative;
+  z-index: 2;
+  color: #000000;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(4px);
+  border-radius: 7px;
+  margin-left: 10px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid #000000;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+}
+
+header nav ul li a:hover {
+  background-color: rgb(222 225 227);
+  padding: 7px;
+}
+.title {
+  position: relative;
+    text-align: center;
+    font-family: 'Noto Sans Arabic';
+font-style: normal;
+font-weight: 500;
+font-size: 35px;
+line-height: 125px;
+}
+
+
+.landing-content {
+  padding-top: 25px;
+    text-align: end;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+}
+.square {
+    width: 300px;
+    height: 250px;
+    border: 1px solid #000000;
+filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.25));
+border-radius: 13px;
+}
+.info {
+  font-family: 'Noto Sans Arabic';
+font-style: normal;
+font-weight: 700;
+font-size: 13px;
+padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+}
+ul {
+  padding: 15px;
+}
+ul li {
+  padding: 10px;
+}
+.user-details {
+  padding: 15px;
+}
+.user-label {
+  position: absolute;
+  left: 50px;
+  color: #b0b0b0;
+  pointer-events: none;
+  transform: translateY(1rem);
+  transition: 150ms cubic-bezier(0.4,0,0.2,1);
+ }
+.user-details .input-box input {
+  width: 268px;
+  height: 40px;
+  border: solid 1.5px #9e9e9e;
+  border-radius: 0.5rem;
+  background: none;
+  padding: 1rem;
+  font-size: 1rem;
+  color: rgb(176 159 159);
+  transition: border 150ms cubic-bezier(0.4,0,0.2,1);
+}
+.user-details .input-box input:focus, .user-details .input-box input:valid {
+  outline: none;
+  border: 1.5px solid #000000;
+ }
+ 
+ .user-details .input-box input:focus ~ label, .user-details .input-box input:valid ~ label {
+  transform: translateY(-50%) scale(0.8);
+    background-color: #f5f5f5;
+    padding: 0px 0.2em;
+    color: rgb(10, 10, 10);
+    border-radius: 5px;
+    border: 1px solid rgb(0, 0, 0);
+ }
+ .pass {
+  margin-top: 20px;
+ }
+ .label1 {
+  top: 74px;
+ }
+ .label2 {
+  top: 135px;
+ }
+ .form1 {
+  margin-top: 10px;
+ }
+ .form1 button {
+  transform: translateX(-110px);
+  background: #F3F3F3;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  font-family: 'Noto Sans Arabic';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  width: 88px;
+ }
+ .landing-info2 {
+  padding-top: 30px;
+    padding-bottom: 30px;
+ }
+ .landing-content2 {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around  
+}
+ .rotation p {
+  width: 220px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 8px;
+    height: 35px;
+ }
+ .square2 {
+  text-align: end;
+ }
+ .user-label2 {
+  position: absolute;
+  right: 188px;
+    color: #b0b0b0;
+    pointer-events: none;
+    transform: translateY(1rem);
+    transition: 150ms cubic-bezier(0.4,0,0.2,1);
+ }
+ .label3 {
+  margin-top: -6px;
+ }
+ .label4 {
+  margin-top: 15px;
+ }
+ .details-company {
+  height: 100px !important;
+ }
+ .square2 {
+  width: 300px;
+    height: 540px;
+    border: 1px solid #000000;
+    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.25));
+    border-radius: 13px;
+ }
+ .Hanover-company {
+  position: relative;
+  background: #FFFFFF;
+border: 1px solid #000000;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 8px;
+margin-bottom: 20px;
+ } 
+ .Hanover-company::before {
+  content: "×";
+  position: absolute;
+  left: 12px;
+  top: 4px;
+  cursor: pointer;
+  font-size: 27px;
+  font-weight: bold;
+ }
+ .sub-comp {
+  transform: translateX(-110px);
+    background: #F3F3F3;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    font-family: 'Noto Sans Arabic';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    width: 88px;
+ }
+ .phone-label4 {
+  position: absolute;
+  right: 140px !important;
+ }
+ .square2-hight {
+  height: 420px !important;
+ }
+ @media (max-width: 768px) {
+  .landing-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .square {
+    margin: auto;
+    margin-bottom: 20px;
+  }
+  .landing-content2 {
+    display: flex;
+    flex-direction: column;
+  }
+  .square2 {
+    margin: auto;
+    margin-bottom: 20px;
+  }
+}
