@@ -18,10 +18,7 @@ a.addEventListener("click", () => {
 	if (b != "" && b.replace(/\s/g, "").length) {
 		const list_form = document.createElement("li");
 		list_form.classList.add("list-form");
-		l = document.querySelector(".HiddenInput1").value.split(",").length;
-		if (l == 1) {
-			l = 0;
-		}
+		l = document.querySelector(".HiddenInput1").value.split(",").length - 1;
 		list_form.classList.add(l);
 		++l;
 		list_form.innerHTML = b;
@@ -62,10 +59,7 @@ a2.addEventListener("click", () => {
 	if (b != "" && b.replace(/\s/g, "").length) {
 		const list_form = document.createElement("li");
 		list_form.classList.add("list-form");
-		l2 = document.querySelector(".HiddenInput2").value.split(",").length;
-		if (l2 == 1) {
-			l2 = 0;
-		}
+		l2 = document.querySelector(".HiddenInput2").value.split(",").length - 1;
 		list_form.classList.add(l2);
 		++l2;
 		list_form.innerHTML = b;
@@ -106,10 +100,7 @@ a3.addEventListener("click", () => {
 	if (b != "" && b.replace(/\s/g, "").length) {
 		const list_form = document.createElement("li");
 		list_form.classList.add("list-form");
-		l3 = document.querySelector(".HiddenInput3").value.split(",").length;
-		if (l3 == 1) {
-			l3 = 0;
-		}
+		l3 = document.querySelector(".HiddenInput3").value.split(",").length - 1;
 		list_form.classList.add(l3);
 		++l3;
 		list_form.innerHTML = b;
@@ -149,10 +140,7 @@ a4.addEventListener("click", () => {
 	if (b != "" && b.replace(/\s/g, "").length) {
 		const list_form = document.createElement("li");
 		list_form.classList.add("list-form");
-		l4 = document.querySelector(".HiddenInput4").value.split(",").length;
-		if (l4 == 1) {
-			l4 = 0;
-		}
+		l4 = document.querySelector(".HiddenInput4").value.split(",").length - 1;
 		list_form.classList.add(l4);
 		++l4;
 		list_form.innerHTML = b;
@@ -193,10 +181,7 @@ a5.addEventListener("click", () => {
 	if (b != "" && b.replace(/\s/g, "").length) {
 		const list_form = document.createElement("li");
 		list_form.classList.add("list-form");
-		l5 = document.querySelector(".HiddenInput51").value.split(",").length;
-		if (l5 == 1) {
-			l5 = 0;
-		}
+		l5 = document.querySelector(".HiddenInput51").value.split(",").length - 1;
 		list_form.classList.add(l5);
 		++l5;
 		list_form.innerHTML = b;
@@ -237,10 +222,7 @@ a6.addEventListener("click", () => {
 	if (b != "" && b.replace(/\s/g, "").length) {
 		const list_form = document.createElement("li");
 		list_form.classList.add("list-form");
-		l6 = document.querySelector(".HiddenInput52").value.split(",").length;
-		if (l6 == 1) {
-			l6 = 0;
-		}
+		l6 = document.querySelector(".HiddenInput52").value.split(",").length - 1;
 		list_form.classList.add(l6);
 		++l6;
 		list_form.innerHTML = b;
@@ -281,10 +263,7 @@ a7.addEventListener("click", () => {
 	if (b != "" && b.replace(/\s/g, "").length) {
 		const list_form = document.createElement("li");
 		list_form.classList.add("list-form");
-		l7 = document.querySelector(".HiddenInput53").value.split(",").length;
-		if (l7 == 1) {
-			l7 = 0;
-		}
+		l7 = document.querySelector(".HiddenInput53").value.split(",").length - 1;
 		list_form.classList.add(l7);
 		++l7;
 		list_form.innerHTML = b;
