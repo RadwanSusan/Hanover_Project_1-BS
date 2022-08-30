@@ -19,22 +19,21 @@
     </script>
     <header>
         <div class="container">
-            <a href="#" class="logo">
+            <a href="home.php" class="logo">
                 <img src="../MEDIA/image/Logo.svg" alt="logo">
                 <p>Business City</p>
             </a>
-            <nav>
-                <i class="toggle-menu">
-                    <img class="image1" src="../MEDIA/image/bi_list.svg" alt="menu">
-                </i>
+            <div class="navBar_buttons">
                 <ul class="list">
-                    <li class="list1"><a href="#" class="hvr-pulse-shrink">تواصل معنا</a></li>
-                    <li class="list1"><a href="#" class="hvr-pulse-shrink">من نحن</a></li>
-                    <li class="list1"><a href="#" class="hvr-pulse-shrink">خدماتنا</a></li>
-                    <li class="Active list1"><a href="#" class="hvr-pulse-shrink">الرئيسية</a></li>
-                    <li class=" list1"><a href="login.php" class="hvr-pulse-shrink">تسجيل الدخول</a></li>
+                    <li class="list1"><a class="hvr-shrink" href="#who">من نحن</a></li>
+                    <li class="list1"><a class="hvr-shrink" href="#ser">خدماتنا</a></li>
+                    <li class="list1"><a class="hvr-shrink" href="#">الرئيسية</a></li>
+                    <li class="list1 listS"><a class="hvr-shrink" href="login.php">تسجيل الدخول</a></li>
                 </ul>
-            </nav>
+            </div>
+            <div class="mobileDropMenu toggle-menu">
+                <img src="../MEDIA/image/bi_list.svg" alt="">
+            </div>
         </div>
     </header>
     <div class="landing">
@@ -53,35 +52,35 @@
             <div class="main-heading">
                 <h2>خدماتنا</h2>
             </div>
-            <div class="services-container">
-                <div class="srv-box slide-top" data-aos="fade-up" data-aos-anchor-placement="top-center">
+            <div id="ser" class="services-container">
+                <div class="srv-box slide-top" data-aos="fade-up" data-aos-anchor-placement="top">
                     <img src="../MEDIA/image/imageSrv1.svg" alt="">
                     <div class="text">
                         <h3>خدمة بناء السيرة الذاتية</h3>
                         <p>.دریگ رارق هدافتسا دروم اساسا یحارط دوجوم یاینداش زاین دروم نامزو دسر نایاپ هب تارت تاتار
                             تارتار تارتار منةمن ةة منةمنة ةمن ة خنكخن نكنكن ك ن كن را را ل لبء بيء ب ءيبي ءبي ءب يءب
                             يءيب رءبي پیات تخس</p>
-                        <button class="hvr-wobble-to-top-right">المزيد</button>
+                        <button class="hvr-shrink">المزيد</button>
                     </div>
                 </div>
-                <div class="srv-box slide-top" data-aos="fade-up" data-aos-anchor-placement="top-center">
+                <div class="srv-box slide-top" data-aos="fade-up" data-aos-anchor-placement="top">
                     <img src="../MEDIA/image/imageSrv2.svg" alt="">
                     <div class="text">
                         <h3>خدمة البحث عن فرص تدريب</h3>
                         <p>.دریگ رارق هدافتسا دروم اساسا یحارط دوجوم یاینداش زاین در غلا ت لاتا لات الات لا تلا تالا ت ا
                             لاتا لاعغ غقؤ فق ءثق ءقث ءق ع ىم تةم ختمه تم هت مه مه تم تمه فبع ث سص سثص س ثوم نامزو دسر
                             نایاپ هب پیات تخس</p>
-                        <button class="hvr-wobble-to-top-right">المزيد</button>
+                        <button class="hvr-shrink">المزيد</button>
                     </div>
                 </div>
-                <div class="srv-box slide-top" data-aos="fade-up" data-aos-anchor-placement="top-center">
+                <div class="srv-box slide-top" data-aos="fade-up" data-aos-anchor-placement="top">
                     <img src="../MEDIA/image/imageSrv3.svg" alt="">
                     <div class="text">
                         <h3>خدمة الدورات التعليمية</h3>
                         <p>.دریگ رارق هدافتسا دروم اساسا یحارط دوجوم یاینداش زاین در غلا ت لاتا لات الات لا تلا تالا ت ا
                             لاتا لاعغ غقؤ فق ءثق ءقث ءق ع ىم تةم ختمه تم هت مه مه تم تمه فبع ث سص سثص س ثوم نامزو دسر
                             نایاپ هب پیات تخس</p>
-                        <button class="hvr-wobble-to-top-right">المزيد</button>
+                        <button class="hvr-shrink">المزيد</button>
                     </div>
                 </div>
             </div>
@@ -90,7 +89,7 @@
     <div class="main-heading DIR">
         <h2>من نحن</h2>
     </div>
-    <div class="design">
+    <div id="who" class="design">
         <div class="image">
             <img src="../MEDIA/image/AboutImge.svg" alt="mobil">
         </div>

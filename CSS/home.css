@@ -8,9 +8,11 @@
     margin: 0;
 }
 
-html {
+html,
+body {
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
 }
 
 p {
@@ -89,18 +91,18 @@ header .logo {
 }
 
 header .logo img {
-    height: 40px;
+    height: 50px;
 }
 
 header .logo p {
     font-size: 20px;
     font-weight: 700;
-    margin-left: 10px;
-    font-family: 'Kantumruy';
+    margin-left: 18px;
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 30px;
-    color: #D1D1D1;
+    color: #fff;
 }
 
 header nav {
@@ -196,7 +198,7 @@ header nav ul li a:hover {
 }
 
 .landing .text .content h2 {
-    font-family: 'Noto Sans Arabic';
+    font-family: 'Noto Sans Arabic', "Roboto";
     font-style: normal;
     font-weight: 700;
     font-size: 30px;
@@ -327,8 +329,6 @@ header nav ul li a:hover {
     border: none;
     cursor: pointer;
     transition: 0.3s;
-    background: #D9D9D9;
-    box-shadow: 1px 4px 4px 1px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
     font-family: 'Italiana';
     font-style: normal;
@@ -338,13 +338,11 @@ header nav ul li a:hover {
     position: relative;
     top: 35px;
     left: -240px;
+    border: 1px solid rgb(122, 122, 122);
 }
 
 .services .srv-box .text button:hover {
-    background: rgb(177 163 163 / 76%);
     color: rgb(4, 4, 4);
-    padding: 6px 18px;
-    border-radius: 10px;
 }
 
 @media (max-width: 767px) {
@@ -649,13 +647,160 @@ header nav ul li a:hover {
     }
 }
 
+.navBar_box {
+    position: fixed;
+    width: 100%;
+    height: 91px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.11) 0%, rgba(235, 237, 239, 0) 100%);
+    z-index: 10;
+}
+
+.logoBox {
+    position: fixed;
+    width: 300px;
+    height: 91px;
+    display: flex;
+    justify-items: flex-start;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.logoBox img {
+    width: 50px;
+    height: 57.16px;
+    margin-top: 10px;
+}
+
+.logoBox a {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    list-style: none;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 30px;
+    color: #424242;
+    margin-left: 10px;
+}
+
+.navBar_buttons {
+    position: absolute;
+    top: 2px;
+    right: 0px;
+    display: inline;
+    width: 500px;
+    height: 91px;
+    justify-items: flex-end;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.navBar_buttons ul {
+    width: 500px;
+    height: 91px;
+    display: flex;
+    list-style: none;
+    margin-right: 20px;
+}
+
+.navBar_buttons ul li {
+    list-style: none;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    width: 101px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #000000;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 7px;
+    margin: auto;
+}
+
+.listS {
+    width: 140px !important;
+}
+
+.navBar_buttons ul li:hover {
+    background: rgba(195, 195, 195, 0.9);
+}
+
+.navBar_buttons ul li a {
+    font-family: 'Noto Sans Arabic', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 19px;
+    color: #000000;
+    text-decoration: none;
+    margin: auto;
+}
+
+.mobileDropMenu {
+    position: fixed;
+    top: 22px;
+    right: 25px;
+    display: none;
+}
+
+.mobileDropMenu img {
+    width: 40px;
+    height: 40px;
+}
+
+@media screen and (max-width: 900px) {
+    .navBar_buttons ul li {
+        width: 80px;
+        height: 40px;
+    }
+
+    .navBar_buttons ul li a {
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .navBar_box {
+        height: 80px;
+    }
+
+    .navBar_buttons {
+        height: 80px;
+    }
+
+    .navBar_buttons ul li {
+        display: none;
+    }
+
+    /* .navBar_buttons ul li a {
+        display: none;
+    } */
+
+    .logoBox {
+        height: 80px;
+    }
+
+    .logoBox img {
+        width: 37px;
+        height: 42.3px;
+        margin-top: 10px;
+    }
+
+    .logoBox a {
+        font-size: 24px;
+    }
+
+    .mobileDropMenu {
+        display: block;
+    }
+}
+
 .show1 {
     display: flex;
     flex-direction: column;
     position: absolute;
     top: 72%;
     left: 55%;
-    width: 40%;
+    width: 40% !important;
+    height: auto !important;
     background-color: rgba(214, 202, 202, 0.5);
 }
 
@@ -664,8 +809,9 @@ header nav ul li a:hover {
 }
 
 .show3 {
-    padding: 10px;
+    padding: 12px;
     background: none;
     border-radius: 0;
     backdrop-filter: blur(0px);
+    display: inline !important;
 }

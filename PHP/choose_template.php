@@ -15,8 +15,19 @@ session_start();
    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
    <link rel="stylesheet" href="../Hover-css/hover.min.css.css">
-   <link rel="stylesheet" href="../CSS/choose_template.css">
    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+   <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css" />
+   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css" />
+   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
+   <link rel="stylesheet" href="../CSS/choose_template.css">
+   <script type="text/javascript">
+      function alert(message) {
+         alertify.defaults.glossary.title = 'My Title';
+         alertify.alert("Business City", message);
+      }
+   </script>
 </head>
 
 <body>
@@ -25,19 +36,8 @@ session_start();
    </script>
    <div class="navBar_box">
       <div class="logoBox">
-         <a href=""><img src="../MEDIA/Logo(chooseT).svg" alt="logo" class="logo"></a>
-         <a href="">Business City</a>
-      </div>
-      <div class="navBar_buttons">
-         <ul class="list">
-            <li class="list1"><a class="hvr-pulse-shrink" href="#">النهائية</a></li>
-            <li class="list1"><a class="hvr-pulse-shrink" href="#">من نحن</a></li>
-            <li class="list1"><a class="hvr-pulse-shrink" href="#">خدماتنا</a></li>
-            <li class="list1"><a class="hvr-pulse-shrink" href="../HTML/choose_template.html">الرئيسية</a></li>
-         </ul>
-      </div>
-      <div class="mobileDropMenu toggle-menu">
-         <img src="../MEDIA/DropDown(chooseT).svg" alt="">
+         <a href="home.php"><img src="../MEDIA/Logo(chooseT).svg" alt="logo" class="logo"></a>
+         <a href="home.php">Business City</a>
       </div>
    </div>
    <div class="header">
@@ -135,13 +135,13 @@ session_start();
             $message2 = $_POST["message5"];
             $sql3 = "INSERT INTO contact_users (email,phone_number,message2) VALUES ('$email','$phoneNumber','$message2')";
             mysqli_query($conn, $sql3);
-            echo '<script type="text/javascript">alert("Account Created Successfully");</script>';
+            echo '<script type="text/javascript">alert("تم إرسال طلبك بنجاح");</script>';
          }
          ?>
          <form action="" method="POST">
-            <input type="text" placeholder="الإيميل" name="emailUser" dir="rtl">
-            <input type="text" placeholder="رقم الهاتف" name="phone" dir="rtl">
-            <textarea dir="rtl" id="" cols="30" name="message5" rows="20" placeholder="الرسالة"></textarea>
+            <input type="text" placeholder="الإيميل" name="emailUser" dir="rtl" required>
+            <input type="text" placeholder="رقم الهاتف" name="phone" dir="rtl" required>
+            <textarea required dir="rtl" id="" cols="30" name="message5" rows="20" placeholder="الرسالة"></textarea>
             <button type="submit" name="ContactInfo">إرسال</button>
          </form>
       </div>

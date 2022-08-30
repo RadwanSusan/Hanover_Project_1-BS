@@ -12,27 +12,28 @@ session_start();
    <title>login</title>
    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" />
    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css" />
+   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css" />
+   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
    <link rel="stylesheet" href="../CSS/login.css">
+   <script type="text/javascript">
+      function alert(message) {
+         alertify.defaults.glossary.title = 'My Title';
+         alertify.alert("Business City", message);
+      }
+   </script>
 </head>
 
 <body>
    <div class="navBar_box">
       <div class="logoBox">
-         <a href=""><img src="../MEDIA/Logo(chooseT).svg" alt="logo" class="logo"></a>
-         <a href="">Business City</a>
+         <a href="home.php"><img src="../MEDIA/Logo(chooseT).svg" alt="logo" class="logo"></a>
+         <a href="home.php">Business City</a>
       </div>
-      <div class="navBar_buttons">
-         <ul class="list">
-            <li class="list1"><a class="hvr-pulse-shrink" href="#">النهائية</a></li>
-            <li class="list1"><a class="hvr-pulse-shrink" href="#">من نحن</a></li>
-            <li class="list1"><a class="hvr-pulse-shrink" href="#">خدماتنا</a></li>
-            <li class="list1"><a class="hvr-pulse-shrink" href="../HTML/choose_template.html">الرئيسية</a></li>
-         </ul>
-      </div>
-
    </div>
    <div class="pen-title">
-      <h1>تسجيل الدخول السيرة الذاتية</h1>
+      <h1>تسجيل الدخول</h1>
    </div>
    <div class="container">
       <div class="card"></div>
