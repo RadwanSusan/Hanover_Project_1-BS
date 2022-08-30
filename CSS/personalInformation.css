@@ -222,6 +222,8 @@ header nav ul li a:hover {
   line-height: 116px;
   color: #000000;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  text-decoration: underline;
+  text-underline-offset: 17px;
 }
 
 .landing-info .container .user-details {
@@ -399,13 +401,6 @@ header nav ul li a:hover {
   margin: auto;
 }
 
-
-
-
-
-
-
-
 .form2 {
   margin-top: 100px;
 }
@@ -483,7 +478,7 @@ header nav ul li a:hover {
   width: fit-content;
   margin-top: 100px;
   margin-bottom: 100px;
-  border: 7px solid #878787;
+  border: 7px solid #c8c8c8;
   border-radius: 10px;
   padding: 20px;
   background: #FFFFFF;
@@ -504,20 +499,18 @@ header nav ul li a:hover {
   }
 }
 
-
 .threeAria {
   grid-row: 1/4;
 }
 
-
-
 .user-details3 .input-box3 input {
   padding: 10px;
   width: 295px;
-  height: 39px;
+  height: 50px;
   background: #FFFFFF;
   border-radius: 7px;
   margin: 10px;
+  border: 1px solid #000;
 }
 
 .form4 {
@@ -525,7 +518,7 @@ header nav ul li a:hover {
   width: fit-content;
   margin-top: 100px;
   margin-bottom: 100px;
-  border: 7px solid #878787;
+  border: 7px solid #c8c8c8;
   border-radius: 10px;
   padding: 20px;
   background: #FFFFFF;
@@ -547,9 +540,10 @@ header nav ul li a:hover {
 .user-details4 .input-box4 input {
   padding: 10px;
   width: 295px;
-  height: 39px;
+  height: 50px;
   background: #FFFFFF;
   border-radius: 7px;
+  border: 1px solid #000;
 }
 
 .tow-aria {

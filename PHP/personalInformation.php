@@ -220,7 +220,8 @@ session_start();
                         <label class="user-label">الوصف الشخصي</label>
                     </div>
                 </div>
-                <div class="line"></div>
+                <br>
+                <hr>
                 <div class="form2">
                     <div class="user-details2">
                         <div class="input-box2">
@@ -315,6 +316,7 @@ session_start();
                         </div>
                     </div>
                 </div>
+                <hr>
                 <div class="form3">
                     <p> التعليم #1 </p>
                     <div class="user-details3">
@@ -405,6 +407,7 @@ session_start();
                         </div>
                     </div>
                 </div>
+                <hr>
                 <div class="form3">
                     <p> الخبرات العملية #1 </p>
                     <div class="user-details3">
@@ -495,7 +498,7 @@ session_start();
                         </div>
                     </div>
                 </div>
-
+                <hr>
                 <div class="form4">
                     <p> #1 المشاريع الشخصية</p>
                     <div class="user-details4">
@@ -547,6 +550,8 @@ session_start();
                         </div>
                     </div>
                 </div>
+                <hr>
+                <br>
                 <button class="button" type="submit" name="imageUpload">upload</button>
             </form>
         </div>
