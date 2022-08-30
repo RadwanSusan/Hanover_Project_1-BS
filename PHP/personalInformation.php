@@ -29,9 +29,9 @@ session_start();
 <body>
     <header>
         <div class="container">
-            <a href="#" class="logo">
-                <img src="../MEDIA/image/Logo.svg" alt="logo">
-                <p>business city</p>
+            <a href="home.php" class="logo">
+                <img src="../MEDIA/Logo(chooseT).svg" alt="logo">
+                <p>Business City</p>
             </a>
         </div>
     </header>
