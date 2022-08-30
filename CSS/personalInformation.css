@@ -248,74 +248,84 @@ header nav ul li a:hover {
   height: 75px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+
 .user-label {
   position: absolute;
   left: 50px;
   color: #b0b0b0;
   pointer-events: none;
   transform: translateY(1rem);
-  transition: 150ms cubic-bezier(0.4,0,0.2,1);
- }
- .user-label2 {
+  transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.user-label2 {
   position: absolute;
   left: 440px;
   color: #e8e8e8;
   pointer-events: none;
   transform: translateY(1rem);
-  transition: 150ms cubic-bezier(0.4,0,0.2,1);
- }
- .user-label3 {
+  transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.user-label3 {
   position: absolute;
   left: 820px;
   color: #e8e8e8;
   pointer-events: none;
   transform: translateY(0.8rem);
-  transition: 150ms cubic-bezier(0.4,0,0.2,1);
- }
- 
+  transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 @media (min-width: 992px) and (max-width: 1198px) {
   .user-label {
     position: absolute;
     left: 33px;
   }
+
   .user-label2 {
     position: absolute;
     left: 370px;
   }
+
   .user-label3 {
     position: absolute;
     left: 705px;
   }
 }
+
 @media (min-width: 768px) and (max-width: 991px) {
   .user-label {
     position: absolute;
     left: 33px;
   }
+
   .user-label2 {
     position: absolute;
     left: 405px;
   }
+
   .user-label3 {
     position: absolute;
     left: 405px;
   }
 }
+
 @media (max-width: 767px) {
   .user-label {
     position: absolute;
     left: 80px;
   }
+
   .user-label2 {
     position: absolute;
     left: 80px;
   }
+
   .user-label3 {
     position: absolute;
     left: 80px;
   }
 }
-
 
 .container .user-details .input-box input {
   width: 300px;
@@ -326,33 +336,24 @@ header nav ul li a:hover {
   padding: 1rem;
   font-size: 1rem;
   color: rgb(176 159 159);
-  transition: border 150ms cubic-bezier(0.4,0,0.2,1);
+  transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.user-details .input-box input:focus, .user-details .input-box input:valid {
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid {
   outline: none;
   border: 1.5px solid #000000;
- }
- 
- .user-details .input-box input:focus ~ label, .user-details .input-box input:valid ~ label {
-  transform: translateY(-50%) scale(0.8);
-    background-color: #f5f5f5;
-    padding: 0px 0.2em;
-    color: rgb(10, 10, 10);
-    border-radius: 5px;
-    border: 1px solid rgb(0, 0, 0);
- }
+}
 
-/* input::placeholder {
-  color: #000000;
-  text-align: end;
-  font-family: 'Noto Sans Arabic';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 33px;
-  color: #8F8F8F;
-  padding: 10px;
-} */
+.user-details .input-box input:focus~label,
+.user-details .input-box input:valid~label {
+  transform: translateY(-50%) scale(0.8);
+  background-color: #f5f5f5;
+  padding: 0px 0.2em;
+  color: rgb(10, 10, 10);
+  border-radius: 5px;
+  border: 1px solid rgb(0, 0, 0);
+}
 
 .personal-desc {
   grid-row: 3/5;
@@ -399,7 +400,7 @@ header nav ul li a:hover {
 }
 
 
- 
+
 
 
 
@@ -412,13 +413,12 @@ header nav ul li a:hover {
 .user-details2 {
   display: flex;
   justify-content: space-between;
-  /* align-items: center; */
 }
 
 .input-box2 input {
-  padding: 10px;
+  padding: 14px;
   width: 450px;
-  height: 39px;
+  height: 50px;
   background: #FFFFFF;
   border: 1px solid #000000;
   border-radius: 7px;
@@ -550,7 +550,6 @@ header nav ul li a:hover {
   margin-bottom: 100px;
   display: flex;
   justify-content: space-between;
-  /* align-items: center; */
 }
 
 .user-details5 {
@@ -563,9 +562,9 @@ header nav ul li a:hover {
 }
 
 .input-box5 input {
-  padding: 10px;
+  padding: 14px;
   width: 450px;
-  height: 39px;
+  height: 50px;
   background: #FFFFFF;
   border: 1px solid #000000;
   border-radius: 7px;
@@ -573,28 +572,30 @@ header nav ul li a:hover {
 
 .list-form {
   min-width: 70px;
-    padding: 5px;
+  padding: 5px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: fit-content;
   flex-direction: row-reverse;
-  border: 2px solid;
+  border: 2px solid #b1b1b1;
   margin: 6px;
-  padding: 3spx;
-  border-radius: 7px
+  padding: 10px;
+  border-radius: 7px;
 }
+
 @media (max-width: 767px) {
   .list-form {
     width: 265px;
   }
-  .Artistic_skills,
-.Personal_skills,
-.important_skill,
-.lang_skill {
 
-  width: 330px;
-}
+  .Artistic_skills,
+  .Personal_skills,
+  .important_skill,
+  .lang_skill {
+
+    width: 330px;
+  }
 }
 
 .history {
@@ -749,25 +750,27 @@ header nav ul li a:hover {
 .fa-minus {
   display: flex !important;
   justify-content: center !important;
-  padding: 3px !important;
-  border: 1px solid !important;
-  border-radius: 50% !important;
-  background: coral !important;
-  margin-top: 2px;
-  margin: 3px;
-  margin-right: 10px;
-}
-
-.inc {
   padding: 4px !important;
   border: 1px solid !important;
   border-radius: 50% !important;
-  background: aquamarine;
+  background: #ffac8f !important;
+  margin-top: 2px;
+  margin: 3px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.inc {
+  padding: 5px !important;
+  border: 1px solid !important;
+  border-radius: 50% !important;
+  background: #c9ffed;
+  cursor: pointer;
 }
 
 
 .inc1 {
-  margin-left: 4px;
+  margin-left: 5px;
 }
 
 canvas {
@@ -823,11 +826,12 @@ canvas {
 .count-particles {
   border-radius: 0 0 3px 3px;
 }
+
 .button {
   position: relative;
   left: -50%
-
 }
+
 .button {
   transform: translateX(50%);
   --color: #EBEBEB;
@@ -845,41 +849,42 @@ canvas {
   text-transform: uppercase;
   color: #000000;
   z-index: 1;
- }
+}
 
-.button::before, .button::after {
- content: '';
- display: block;
- width: 50px;
- height: 50px;
- transform: translate(-50%, -50%);
- position: absolute;
- border-radius: 50%;
- z-index: -1;
- background-color: var(--color);
- transition: 1s ease;
+.button::before,
+.button::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  background-color: var(--color);
+  transition: 1s ease;
 }
 
 .button::before {
- top: -1em;
- left: -1em;
+  top: -1em;
+  left: -1em;
 }
 
 .button::after {
- left: calc(100% + 1em);
- top: calc(100% + 1em);
+  left: calc(100% + 1em);
+  top: calc(100% + 1em);
 }
 
-.button:hover::before, .button:hover::after {
- height: 410px;
- width: 410px;
+.button:hover::before,
+.button:hover::after {
+  height: 410px;
+  width: 410px;
 }
 
 .button:hover {
- color: rgb(10, 25, 30);
+  color: rgb(10, 25, 30);
 }
 
 .button:active {
- filter: brightness(.8);
+  filter: brightness(.8);
 }
-

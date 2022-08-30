@@ -47,16 +47,16 @@ session_start();
                 $result = mysqli_query($conn, $sql);
                 $rowV = mysqli_fetch_assoc($result);
                 $Personal_skills_array =  $rowV["Personal_skills"];
-                $Personal_skills_array = explode(' ', $Personal_skills_array);
+                $Personal_skills_array = explode(',', $Personal_skills_array);
                 array_pop($Personal_skills_array);
                 $Artistic_skills_array =  $rowV["Artistic_skills"];
-                $Artistic_skills_array = explode(' ', $Artistic_skills_array);
+                $Artistic_skills_array = explode(',', $Artistic_skills_array);
                 array_pop($Artistic_skills_array);
                 $hobbies_array =  $rowV["hobbies"];
-                $hobbies_array = explode(' ', $hobbies_array);
+                $hobbies_array = explode(',', $hobbies_array);
                 array_pop($hobbies_array);
                 $user_language_array =  $rowV["user_language"];
-                $user_language_array = explode(' ', $user_language_array);
+                $user_language_array = explode(',', $user_language_array);
                 array_pop($user_language_array);
             } else {
                 $sql = "select * from cv_form where form_ID = '" . $row66["form_id"] . "'";
@@ -206,12 +206,10 @@ session_start();
                     <div class="input-box input-box-name ">
                         <input type="text" name="user_name" required value="<?php echo $rowV['user_name'] = $rowV['user_name'] ?? ''; ?>">
                         <label class="user-label3">الأسم</label>
-
                     </div>
                     <div class="input-box input-box-phone">
                         <input type="text" name="phone_number" required value="<?php echo $rowV['phone_number'] = $rowV['phone_number'] ?? ''; ?>">
                         <label class="user-label">رقم الهاتف</label>
-
                     </div>
                     <div class="input-box">
                         <input type="email" name="user_email" required value="<?php echo $rowV['user_email'] = $rowV['user_email'] ?? ''; ?>">
@@ -238,10 +236,14 @@ session_start();
                             <ul class="Artistic_skills">
                                 <?php
                                 $num = 0;
-                                foreach ($Artistic_skills_array as $skill) {
-                                    echo "<li class='list-form $num'>$skill";
-                                    echo '<div class="add_Pskill AKill"><i class="fa-solid fa-minus"></i></div></li>';
-                                    ++$num;
+                                if (isset($Artistic_skills_array)) {
+                                    foreach ($Artistic_skills_array as $skill) {
+                                        if ($skill && trim($skill)) {
+                                            echo "<li class='list-form $num'>$skill";
+                                            echo '<div class="add_Pskill AKill"><i class="fa-solid fa-minus"></i></div></li>';
+                                            ++$num;
+                                        }
+                                    }
                                 }
                                 ?>
                             </ul>
@@ -255,10 +257,14 @@ session_start();
                             <ul class="Personal_skills">
                                 <?php
                                 $num = 0;
-                                foreach ($Personal_skills_array as $skill) {
-                                    echo "<li class='list-form $num'>$skill";
-                                    echo '<div class="add_Pskill PKill"><i class="fa-solid fa-minus"></i></div></li>';
-                                    ++$num;
+                                if (isset($Personal_skills_array)) {
+                                    foreach ($Personal_skills_array as $skill) {
+                                        if ($skill && trim($skill)) {
+                                            echo "<li class='list-form $num'>$skill";
+                                            echo '<div class="add_Pskill PKill"><i class="fa-solid fa-minus"></i></div></li>';
+                                            ++$num;
+                                        }
+                                    }
                                 }
                                 ?>
                             </ul>
@@ -271,9 +277,21 @@ session_start();
                             <div class="add-skills_input2">
                                 <input class="important" type="text" placeholder="الهوايات والأهتمامات">
                                 <input class="HiddenInput3" name="HiddenInput3" type="text" placeholder="Danger" value="<?php echo $rowV['hobbies'] = $rowV['hobbies'] ?? ''; ?>">
-                                <div class="add_vskill"><i class="fa-solid fa-plus inc inc1"></i></div>
+                                <div class="add_Vskill"><i class="fa-solid fa-plus inc inc1"></i></div>
                             </div>
                             <ul class="important_skill">
+                                <?php
+                                $num = 0;
+                                if (isset($hobbies_array)) {
+                                    foreach ($hobbies_array as $hob) {
+                                        if ($hob && trim($hob)) {
+                                            echo "<li class='list-form $num'>$hob";
+                                            echo '<div class="add_Pskill VKill"><i class="fa-solid fa-minus"></i></div></li>';
+                                            ++$num;
+                                        }
+                                    }
+                                }
+                                ?>
                             </ul>
                         </div>
                     </div>
@@ -285,6 +303,18 @@ session_start();
                                 <div class="add_kskill"><i class="fa-solid fa-plus inc inc1"></i></div>
                             </div>
                             <ul class="lang_skill">
+                                <?php
+                                $num = 0;
+                                if (isset($user_language_array)) {
+                                    foreach ($user_language_array as $lang) {
+                                        if ($lang && trim($lang)) {
+                                            echo "<li class='list-form $num'>$lang";
+                                            echo '<div class="add_Pskill KKill"><i class="fa-solid fa-minus"></i></div></li>';
+                                            ++$num;
+                                        }
+                                    }
+                                }
+                                ?>
                             </ul>
                         </div>
                     </div>

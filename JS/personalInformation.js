@@ -32,8 +32,8 @@ a.addEventListener("click", () => {
 		list_form.innerHTML = b;
 		document.querySelector(".Artistic_skills").appendChild(list_form);
 		document.querySelector(".HiddenInput1").value += b;
-		document.querySelector(".HiddenInput1").value += " ";
-		array = document.querySelector(".HiddenInput1").value.split(" ");
+		document.querySelector(".HiddenInput1").value += ",";
+		array = document.querySelector(".HiddenInput1").value.split(",");
 		array.pop();
 		document.querySelector(".Artistic_skills_input").value = "";
 		const minusAskill = document.createElement("div");
@@ -46,7 +46,7 @@ a.addEventListener("click", () => {
 		minusAskill.addEventListener("click", () => {
 			class2 = minusAskill.parentElement.classList[1];
 			array = removeFirst(array, class2);
-			const arrayString = array.join(" ");
+			const arrayString = array.join(",");
 			document.querySelector(".HiddenInput1").value = arrayString;
 			minusAskill.parentElement.remove();
 		});
@@ -56,7 +56,6 @@ a.addEventListener("click", () => {
 let l2 = 0;
 let array2 = [];
 let class3;
-
 let a2 = document.querySelector(".add_Pskill");
 a2.addEventListener("click", () => {
 	const b = document.querySelector(".Personal_skills_input").value;
@@ -68,8 +67,8 @@ a2.addEventListener("click", () => {
 		list_form.innerHTML = b;
 		document.querySelector(".Personal_skills").appendChild(list_form);
 		document.querySelector(".HiddenInput2").value += b;
-		document.querySelector(".HiddenInput2").value += " ";
-		array2 = document.querySelector(".HiddenInput2").value.split(" ");
+		document.querySelector(".HiddenInput2").value += ",";
+		array2 = document.querySelector(".HiddenInput2").value.split(",");
 		array2.pop();
 		document.querySelector(".Personal_skills_input").value = "";
 		const minusAskill = document.createElement("div");
@@ -82,7 +81,7 @@ a2.addEventListener("click", () => {
 		minusAskill.addEventListener("click", () => {
 			class3 = minusAskill.parentElement.classList[1];
 			array2 = removeFirst(array2, class3);
-			const array2String = array2.join(" ");
+			const array2String = array2.join(",");
 			document.querySelector(".HiddenInput2").value = array2String;
 			minusAskill.parentElement.remove();
 		});
@@ -92,7 +91,7 @@ a2.addEventListener("click", () => {
 let l3 = 0;
 let array3 = [];
 let class4;
-let a3 = document.querySelector(".add_vskill");
+let a3 = document.querySelector(".add_Vskill");
 a3.addEventListener("click", () => {
 	const b = document.querySelector(".important").value;
 	if (b != "") {
@@ -103,8 +102,8 @@ a3.addEventListener("click", () => {
 		list_form.innerHTML = b;
 		document.querySelector(".important_skill").appendChild(list_form);
 		document.querySelector(".HiddenInput3").value += b;
-		document.querySelector(".HiddenInput3").value += " ";
-		array3 = document.querySelector(".HiddenInput3").value.split(" ");
+		document.querySelector(".HiddenInput3").value += ",";
+		array3 = document.querySelector(".HiddenInput3").value.split(",");
 		array3.pop();
 		document.querySelector(".important").value = "";
 		const minusAskill = document.createElement("div");
@@ -117,7 +116,7 @@ a3.addEventListener("click", () => {
 		minusAskill.addEventListener("click", () => {
 			class4 = minusAskill.parentElement.classList[1];
 			array3 = removeFirst(array3, class4);
-			const array2String = array3.join(" ");
+			const array2String = array3.join(",");
 			document.querySelector(".HiddenInput3").value = array2String;
 			minusAskill.parentElement.remove();
 		});
@@ -137,8 +136,8 @@ a4.addEventListener("click", () => {
 		list_form.innerHTML = b;
 		document.querySelector(".lang_skill").appendChild(list_form);
 		document.querySelector(".HiddenInput4").value += b;
-		document.querySelector(".HiddenInput4").value += " ";
-		array4 = document.querySelector(".HiddenInput4").value.split(" ");
+		document.querySelector(".HiddenInput4").value += ",";
+		array4 = document.querySelector(".HiddenInput4").value.split(",");
 		array4.pop();
 		document.querySelector(".lang").value = "";
 		const minusAskill = document.createElement("div");
@@ -151,7 +150,7 @@ a4.addEventListener("click", () => {
 		minusAskill.addEventListener("click", () => {
 			class5 = minusAskill.parentElement.classList[1];
 			array4 = removeFirst(array4, class5);
-			const array2String = array4.join(" ");
+			const array2String = array4.join(",");
 			document.querySelector(".HiddenInput4").value = array2String;
 			minusAskill.parentElement.remove();
 		});
@@ -422,26 +421,50 @@ particlesJS("particles-js", {
 	retina_detect: true,
 });
 
-let arrayPKill = document.querySelector(".HiddenInput2").value.split(" ");
-arrayPKill.pop();
-let numberPKill;
-document.querySelectorAll(".PKill").forEach((element) => {
-	element.addEventListener("click", () => {
-		numberPKill = element.parentElement.classList[1];
-		arrayPKill = removeFirst(arrayPKill, numberPKill);
-		document.querySelector(".HiddenInput2").value = arrayPKill.join(" ");
-		element.parentElement.remove();
-	});
-});
-
-let arrayAKill = document.querySelector(".HiddenInput1").value.split(" ");
+let arrayAKill = document.querySelector(".HiddenInput1").value.split(",");
 arrayAKill.pop();
 let numberAKill;
 document.querySelectorAll(".AKill").forEach((element) => {
 	element.addEventListener("click", () => {
 		numberAKill = element.parentElement.classList[1];
 		arrayAKill = removeFirst(arrayAKill, numberAKill);
-		document.querySelector(".HiddenInput1").value = arrayAKill.join(" ");
+		document.querySelector(".HiddenInput1").value = arrayAKill.join(",");
+		element.parentElement.remove();
+	});
+});
+
+let arrayPKill = document.querySelector(".HiddenInput2").value.split(",");
+arrayPKill.pop();
+let numberPKill;
+document.querySelectorAll(".PKill").forEach((element) => {
+	element.addEventListener("click", () => {
+		numberPKill = element.parentElement.classList[1];
+		arrayPKill = removeFirst(arrayPKill, numberPKill);
+		document.querySelector(".HiddenInput2").value = arrayPKill.join(",");
+		element.parentElement.remove();
+	});
+});
+
+let arrayVKill = document.querySelector(".HiddenInput3").value.split(",");
+arrayVKill.pop();
+let numberVKill;
+document.querySelectorAll(".VKill").forEach((element) => {
+	element.addEventListener("click", () => {
+		numberVKill = element.parentElement.classList[1];
+		arrayVKill = removeFirst(arrayVKill, numberVKill);
+		document.querySelector(".HiddenInput3").value = arrayVKill.join(",");
+		element.parentElement.remove();
+	});
+});
+
+let arrayKKill = document.querySelector(".HiddenInput4").value.split(",");
+arrayKKill.pop();
+let numberKKill;
+document.querySelectorAll(".KKill").forEach((element) => {
+	element.addEventListener("click", () => {
+		numberKKill = element.parentElement.classList[1];
+		arrayKKill = removeFirst(arrayKKill, numberKKill);
+		document.querySelector(".HiddenInput4").value = arrayKKill.join(",");
 		element.parentElement.remove();
 	});
 });
