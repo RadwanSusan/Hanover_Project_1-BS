@@ -424,6 +424,17 @@ header nav ul li a:hover {
   border-radius: 7px;
 }
 
+.input-box2 input:focus {
+  outline: none;
+}
+
+.input-box5 input:focus {
+  outline: none;
+}
+
+.user-details3 .input-box3 input:focus {
+  outline: none;
+}
 
 .Artistic_skills,
 .Personal_skills,

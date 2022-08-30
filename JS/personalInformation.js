@@ -494,17 +494,21 @@ document.querySelector(".button").addEventListener("click", (e) => {
 	arrayAKill = arrayAKill.split(",");
 	arrayAKill = arrayAKill.filter((n) => n);
 	document.querySelector(".HiddenInput1").value = arrayAKill.join(",");
+
 	arrayPKill = document.querySelector(".HiddenInput2").value;
 	arrayPKill = arrayPKill.split(",");
 	arrayPKill = arrayPKill.filter((n) => n);
-	document.querySelector(".HiddenInput1").value = arrayAKill.join(",");
+	document.querySelector(".HiddenInput2").value = arrayAKill.join(",");
+
 	arrayVKill = document.querySelector(".HiddenInput3").value;
 	arrayVKill = arrayVKill.split(",");
 	arrayVKill = arrayVKill.filter((n) => n);
-	document.querySelector(".HiddenInput1").value = arrayAKill.join(",");
+	document.querySelector(".HiddenInput3").value = arrayAKill.join(",");
+
 	arrayKKill = document.querySelector(".HiddenInput4").value;
 	arrayKKill = arrayKKill.split(",");
 	arrayKKill = arrayKKill.filter((n) => n);
-	document.querySelector(".HiddenInput1").value = arrayAKill.join(",");
+	document.querySelector(".HiddenInput4").value = arrayAKill.join(",");
+
 	document.querySelector(".form1").submit();
 });
