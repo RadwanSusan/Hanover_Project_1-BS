@@ -88,7 +88,7 @@ session_start();
    <div class="chooseTbox">
       <div data-aos="fade-up" data-aos-anchor-placement="top-center" class="templateBox">
          <img src="../MEDIA/image/SNPimageCV1.png" alt="" srcset="">
-         <a href="personalInformation.php?type=1">
+         <a href="personalInformation.php?type=2">
             <div class="chooseT">
                <p>إختار</p>
             </div>
@@ -99,7 +99,7 @@ session_start();
       </div>
       <div data-aos="fade-up" data-aos-anchor-placement="top-center" class="templateBox">
          <img src="../MEDIA/image/SNPimageCV2.png" alt="" srcset="">
-         <a href="personalInformation.php?type=2">
+         <a href="personalInformation.php?type=1">
             <div class="chooseT">
                   <p>إختار</p>
             </div>
