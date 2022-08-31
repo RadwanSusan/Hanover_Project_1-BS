@@ -107,9 +107,15 @@ $hobbies = explode(" ", $hobbies);
             <div class="col-lg-4 col-md-5">
               <div class="avatar hover-effect bg-white shadow-sm p-1"><img src="../<?php echo  $img_path; ?>" width="200" height="200" /></div>
             </div>
-            <div class="col-lg-8 col-md-7 text-center text-md-start">
+            <div class="col-lg-6 col-md-7 text-center text-md-start">
               <h2 class="h1 mt-2" data-aos="fade-left" data-aos-delay="0"><?php echo $name; ?></h2>
               <p data-aos="fade-left" data-aos-delay="100"><?php echo $speciality; ?></p>
+            </div>
+            <div class="col-lg-2 col-md-7 text-center text-md-start">
+              <div class="image" style="width: 100px;">
+                <img src="../../MEDIA/image/websiteQRCode_noFrame.png" style="width: 100%;" alt="">
+              </div>
+              
             </div>
           </div>
         </div>

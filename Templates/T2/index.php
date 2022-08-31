@@ -116,13 +116,13 @@ $hobbies = explode(",", $hobbies);
   <div class="container">
     <div class="card" data-aos="fade-up" data-aos-offset="10">
       <div class="row">
-        <div class="col-lg-6 col-md-12">
+        <div class="col-lg-4 col-md-12">
           <div class="card-body">
             <div class="h4 mt-0 title">About</div>
             <p><?php echo $user_bio; ?></p>
           </div>
         </div>
-        <div class="col-lg-6 col-md-12">
+        <div class="col-lg-4 col-md-12">
           <div class="card-body">
             <div class="h4 mt-0 title">Basic Information</div>
             <div class="row">
@@ -152,6 +152,10 @@ $hobbies = explode(",", $hobbies);
             </div>
           </div>
         </div>
+        <div class="col-lg-4 col-md-12 ">
+              <div class="image" style="width: 100px;">
+                <img src="../../MEDIA/image/websiteQRCode_noFrame.png" style="width: 100%;" alt="">
+              </div>
       </div>
     </div>
   </div>

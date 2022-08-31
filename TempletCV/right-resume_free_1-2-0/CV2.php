@@ -54,15 +54,12 @@
       <div class="col-lg-4 col-md-5">
         <div class="avatar hover-effect bg-white shadow-sm p-1"><img src="images/avatar.jpg" width="200" height="200"/></div>
       </div>
-      <div class="col-lg-6 col-md-7 text-center text-md-start">
+      <div class="col-lg-8 col-md-7 text-center text-md-start">
         <h2 class="h1 mt-2" data-aos="fade-left" data-aos-delay="0">Joyce Harrison</h2>
         <p data-aos="fade-left" data-aos-delay="100">Graphic Designer & Web Developer</p>
         <div class="d-print-none" data-aos="fade-left" data-aos-delay="200"><a class="btn btn-light text-dark shadow-sm mt-1 me-1" href="right-resume.pdf" target="_blank">Download CV</a><a class="btn btn-success shadow-sm mt-1" href="#contact">Hire Me</a></div>
       </div>
-      <div class="col-lg-2 col-md-7 text-center text-md-start">
-        <div class="image">
-        <!-- <img src="/MEDIA/image/websiteQRCode_noFrame.png" alt="zaid"> -->
-        </div>
+     
       </div>
 
     </div>

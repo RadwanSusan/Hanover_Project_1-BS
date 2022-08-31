@@ -102,6 +102,8 @@ $hobbies = explode(" ", $hobbies);
                     <a class="social-icon" href="#!"><i class="fab fa-facebook-f"></i></a>
                 </div>
             </div>
+              <div class="image" style="width: 100px;">
+                <img src="../../MEDIA/image/websiteQRCode_noFrame.png" style="width: 100%;" alt="">
         </section>
         <hr class="m-0" />
         <section class="resume-section" id="education">
