@@ -11,10 +11,6 @@
   box-sizing: border-box;
 }
 
-/* input {
-  text-align: right;
-} */
-
 h1,
 h2,
 h3,
@@ -49,14 +45,18 @@ html {
       color-stop(0.86, rgb(30, 30, 30)));
 }
 
-ul {
+.caution {
   list-style-type: disc;
   direction: rtl;
   margin-right: 25px;
   margin-bottom: 50px;
 }
 
-li {
+ul {
+  list-style: none;
+}
+
+.caution li {
   text-align: right;
 }
 

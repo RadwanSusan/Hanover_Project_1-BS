@@ -217,7 +217,7 @@ session_start();
             }
             ?>
             <form class="form1" action="" method="POST" enctype="multipart/form-data" onkeydown="return event.key != 'Enter';">
-                <ul style="list-style-type:disc !important">
+                <ul class="caution" style="list-style-type:disc !important">
                     <li>الرجاء تعبئة البيانات باللغة الأنجليزية</li>
                 </ul>
                 <label for="fileimg">

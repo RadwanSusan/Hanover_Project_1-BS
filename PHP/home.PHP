@@ -27,7 +27,7 @@
                 <ul class="list">
                     <li class="list1"><a class="hvr-shrink" href="#who">من نحن</a></li>
                     <li class="list1"><a class="hvr-shrink" href="#ser">خدماتنا</a></li>
-                    <li class="list1"><a class="hvr-shrink" href="#">الرئيسية</a></li>
+                    <li class="list1"><a class="hvr-shrink" href="home.php">الرئيسية</a></li>
                     <li class="list1 listS"><a class="hvr-shrink" href="login.php">تسجيل الدخول</a></li>
                 </ul>
             </div>
