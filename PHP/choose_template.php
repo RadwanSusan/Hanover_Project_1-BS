@@ -94,18 +94,18 @@ session_start();
             </div>
          </a>
          <div class="showT">
-            <p>عرض النموذج</p>
+            <p onclick="window.location.href='../TempletCV/creative-cv_free_1-1-0/CV1.PHP'">عرض النموذج</p>
          </div>
       </div>
       <div data-aos="fade-up" data-aos-anchor-placement="top-center" class="templateBox">
          <img src="../MEDIA/image/SNPimageCV2.png" alt="" srcset="">
          <a href="personalInformation.php?type=2">
             <div class="chooseT">
-               <p>إختار</p>
+                  <p>إختار</p>
             </div>
          </a>
          <div class="showT">
-            <p>عرض النموذج</p>
+            <p onclick="window.location.href='../TempletCV/right-resume_free_1-2-0/CV2.php'">عرض النموذج</p>
          </div>
       </div>
       <div data-aos="fade-up" data-aos-anchor-placement="top-center" class="templateBox">
@@ -116,7 +116,7 @@ session_start();
             </div>
          </a>
          <div class="showT">
-            <p>عرض النموذج</p>
+            <p onclick="window.location.href='../TempletCV/startbootstrap-resume-gh-pages/CV3.php'">عرض النموذج</p>
          </div>
       </div>
    </div>
