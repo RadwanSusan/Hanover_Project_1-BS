@@ -50,7 +50,14 @@ html {
 }
 
 ul {
-  list-style: none;
+  list-style-type: disc;
+  direction: rtl;
+  margin-right: 25px;
+  margin-bottom: 50px;
+}
+
+li {
+  text-align: right;
 }
 
 .container {
@@ -332,7 +339,7 @@ header nav ul li a:hover {
 .container .user-details .input-box input {
   width: 300px;
   height: 50px;
-  border: solid 1.5px #9e9e9e;
+  border: solid 1.5px #535353;
   border-radius: 0.5rem;
   background: none;
   padding: 1rem;
@@ -415,7 +422,7 @@ header nav ul li a:hover {
   width: 450px;
   height: 50px;
   background: #FFFFFF;
-  border: 1px solid #000000;
+  border: 1px solid #535353;
   border-radius: 7px;
 }
 
@@ -510,7 +517,7 @@ header nav ul li a:hover {
   background: #FFFFFF;
   border-radius: 7px;
   margin: 10px;
-  border: 1px solid #000;
+  border: 1px solid #535353;
 }
 
 .form4 {
@@ -543,7 +550,7 @@ header nav ul li a:hover {
   height: 50px;
   background: #FFFFFF;
   border-radius: 7px;
-  border: 1px solid #000;
+  border: 1px solid #535353;
 }
 
 .user-details4 .input-box4 input:focus {
@@ -575,7 +582,7 @@ header nav ul li a:hover {
   width: 450px;
   height: 50px;
   background: #FFFFFF;
-  border: 1px solid #000000;
+  border: 1px solid #535353;
   border-radius: 7px;
 }
 
