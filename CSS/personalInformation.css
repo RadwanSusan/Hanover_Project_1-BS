@@ -263,7 +263,7 @@ header nav ul li a:hover {
 .user-label2 {
   position: absolute;
   left: 440px;
-  color: #e8e8e8;
+  color: #b0b0b0;
   pointer-events: none;
   transform: translateY(1rem);
   transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -272,7 +272,7 @@ header nav ul li a:hover {
 .user-label3 {
   position: absolute;
   left: 820px;
-  color: #e8e8e8;
+  color: #b0b0b0;
   pointer-events: none;
   transform: translateY(0.8rem);
   transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);

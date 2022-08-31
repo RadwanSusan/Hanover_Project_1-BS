@@ -19,6 +19,12 @@ a.addEventListener("click", () => {
 		const list_form = document.createElement("li");
 		list_form.classList.add("list-form");
 		l = document.querySelector(".HiddenInput1").value.split(",").length - 1;
+		if (
+			document.querySelector(".HiddenInput1").value.slice(-1) != "," &&
+			document.querySelector(".HiddenInput1").value.split(",").length > 1
+		) {
+			++l;
+		}
 		list_form.classList.add(l);
 		list_form.innerHTML = b;
 		document.querySelector(".Artistic_skills").appendChild(list_form);
@@ -41,11 +47,13 @@ a.addEventListener("click", () => {
 		const minusAskill = document.createElement("div");
 		const minusIcon = document.createElement("i");
 		minusAskill.classList.add("add_Askill");
+		minusAskill.classList.add("AKill");
 		minusIcon.classList.add("fa-solid");
 		minusIcon.classList.add("fa-minus");
 		list_form.appendChild(minusAskill);
 		minusAskill.appendChild(minusIcon);
 		minusAskill.addEventListener("click", () => {
+			array = document.querySelector(".HiddenInput1").value.split(",");
 			class2 = minusAskill.parentElement.classList[1];
 			array = removeFirst(array, class2);
 			let arrayString = array.join(",");
@@ -362,11 +370,13 @@ particlesJS("particles-js", {
 	retina_detect: true,
 });
 
-let arrayAKill = document.querySelector(".HiddenInput1").value.split(",");
+let arrayAKill = [];
 let numberAKill;
 document.querySelectorAll(".AKill").forEach((element) => {
 	element.addEventListener("click", () => {
+		arrayAKill = document.querySelector(".HiddenInput1").value.split(",");
 		numberAKill = element.parentElement.classList[1];
+		console.log(numberAKill);
 		arrayAKill = removeFirst(arrayAKill, numberAKill);
 		arrayAKill.join(",");
 		if (onlyCommas(arrayAKill) == true) {
