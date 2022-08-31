@@ -60,7 +60,7 @@
                         <p>.دریگ رارق هدافتسا دروم اساسا یحارط دوجوم یاینداش زاین دروم نامزو دسر نایاپ هب تارت تاتار
                             تارتار تارتار منةمن ةة منةمنة ةمن ة خنكخن نكنكن ك ن كن را را ل لبء بيء ب ءيبي ءبي ءب يءب
                             يءيب رءبي پیات تخس</p>
-                        <button class="hvr-shrink" onclick="window.location.href='choose_template.php'">المزيد</button>
+                        <button class="hvr-shrink" onclick="window.location.href='login.php'">المزيد</button>
                     </div>
                 </div>
                 <div class="srv-box slide-top" data-aos="fade-up" data-aos-anchor-placement="top">
