@@ -79,12 +79,29 @@ a2.addEventListener("click", () => {
 		const list_form = document.createElement("li");
 		list_form.classList.add("list-form");
 		l2 = document.querySelector(".HiddenInput2").value.split(",").length - 1;
+		if (
+			document.querySelector(".HiddenInput2").value.slice(-1) != "," &&
+			document.querySelector(".HiddenInput2").value.split(",").length > 1
+		) {
+			++l2;
+		}
 		list_form.classList.add(l2);
-		++l2;
 		list_form.innerHTML = b;
 		document.querySelector(".Personal_skills").appendChild(list_form);
-		document.querySelector(".HiddenInput2").value += b;
-		document.querySelector(".HiddenInput2").value += ",";
+		if (document.querySelector(".HiddenInput2").value.split(",").length == 1) {
+			document.querySelector(".HiddenInput2").value += b;
+			if (
+				document.querySelector(".HiddenInput2").value.includes(",") == false
+			) {
+				document.querySelector(".HiddenInput2").value += ",";
+			}
+		} else {
+			if (document.querySelector(".HiddenInput2").value.slice(-1) != ",") {
+				document.querySelector(".HiddenInput2").value += ",";
+			}
+			document.querySelector(".HiddenInput2").value += b;
+			document.querySelector(".HiddenInput2").value += ",";
+		}
 		array2 = document.querySelector(".HiddenInput2").value.split(",");
 		document.querySelector(".Personal_skills_input").value = "";
 		const minusAskill = document.createElement("div");
@@ -120,12 +137,29 @@ a3.addEventListener("click", () => {
 		const list_form = document.createElement("li");
 		list_form.classList.add("list-form");
 		l3 = document.querySelector(".HiddenInput3").value.split(",").length - 1;
+		if (
+			document.querySelector(".HiddenInput3").value.slice(-1) != "," &&
+			document.querySelector(".HiddenInput3").value.split(",").length > 1
+		) {
+			++l3;
+		}
 		list_form.classList.add(l3);
-		++l3;
 		list_form.innerHTML = b;
 		document.querySelector(".important_skill").appendChild(list_form);
-		document.querySelector(".HiddenInput3").value += b;
-		document.querySelector(".HiddenInput3").value += ",";
+		if (document.querySelector(".HiddenInput3").value.split(",").length == 1) {
+			document.querySelector(".HiddenInput3").value += b;
+			if (
+				document.querySelector(".HiddenInput3").value.includes(",") == false
+			) {
+				document.querySelector(".HiddenInput3").value += ",";
+			}
+		} else {
+			if (document.querySelector(".HiddenInput3").value.slice(-1) != ",") {
+				document.querySelector(".HiddenInput3").value += ",";
+			}
+			document.querySelector(".HiddenInput3").value += b;
+			document.querySelector(".HiddenInput3").value += ",";
+		}
 		array3 = document.querySelector(".HiddenInput3").value.split(",");
 		document.querySelector(".important").value = "";
 		const minusAskill = document.createElement("div");
@@ -160,12 +194,29 @@ a4.addEventListener("click", () => {
 		const list_form = document.createElement("li");
 		list_form.classList.add("list-form");
 		l4 = document.querySelector(".HiddenInput4").value.split(",").length - 1;
+		if (
+			document.querySelector(".HiddenInput4").value.slice(-1) != "," &&
+			document.querySelector(".HiddenInput4").value.split(",").length > 1
+		) {
+			++l4;
+		}
 		list_form.classList.add(l4);
-		++l4;
 		list_form.innerHTML = b;
 		document.querySelector(".lang_skill").appendChild(list_form);
-		document.querySelector(".HiddenInput4").value += b;
-		document.querySelector(".HiddenInput4").value += ",";
+		if (document.querySelector(".HiddenInput4").value.split(",").length == 1) {
+			document.querySelector(".HiddenInput4").value += b;
+			if (
+				document.querySelector(".HiddenInput4").value.includes(",") == false
+			) {
+				document.querySelector(".HiddenInput4").value += ",";
+			}
+		} else {
+			if (document.querySelector(".HiddenInput4").value.slice(-1) != ",") {
+				document.querySelector(".HiddenInput4").value += ",";
+			}
+			document.querySelector(".HiddenInput4").value += b;
+			document.querySelector(".HiddenInput4").value += ",";
+		}
 		array4 = document.querySelector(".HiddenInput4").value.split(",");
 		document.querySelector(".lang").value = "";
 		const minusAskill = document.createElement("div");
@@ -201,12 +252,29 @@ a5.addEventListener("click", () => {
 		const list_form = document.createElement("li");
 		list_form.classList.add("list-form");
 		l5 = document.querySelector(".HiddenInput51").value.split(",").length - 1;
+		if (
+			document.querySelector(".HiddenInput51").value.slice(-1) != "," &&
+			document.querySelector(".HiddenInput51").value.split(",").length > 1
+		) {
+			++l5;
+		}
 		list_form.classList.add(l5);
-		++l5;
 		list_form.innerHTML = b;
 		document.querySelector(".v1").appendChild(list_form);
-		document.querySelector(".HiddenInput51").value += b;
-		document.querySelector(".HiddenInput51").value += ",";
+		if (document.querySelector(".HiddenInput51").value.split(",").length == 1) {
+			document.querySelector(".HiddenInput51").value += b;
+			if (
+				document.querySelector(".HiddenInput51").value.includes(",") == false
+			) {
+				document.querySelector(".HiddenInput51").value += ",";
+			}
+		} else {
+			if (document.querySelector(".HiddenInput51").value.slice(-1) != ",") {
+				document.querySelector(".HiddenInput51").value += ",";
+			}
+			document.querySelector(".HiddenInput51").value += b;
+			document.querySelector(".HiddenInput51").value += ",";
+		}
 		array5 = document.querySelector(".HiddenInput51").value.split(",");
 		document.querySelector(".resp1").value = "";
 		const minusAskill = document.createElement("div");
@@ -242,12 +310,29 @@ a6.addEventListener("click", () => {
 		const list_form = document.createElement("li");
 		list_form.classList.add("list-form");
 		l6 = document.querySelector(".HiddenInput52").value.split(",").length - 1;
+		if (
+			document.querySelector(".HiddenInput52").value.slice(-1) != "," &&
+			document.querySelector(".HiddenInput52").value.split(",").length > 1
+		) {
+			++l6;
+		}
 		list_form.classList.add(l6);
-		++l6;
 		list_form.innerHTML = b;
 		document.querySelector(".v2").appendChild(list_form);
-		document.querySelector(".HiddenInput52").value += b;
-		document.querySelector(".HiddenInput52").value += ",";
+		if (document.querySelector(".HiddenInput52").value.split(",").length == 1) {
+			document.querySelector(".HiddenInput52").value += b;
+			if (
+				document.querySelector(".HiddenInput52").value.includes(",") == false
+			) {
+				document.querySelector(".HiddenInput52").value += ",";
+			}
+		} else {
+			if (document.querySelector(".HiddenInput52").value.slice(-1) != ",") {
+				document.querySelector(".HiddenInput52").value += ",";
+			}
+			document.querySelector(".HiddenInput52").value += b;
+			document.querySelector(".HiddenInput52").value += ",";
+		}
 		array6 = document.querySelector(".HiddenInput52").value.split(",");
 		document.querySelector(".resp2").value = "";
 		const minusAskill = document.createElement("div");
@@ -283,12 +368,29 @@ a7.addEventListener("click", () => {
 		const list_form = document.createElement("li");
 		list_form.classList.add("list-form");
 		l7 = document.querySelector(".HiddenInput53").value.split(",").length - 1;
+		if (
+			document.querySelector(".HiddenInput53").value.slice(-1) != "," &&
+			document.querySelector(".HiddenInput53").value.split(",").length > 1
+		) {
+			++l7;
+		}
 		list_form.classList.add(l7);
-		++l7;
 		list_form.innerHTML = b;
 		document.querySelector(".v3").appendChild(list_form);
-		document.querySelector(".HiddenInput53").value += b;
-		document.querySelector(".HiddenInput53").value += ",";
+		if (document.querySelector(".HiddenInput53").value.split(",").length == 1) {
+			document.querySelector(".HiddenInput53").value += b;
+			if (
+				document.querySelector(".HiddenInput53").value.includes(",") == false
+			) {
+				document.querySelector(".HiddenInput53").value += ",";
+			}
+		} else {
+			if (document.querySelector(".HiddenInput53").value.slice(-1) != ",") {
+				document.querySelector(".HiddenInput53").value += ",";
+			}
+			document.querySelector(".HiddenInput53").value += b;
+			document.querySelector(".HiddenInput53").value += ",";
+		}
 		array7 = document.querySelector(".HiddenInput53").value.split(",");
 		document.querySelector(".resp3").value = "";
 		const minusAskill = document.createElement("div");
@@ -376,7 +478,6 @@ document.querySelectorAll(".AKill").forEach((element) => {
 	element.addEventListener("click", () => {
 		arrayAKill = document.querySelector(".HiddenInput1").value.split(",");
 		numberAKill = element.parentElement.classList[1];
-		console.log(numberAKill);
 		arrayAKill = removeFirst(arrayAKill, numberAKill);
 		arrayAKill.join(",");
 		if (onlyCommas(arrayAKill) == true) {
@@ -387,10 +488,11 @@ document.querySelectorAll(".AKill").forEach((element) => {
 	});
 });
 
-let arrayPKill = document.querySelector(".HiddenInput2").value.split(",");
+let arrayPKill = [];
 let numberPKill;
 document.querySelectorAll(".PKill").forEach((element) => {
 	element.addEventListener("click", () => {
+		arrayPKill = document.querySelector(".HiddenInput2").value.split(",");
 		numberPKill = element.parentElement.classList[1];
 		arrayPKill = removeFirst(arrayPKill, numberPKill);
 		arrayPKill.join(",");
@@ -402,10 +504,11 @@ document.querySelectorAll(".PKill").forEach((element) => {
 	});
 });
 
-let arrayVKill = document.querySelector(".HiddenInput3").value.split(",");
+let arrayVKill = [];
 let numberVKill;
 document.querySelectorAll(".VKill").forEach((element) => {
 	element.addEventListener("click", () => {
+		arrayVKill = document.querySelector(".HiddenInput3").value.split(",");
 		numberVKill = element.parentElement.classList[1];
 		arrayVKill = removeFirst(arrayVKill, numberVKill);
 		arrayVKill.join(",");
@@ -417,10 +520,11 @@ document.querySelectorAll(".VKill").forEach((element) => {
 	});
 });
 
-let arrayKKill = document.querySelector(".HiddenInput4").value.split(",");
+let arrayKKill = [];
 let numberKKill;
 document.querySelectorAll(".KKill").forEach((element) => {
 	element.addEventListener("click", () => {
+		arrayKKill = document.querySelector(".HiddenInput4").value.split(",");
 		numberKKill = element.parentElement.classList[1];
 		arrayKKill = removeFirst(arrayKKill, numberKKill);
 		arrayKKill.join(",");
@@ -432,10 +536,11 @@ document.querySelectorAll(".KKill").forEach((element) => {
 	});
 });
 
-let add_F1skill = document.querySelector(".HiddenInput51").value.split(",");
+let add_F1skill = [];
 let numberF1Kill;
 document.querySelectorAll(".A1Kill").forEach((element) => {
 	element.addEventListener("click", () => {
+		add_F1skill = document.querySelector(".HiddenInput51").value.split(",");
 		numberF1Kill = element.parentElement.classList[1];
 		add_F1skill = removeFirst(add_F1skill, numberF1Kill);
 		add_F1skill.join(",");
@@ -447,10 +552,11 @@ document.querySelectorAll(".A1Kill").forEach((element) => {
 	});
 });
 
-let add_F2skill = document.querySelector(".HiddenInput52").value.split(",");
+let add_F2skill = [];
 let numberF2Kill;
 document.querySelectorAll(".A2Kill").forEach((element) => {
 	element.addEventListener("click", () => {
+		add_F2skill = document.querySelector(".HiddenInput52").value.split(",");
 		numberF2Kill = element.parentElement.classList[1];
 		add_F2skill = removeFirst(add_F2skill, numberF2Kill);
 		add_F2skill.join(",");
@@ -462,10 +568,11 @@ document.querySelectorAll(".A2Kill").forEach((element) => {
 	});
 });
 
-let add_F3skill = document.querySelector(".HiddenInput53").value.split(",");
+let add_F3skill = [];
 let numberF3Kill;
 document.querySelectorAll(".A3Kill").forEach((element) => {
 	element.addEventListener("click", () => {
+		add_F3skill = document.querySelector(".HiddenInput53").value.split(",");
 		numberF3Kill = element.parentElement.classList[1];
 		add_F3skill = removeFirst(add_F3skill, numberF3Kill);
 		add_F3skill.join(",");
