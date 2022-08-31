@@ -353,6 +353,7 @@ session_start();
                 <hr>
                 <div class="form3">
                     <p> التعليم #1 </p>
+                    <i class="fa-solid fa-plus inc inc1 dir"></i>
                     <div class="user-details3">
                         <div class="left-user">
                             <div class="input-box3 threeAria">
@@ -379,6 +380,7 @@ session_start();
                 </div>
                 <div class="form3">
                     <p> التعليم #2 </p>
+                    <i class="fa-solid fa-plus inc inc1 dir"></i>
                     <div class="user-details3">
                         <div class="left-user">
                             <div class="input-box3 threeAria">
@@ -405,6 +407,7 @@ session_start();
                 </div>
                 <div class="form3">
                     <p> التعليم #3 </p>
+                    <i class="fa-solid fa-plus inc inc1 dir"></i>
                     <div class="user-details3">
                         <div class="left-user">
                             <div class="input-box3 threeAria">
@@ -431,7 +434,10 @@ session_start();
                 </div>
                 <hr>
                 <div class="form3">
+                    <div class="inc-pr">
                     <p> الخبرات العملية #1 </p>
+                    <i class="fa-solid fa-plus inc inc1 dir"></i>
+                    </div>
                     <div class="user-details3">
                         <div class="left-user">
                             <div class="input-box3 threeAria">
@@ -474,6 +480,7 @@ session_start();
                 </div>
                 <div class="form3">
                     <p> الخبرات العملية #2 </p>
+                    <i class="fa-solid fa-plus inc inc1 dir"></i>
                     <div class="user-details3">
                         <div class="left-user">
                             <div class="input-box3 threeAria">
@@ -516,6 +523,7 @@ session_start();
                 </div>
                 <div class="form3">
                     <p> الخبرات العملية #3 </p>
+                    <i class="fa-solid fa-plus inc inc1 dir"></i>
                     <div class="user-details3">
                         <div class="left-user">
                             <div class="input-box3 threeAria">
@@ -559,6 +567,7 @@ session_start();
                 <hr>
                 <div class="form4">
                     <p> #1 المشاريع الشخصية</p>
+                    <i class="fa-solid fa-plus inc inc1 dir"></i>
                     <div class="user-details4">
                         <div class="input-box4 towAria">
                             <input class="tow-aria" type="text" placeholder="الوصف" name="project_bio1" value="<?php echo $project_bio_array[0] = $project_bio_array[0] ?? ''; ?>">
@@ -576,6 +585,7 @@ session_start();
                 </div>
                 <div class="form4">
                     <p> #2 المشاريع الشخصية</p>
+                    <i class="fa-solid fa-plus inc inc1 dir"></i>
                     <div class="user-details4">
                         <div class="input-box4 towAria">
                             <input class="tow-aria" type="text" placeholder="الوصف" name="project_bio2" value="<?php echo $project_bio_array[1] = $project_bio_array[1] ?? ''; ?>">
@@ -593,6 +603,7 @@ session_start();
                 </div>
                 <div class="form4">
                     <p>المشاريع الشخصية #3</p>
+                    <i class="fa-solid fa-plus inc inc1 dir"></i>
                     <div class="user-details4">
                         <div class="input-box4 towAria">
                             <input class="tow-aria" type="text" placeholder="الوصف" name="project_bio3" value="<?php echo $project_bio_array[2] = $project_bio_array[2] ?? ''; ?>">
