@@ -20,11 +20,22 @@ a.addEventListener("click", () => {
 		list_form.classList.add("list-form");
 		l = document.querySelector(".HiddenInput1").value.split(",").length - 1;
 		list_form.classList.add(l);
-		++l;
 		list_form.innerHTML = b;
 		document.querySelector(".Artistic_skills").appendChild(list_form);
-		document.querySelector(".HiddenInput1").value += b;
-		document.querySelector(".HiddenInput1").value += ",";
+		if (document.querySelector(".HiddenInput1").value.split(",").length == 1) {
+			document.querySelector(".HiddenInput1").value += b;
+			if (
+				document.querySelector(".HiddenInput1").value.includes(",") == false
+			) {
+				document.querySelector(".HiddenInput1").value += ",";
+			}
+		} else {
+			if (document.querySelector(".HiddenInput1").value.slice(-1) != ",") {
+				document.querySelector(".HiddenInput1").value += ",";
+			}
+			document.querySelector(".HiddenInput1").value += b;
+			document.querySelector(".HiddenInput1").value += ",";
+		}
 		array = document.querySelector(".HiddenInput1").value.split(",");
 		document.querySelector(".Artistic_skills_input").value = "";
 		const minusAskill = document.createElement("div");
