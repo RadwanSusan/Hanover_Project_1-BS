@@ -87,7 +87,7 @@ session_start();
    </div>
    <div class="chooseTbox">
       <div data-aos="fade-up" data-aos-anchor-placement="top-center" class="templateBox">
-         <img src="../MEDIA/TemplatePlaceHolder(chooseT).png" alt="" srcset="">
+         <img src="../MEDIA/image/SNPimageCV1.png" alt="" srcset="">
          <a href="personalInformation.php?type=1">
             <div class="chooseT">
                <p>إختار</p>
@@ -98,7 +98,7 @@ session_start();
          </div>
       </div>
       <div data-aos="fade-up" data-aos-anchor-placement="top-center" class="templateBox">
-         <img src="../MEDIA/TemplatePlaceHolder(chooseT).png" alt="" srcset="">
+         <img src="../MEDIA/image/SNPimageCV2.png" alt="" srcset="">
          <a href="personalInformation.php?type=2">
             <div class="chooseT">
                <p>إختار</p>
@@ -109,7 +109,7 @@ session_start();
          </div>
       </div>
       <div data-aos="fade-up" data-aos-anchor-placement="top-center" class="templateBox">
-         <img src="../MEDIA/TemplatePlaceHolder(chooseT).png" alt="" srcset="">
+         <img src="../MEDIA/image/SNPimageCV3.png" alt="" srcset="">
          <a href="personalInformation.php?type=3">
             <div class="chooseT">
                <p>إختار</p>
