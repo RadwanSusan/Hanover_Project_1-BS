@@ -285,15 +285,15 @@ ul {
 }
 
 .service-icon .secImage {
-   width: 50%;
-   margin-bottom: 10px;
-   margin-right: 4px;
+   width: 45%;
+   margin-bottom: 2px;
+   margin-right: -4px;
 }
 
 .service-icon .thirdImage {
    width: 50%;
-   margin-bottom: 10px;
-   margin-right: 2px;
+   margin-bottom: 7px;
+   margin-right: -2px;
 }
 
 .serviceBox .service-icon:before,
@@ -443,6 +443,7 @@ ul {
    border-radius: 15px;
    margin: auto;
    margin-top: 20px;
+   cursor: pointer;
 }
 
 .chooseT:hover {
@@ -472,6 +473,7 @@ ul {
    border-radius: 15px;
    margin: auto;
    margin-top: 13px;
+   cursor: pointer;
 }
 
 .showT:hover {

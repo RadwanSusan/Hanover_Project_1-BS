@@ -42,24 +42,24 @@ session_start();
       </div>
    </div>
    <div class="topHeaderBox">
-      <p>فرص تدريب ميداني</p>
+      <p>دورات تعليمية</p>
       <img src="../MEDIA/AfterLine.svg" alt="">
    </div>
    <div class="contentBox">
       <div class="topBox">
          <img src="../MEDIA/Logo(chooseT).svg" alt="logo">
-         <p>شركة هانوفر للخدمات</p>
+         <p>دورة علم حاسوب</p>
       </div>
       <div class="topLine"></div>
       <div class="mainBox">
          <div class="rightBox">
-            <img src="../MEDIA/company.jpg" alt="" srcset="">
+            <img src="../MEDIA/programming.jpg" alt="" srcset="">
          </div>
          <div class="leftBox">
             <div class="leftTop">
-               <p class="companyDetails">.....................تفاصيل الشركة</p>
+               <p class="companyDetails">.....................تفاصيل الدورة</p>
                <p class="phoneNum">رقم الهاتف : 0799999999</p>
-               <p class="companyEmail">Hanover@gmail.com</p>
+               <p class="companyEmail">java@gmail.com</p>
             </div>
             <div class="leftBot">
                <div class="buttonsBox">
@@ -108,7 +108,7 @@ session_start();
          $email = $_POST['email'];
          $name = $_POST['name'];
          $phone = $_POST['phone'];
-         $sql = "INSERT INTO internship_form (user_email,user_name,user_phone_number) values ('$email', '$name', '$phone')";
+         $sql = "INSERT INTO courses_form (user_email,user_name,user_phone_number) values ('$email', '$name', '$phone')";
          mysqli_query($conn, $sql);
          echo "<script>alert('تم إرسال طلبك بنجاح');</script>";
       }

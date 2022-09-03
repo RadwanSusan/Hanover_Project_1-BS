@@ -11,3 +11,6 @@ title22.onclick = () => {
 		arf[i].classList.toggle("show3");
 	}
 };
+if (window.history.replaceState) {
+	window.history.replaceState(null, null, window.location.href);
+}

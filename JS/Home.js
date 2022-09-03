@@ -32,3 +32,6 @@ title22.onclick = () => {
 		".navBar_buttons ul",
 	).style.cssText = `padding: 10px; border-radius: 10px;`;
 };
+if (window.history.replaceState) {
+	window.history.replaceState(null, null, window.location.href);
+}

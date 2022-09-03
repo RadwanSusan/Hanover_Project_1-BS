@@ -637,3 +637,6 @@ showTarget("click", ".showwork2", ".work2");
 showTarget("click", ".showwork3", ".work3");
 showTarget("click", ".showproject2", ".project2");
 showTarget("click", ".showproject3", ".project3");
+if (window.history.replaceState) {
+	window.history.replaceState(null, null, window.location.href);
+}

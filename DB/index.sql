@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 03, 2022 at 02:08 PM
+-- Generation Time: Sep 03, 2022 at 06:25 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -42,6 +42,26 @@ INSERT INTO `contact_users` (`message_ID`, `email`, `phone_number`, `message2`) 
 (0, 's', 0, ''),
 (0, 's', 0, ''),
 (0, 'radwansusan90@gmail.com', 0, 'sss');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `courses_form`
+--
+
+CREATE TABLE `courses_form` (
+  `form_id` bigint(255) NOT NULL,
+  `user_email` varchar(30) NOT NULL,
+  `user_name` varchar(30) NOT NULL,
+  `user_phone_number` bigint(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `courses_form`
+--
+
+INSERT INTO `courses_form` (`form_id`, `user_email`, `user_name`, `user_phone_number`) VALUES
+(1, '4LPXXZ7Vqp', 'EDMSKZjmPd', 0);
 
 -- --------------------------------------------------------
 
@@ -95,6 +115,7 @@ INSERT INTO `cv_form` (`form_ID`, `img_path`, `user_name`, `birth_date`, `nation
 (295599136, '../db_images/63132da1243965.12639206.png', 'EwPSlfzSMgs', '5', 'pGb5dZhoPx', 'bc8LXSqjLi', 'g4g9i@wit8.com', '1269438173', 'CEtNVqH7yv,,', 'J3jfyVw5cQ,,', 'j5dwPmkgld', 's,,', 's,,', 'CEtNVqH7yv,,', '', '', '1,2,3', 'Yy0dKrLDwI,rS3KvuO5tE,6CAQ71kmSs--', 'xv83MuVq0j,xv83MuVq0j,xv83MuVq0j', '21312,123,123', '123123,123,123', 'V4sSSlw6Zi,l3y4X1Fzrl,zZjgZDmg7U', '123,123,3123', '123,123,11', 'WmV0yDG12C,v6MAvr5LzH,Yc8QyJvvVW', '', '', NULL, NULL, NULL, NULL),
 (324684954, '../db_images/6313337c599d81.19833553.jpg', 'EwPSlfzSMga', '69', 'pGb5dZhoPx', 'bc8LXSqjLi', 'g4g9i@wit8.com', '1269438173', 'CEtNVqH7yv,,', 'J3jfyVw5cQ,,', 'j5dwPmkgld', 's,,', 's,,', 'CEtNVqH7yv,,', 'asdasd', 'asdasd', '1,2,3', 'Yy0dKrLDwI,rS3KvuO5tE,6CAQ71kmSs--', 'xv83MuVq0j,xv83MuVq0j,xv83MuVq0j', '21312,123,123', '123123,123,123', 'V4sSSlw6Zi,l3y4X1Fzrl,zZjgZDmg7U', '123,123,3123', '123,123,11', 'WmV0yDG12C,v6MAvr5LzH,Yc8QyJvvVW', 'asdasd', 'dasd', NULL, NULL, NULL, NULL),
 (350167394, '../MEDIA/image/imageCV.svg', 'EwPSlfzSMgs', '5', 'pGb5dZhoPx', 'bc8LXSqjLi', 'g4g9i@wit8.com', '1269438173', 'CEtNVqH7yv,,', 'J3jfyVw5cQ,,', 'j5dwPmkgld', 's,,', 's,,', 'CEtNVqH7yv,,', '', '', '1,2,3', 'Yy0dKrLDwI,rS3KvuO5tE,6CAQ71kmSs--', 'xv83MuVq0j,xv83MuVq0j,xv83MuVq0j', '21312,123,123', '123123,123,123', 'V4sSSlw6Zi,l3y4X1Fzrl,zZjgZDmg7U', '123,123,3123', '123,123,11', 'WmV0yDG12C,v6MAvr5LzH,Yc8QyJvvVW', '', '', NULL, NULL, NULL, NULL),
+(374155707, '../db_images/6313337c599d81.19833553.jpg', 'EwPSlfzSMga', '69', 'pGb5dZhoPx', 'bc8LXSqjLi', 'g4g9i@wit8.com', '1269438173', 'CEtNVqH7yv,,', 'J3jfyVw5cQ,,', 'j5dwPmkgld', 's,,', 's,,', 'CEtNVqH7yv,,', 'asdasd', 'asdasd', '1,2,3', 'Yy0dKrLDwI,rS3KvuO5tE,6CAQ71kmSs--', 'xv83MuVq0j,xv83MuVq0j,xv83MuVq0j', '21312,123,123', '123123,123,123', 'V4sSSlw6Zi,l3y4X1Fzrl,zZjgZDmg7U', '123,123,3123', '123,123,11', 'WmV0yDG12C,v6MAvr5LzH,Yc8QyJvvVW', 'asdasd', 'dasd', '', '', '', ''),
 (415798655, 's', 'EwPSlfzSMg', 's2', 'pGb5dZhoPx', 'bc8LXSqjLi', 'g4g9i@wit8.com', '1269438173', 'CEtNVqH7yv,,', 'J3jfyVw5cQ,,', 'j5dwPmkgld', 's,,', 's,,', 'CEtNVqH7yv,,', '', '', '1,2,3', 'Yy0dKrLDwI,rS3KvuO5tE,6CAQ71kmSs--', 'xv83MuVq0j,xv83MuVq0j,xv83MuVq0j', '21312,123,123', '123123,123,123', 'V4sSSlw6Zi,l3y4X1Fzrl,zZjgZDmg7U', '123,123,3123', '123,123,11', 'WmV0yDG12C,v6MAvr5LzH,Yc8QyJvvVW', '', '', NULL, NULL, NULL, NULL),
 (418602584, '../db_images/63132dac423828.33774244.png', 'EwPSlfzSMga', '5', 'pGb5dZhoPx', 'bc8LXSqjLi', 'g4g9i@wit8.com', '1269438173', 'CEtNVqH7yv,,', 'J3jfyVw5cQ,,', 'j5dwPmkgld', 's,,', 's,,', 'CEtNVqH7yv,,', '', '', '1,2,3', 'Yy0dKrLDwI,rS3KvuO5tE,6CAQ71kmSs--', 'xv83MuVq0j,xv83MuVq0j,xv83MuVq0j', '21312,123,123', '123123,123,123', 'V4sSSlw6Zi,l3y4X1Fzrl,zZjgZDmg7U', '123,123,3123', '123,123,11', 'WmV0yDG12C,v6MAvr5LzH,Yc8QyJvvVW', '', '', NULL, NULL, NULL, NULL),
 (431758939, '../db_images/631330364850c2.13316406.jpg', 'EwPSlfzSMga', '65', 'pGb5dZhoPx', 'bc8LXSqjLi', 'g4g9i@wit8.com', '1269438173', 'CEtNVqH7yv,,', 'J3jfyVw5cQ,,', 'j5dwPmkgld', 's,,', 's,,', 'CEtNVqH7yv,,', '', '', '1,2,3', 'Yy0dKrLDwI,rS3KvuO5tE,6CAQ71kmSs--', 'xv83MuVq0j,xv83MuVq0j,xv83MuVq0j', '21312,123,123', '123123,123,123', 'V4sSSlw6Zi,l3y4X1Fzrl,zZjgZDmg7U', '123,123,3123', '123,123,11', 'WmV0yDG12C,v6MAvr5LzH,Yc8QyJvvVW', '', '', NULL, NULL, NULL, NULL),
@@ -121,6 +142,31 @@ INSERT INTO `cv_form` (`form_ID`, `img_path`, `user_name`, `birth_date`, `nation
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `internship_form`
+--
+
+CREATE TABLE `internship_form` (
+  `form_id` bigint(255) NOT NULL,
+  `user_email` varchar(30) NOT NULL,
+  `user_name` varchar(30) NOT NULL,
+  `user_phone_number` bigint(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `internship_form`
+--
+
+INSERT INTO `internship_form` (`form_id`, `user_email`, `user_name`, `user_phone_number`) VALUES
+(1, 'caZGjZjLRj', '82pnDoo1PX', 0),
+(2, 'caZGjZjLRj', '82pnDoo1PX', 0),
+(3, '8drZ0FDu8g', 's41Zk83ZDV', 0),
+(4, 'sYDOKG5isS', '2wXQeSpqZ9', 0),
+(5, 'radwansusan90@gmail.com', 'radwan susan', 0),
+(6, 'radwansusan90@gmail.com', 'radwan susan', 0);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user_info`
 --
 
@@ -138,11 +184,17 @@ CREATE TABLE `user_info` (
 
 INSERT INTO `user_info` (`ID`, `username`, `password`, `CV_done`, `form_id`) VALUES
 (1, 'radwan', '123', 0, NULL),
-(2, 'zaid', '123', 1, 890523174);
+(2, 'zaid', '123', 1, 374155707);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `courses_form`
+--
+ALTER TABLE `courses_form`
+  ADD PRIMARY KEY (`form_id`);
 
 --
 -- Indexes for table `cv_form`
@@ -151,8 +203,30 @@ ALTER TABLE `cv_form`
   ADD PRIMARY KEY (`form_ID`);
 
 --
+-- Indexes for table `internship_form`
+--
+ALTER TABLE `internship_form`
+  ADD PRIMARY KEY (`form_id`);
+
+--
 -- Indexes for table `user_info`
 --
 ALTER TABLE `user_info`
   ADD PRIMARY KEY (`ID`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `courses_form`
+--
+ALTER TABLE `courses_form`
+  MODIFY `form_id` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `internship_form`
+--
+ALTER TABLE `internship_form`
+  MODIFY `form_id` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;

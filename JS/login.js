@@ -61,3 +61,6 @@ particlesJS("particles-js", {
 	},
 	retina_detect: true,
 });
+if (window.history.replaceState) {
+	window.history.replaceState(null, null, window.location.href);
+}
