@@ -135,6 +135,10 @@ session_start();
                 $Personal_skills = $_POST["HiddenInput2"];
                 $hobbies = $_POST["HiddenInput3"];
                 $user_language = $_POST["HiddenInput4"];
+                $Facebook = $_POST["Facebook"];
+                $Linkedin = $_POST["Linkedin"];
+                $Github = $_POST["Github"];
+                $Twitter = $_POST["Twitter"];
                 $job1 = $_POST["job1"];
                 $job2 = $_POST["job2"];
                 $job3 = $_POST["job3"];
@@ -215,8 +219,8 @@ session_start();
                     $result = mysqli_query($conn, $sql2);
                     $num = mysqli_num_rows($result);
                 }
-                $sql3 = "INSERT INTO cv_form (form_id,img_path,user_name,birth_date,nationality,city,user_email,phone_number,speciality,Degree,user_bio,Degree_date_start,Degree_date_end,university,Artistic_skills,Personal_skills,hobbies,user_language,jobs,company,job_date_start,job_date_end,achievements,project_name,project_date_start,project_date_end,project_bio) VALUES
-                ('$form_id','$fileDestination', '$user_name' , '$birth_date', '$nationality' ,'$city' , '$user_email' , '$phone_number' , '$speciality_Combined' , '$Degree_Combined' , '$user_bio' , '$Degree_date_start_Combined','$Degree_date_end_Combined','$university_Combined','$Artistic_skills','$Personal_skills','$hobbies','$user_language','$combinedJobs','$combinedcompanys','$job_date_start_Combined','$job_date_end_Combined','$achievements_Combined','$project_name_Combined','$project_date_start_Combined','$project_date_end_Combined','$project_bio_Combined')";
+                $sql3 = "INSERT INTO cv_form (form_id,img_path,user_name,birth_date,nationality,city,user_email,phone_number,speciality,Degree,user_bio,Degree_date_start,Degree_date_end,university,Artistic_skills,Personal_skills,hobbies,user_language,jobs,company,job_date_start,job_date_end,achievements,project_name,project_date_start,project_date_end,project_bio,Facebook,Linkedin,Github,Twitter) VALUES
+                ('$form_id','$fileDestination', '$user_name' , '$birth_date', '$nationality' ,'$city' , '$user_email' , '$phone_number' , '$speciality_Combined' , '$Degree_Combined' , '$user_bio' , '$Degree_date_start_Combined','$Degree_date_end_Combined','$university_Combined','$Artistic_skills','$Personal_skills','$hobbies','$user_language','$combinedJobs','$combinedcompanys','$job_date_start_Combined','$job_date_end_Combined','$achievements_Combined','$project_name_Combined','$project_date_start_Combined','$project_date_end_Combined','$project_bio_Combined','$Facebook','$Linkedin','$Github','$Twitter')";
                 mysqli_query($conn, $sql3);
                 $sql4 = "UPDATE user_info SET form_id = '$form_id ' WHERE ID = '" . $_SESSION["ID"] . "'";
                 $sql5 = "UPDATE user_info SET CV_done = 1 WHERE ID = '" . $_SESSION["ID"] . "'";
@@ -268,6 +272,22 @@ session_start();
                     <div class="input-box personal-desc">
                         <input class="row-2" type="text" name="user_bio" required value="<?php echo $rowV['user_bio'] = $rowV['user_bio'] ?? ''; ?>">
                         <label class="user-label">الوصف الشخصي</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" name="Facebook" required value="<?php echo $rowV['Facebook'] = $rowV['Facebook'] ?? ''; ?>">
+                        <label class="user-label2">Facebook رابط</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" name="Linkedin" required value="<?php echo $rowV['Linkedin'] = $rowV['Linkedin'] ?? ''; ?>">
+                        <label class="user-label3">Linkedin رابط</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" name="Github" required value="<?php echo $rowV['Github'] = $rowV['Github'] ?? ''; ?>">
+                        <label class="user-label2">Github رابط</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" name="Twitter" required value="<?php echo $rowV['Twitter'] = $rowV['Twitter'] ?? ''; ?>">
+                        <label class="user-label3">Twitter رابط</label>
                     </div>
                 </div>
                 <br>
@@ -617,7 +637,6 @@ session_start();
                 </div>
                 <div class="form4 project3" style="display: none" data-aos="fade-up" data-aos-anchor-placement="top-center">
                     <p>المشاريع الشخصية #3</p>
-                    <i class="fa-solid fa-plus inc inc1 dir"></i>
                     <div class="user-details4">
                         <div class="input-box4 towAria">
                             <input class="tow-aria" type="text" placeholder="الوصف" name="project_bio3" value="<?php echo $project_bio_array[2] = $project_bio_array[2] ?? ''; ?>">
