@@ -9,6 +9,11 @@ function onlyCommas(str) {
 	return /^[,]+$/.test(str);
 	/* The above code is checking if the string is only made up of commas. */
 }
+function showTarget(event, element, target) {
+	document.querySelector(element).addEventListener(event, () => {
+		document.querySelector(target).style.display = "block";
+	});
+}
 let l = 0;
 let array = [];
 let class2;
@@ -625,3 +630,10 @@ const imageCV = document.querySelector(".imageCV");
 if (imageCV.src.includes("imageCV.svg")) {
 	imageCV.style.padding = "16px";
 }
+
+showTarget("click", ".showedu2", ".edu2");
+showTarget("click", ".showedu3", ".edu3");
+showTarget("click", ".showwork2", ".work2");
+showTarget("click", ".showwork3", ".work3");
+showTarget("click", ".showproject2", ".project2");
+showTarget("click", ".showproject3", ".project3");

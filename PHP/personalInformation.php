@@ -13,6 +13,9 @@ session_start();
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../Hover-css/hover.min.css.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css" />
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css" />
@@ -27,6 +30,11 @@ session_start();
 </head>
 
 <body>
+    <script>
+        AOS.init({
+            once: true
+        });
+    </script>
     <header>
         <div class="container">
             <a href="home.php" class="logo">
@@ -359,9 +367,9 @@ session_start();
                     </div>
                 </div>
                 <hr>
-                <div class="form3">
+                <div class="form3" data-aos="fade-up" data-aos-anchor-placement="top-center">
                     <p> التعليم #1 </p>
-                    <i class="fa-solid fa-plus inc inc1 dir"></i>
+                    <i class="fa-solid fa-plus inc inc1 dir showedu2"></i>
                     <div class="user-details3">
                         <div class="left-user">
                             <div class="input-box3 threeAria">
@@ -386,9 +394,9 @@ session_start();
                         </div>
                     </div>
                 </div>
-                <div class="form3">
+                <div class="form3 edu2" style="display: none" data-aos="fade-up" data-aos-anchor-placement="top-center">
                     <p> التعليم #2 </p>
-                    <i class="fa-solid fa-plus inc inc1 dir"></i>
+                    <i class="fa-solid fa-plus inc inc1 dir showedu3"></i>
                     <div class="user-details3">
                         <div class="left-user">
                             <div class="input-box3 threeAria">
@@ -413,9 +421,8 @@ session_start();
                         </div>
                     </div>
                 </div>
-                <div class="form3">
+                <div class="form3 edu3" style="display: none" data-aos="fade-up" data-aos-anchor-placement="top-center">
                     <p> التعليم #3 </p>
-                    <i class="fa-solid fa-plus inc inc1 dir"></i>
                     <div class="user-details3">
                         <div class="left-user">
                             <div class="input-box3 threeAria">
@@ -441,10 +448,10 @@ session_start();
                     </div>
                 </div>
                 <hr>
-                <div class="form3">
+                <div class="form3" data-aos="fade-up" data-aos-anchor-placement="top-center">
                     <div class="inc-pr">
                         <p> الخبرات العملية #1 </p>
-                        <i class="fa-solid fa-plus inc inc1 dir"></i>
+                        <i class="fa-solid fa-plus inc inc1 dir showwork2"></i>
                     </div>
                     <div class="user-details3">
                         <div class="left-user">
@@ -486,9 +493,9 @@ session_start();
                         </div>
                     </div>
                 </div>
-                <div class="form3">
+                <div class="form3 work2" style="display: none" data-aos="fade-up" data-aos-anchor-placement="top-center">
                     <p> الخبرات العملية #2 </p>
-                    <i class="fa-solid fa-plus inc inc1 dir"></i>
+                    <i class="fa-solid fa-plus inc inc1 dir showwork3"></i>
                     <div class="user-details3">
                         <div class="left-user">
                             <div class="input-box3 threeAria">
@@ -529,9 +536,8 @@ session_start();
                         </div>
                     </div>
                 </div>
-                <div class="form3">
+                <div class="form3 work3" style="display: none" data-aos="fade-up" data-aos-anchor-placement="top-center">
                     <p> الخبرات العملية #3 </p>
-                    <i class="fa-solid fa-plus inc inc1 dir"></i>
                     <div class="user-details3">
                         <div class="left-user">
                             <div class="input-box3 threeAria">
@@ -573,9 +579,9 @@ session_start();
                     </div>
                 </div>
                 <hr>
-                <div class="form4">
+                <div class="form4" data-aos="fade-up" data-aos-anchor-placement="top-center">
                     <p> #1 المشاريع الشخصية</p>
-                    <i class="fa-solid fa-plus inc inc1 dir"></i>
+                    <i class="fa-solid fa-plus inc inc1 dir showproject2"></i>
                     <div class="user-details4">
                         <div class="input-box4 towAria">
                             <input class="tow-aria" type="text" placeholder="الوصف" name="project_bio1" value="<?php echo $project_bio_array[0] = $project_bio_array[0] ?? ''; ?>">
@@ -591,9 +597,9 @@ session_start();
                         </div>
                     </div>
                 </div>
-                <div class="form4">
+                <div class="form4 project2" style="display: none" data-aos="fade-up" data-aos-anchor-placement="top-center">
                     <p> #2 المشاريع الشخصية</p>
-                    <i class="fa-solid fa-plus inc inc1 dir"></i>
+                    <i class="fa-solid fa-plus inc inc1 dir showproject3"></i>
                     <div class="user-details4">
                         <div class="input-box4 towAria">
                             <input class="tow-aria" type="text" placeholder="الوصف" name="project_bio2" value="<?php echo $project_bio_array[1] = $project_bio_array[1] ?? ''; ?>">
@@ -609,7 +615,7 @@ session_start();
                         </div>
                     </div>
                 </div>
-                <div class="form4">
+                <div class="form4 project3" style="display: none" data-aos="fade-up" data-aos-anchor-placement="top-center">
                     <p>المشاريع الشخصية #3</p>
                     <i class="fa-solid fa-plus inc inc1 dir"></i>
                     <div class="user-details4">
