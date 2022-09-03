@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 03, 2022 at 06:25 PM
+-- Generation Time: Sep 03, 2022 at 08:38 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -53,15 +53,16 @@ CREATE TABLE `courses_form` (
   `form_id` bigint(255) NOT NULL,
   `user_email` varchar(30) NOT NULL,
   `user_name` varchar(30) NOT NULL,
-  `user_phone_number` bigint(10) NOT NULL
+  `user_phone_number` bigint(10) NOT NULL,
+  `course_id` int(5) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `courses_form`
 --
 
-INSERT INTO `courses_form` (`form_id`, `user_email`, `user_name`, `user_phone_number`) VALUES
-(1, '4LPXXZ7Vqp', 'EDMSKZjmPd', 0);
+INSERT INTO `courses_form` (`form_id`, `user_email`, `user_name`, `user_phone_number`, `course_id`) VALUES
+(1, '4LPXXZ7Vqp', 'EDMSKZjmPd', 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -116,15 +117,18 @@ INSERT INTO `cv_form` (`form_ID`, `img_path`, `user_name`, `birth_date`, `nation
 (324684954, '../db_images/6313337c599d81.19833553.jpg', 'EwPSlfzSMga', '69', 'pGb5dZhoPx', 'bc8LXSqjLi', 'g4g9i@wit8.com', '1269438173', 'CEtNVqH7yv,,', 'J3jfyVw5cQ,,', 'j5dwPmkgld', 's,,', 's,,', 'CEtNVqH7yv,,', 'asdasd', 'asdasd', '1,2,3', 'Yy0dKrLDwI,rS3KvuO5tE,6CAQ71kmSs--', 'xv83MuVq0j,xv83MuVq0j,xv83MuVq0j', '21312,123,123', '123123,123,123', 'V4sSSlw6Zi,l3y4X1Fzrl,zZjgZDmg7U', '123,123,3123', '123,123,11', 'WmV0yDG12C,v6MAvr5LzH,Yc8QyJvvVW', 'asdasd', 'dasd', NULL, NULL, NULL, NULL),
 (350167394, '../MEDIA/image/imageCV.svg', 'EwPSlfzSMgs', '5', 'pGb5dZhoPx', 'bc8LXSqjLi', 'g4g9i@wit8.com', '1269438173', 'CEtNVqH7yv,,', 'J3jfyVw5cQ,,', 'j5dwPmkgld', 's,,', 's,,', 'CEtNVqH7yv,,', '', '', '1,2,3', 'Yy0dKrLDwI,rS3KvuO5tE,6CAQ71kmSs--', 'xv83MuVq0j,xv83MuVq0j,xv83MuVq0j', '21312,123,123', '123123,123,123', 'V4sSSlw6Zi,l3y4X1Fzrl,zZjgZDmg7U', '123,123,3123', '123,123,11', 'WmV0yDG12C,v6MAvr5LzH,Yc8QyJvvVW', '', '', NULL, NULL, NULL, NULL),
 (374155707, '../db_images/6313337c599d81.19833553.jpg', 'EwPSlfzSMga', '69', 'pGb5dZhoPx', 'bc8LXSqjLi', 'g4g9i@wit8.com', '1269438173', 'CEtNVqH7yv,,', 'J3jfyVw5cQ,,', 'j5dwPmkgld', 's,,', 's,,', 'CEtNVqH7yv,,', 'asdasd', 'asdasd', '1,2,3', 'Yy0dKrLDwI,rS3KvuO5tE,6CAQ71kmSs--', 'xv83MuVq0j,xv83MuVq0j,xv83MuVq0j', '21312,123,123', '123123,123,123', 'V4sSSlw6Zi,l3y4X1Fzrl,zZjgZDmg7U', '123,123,3123', '123,123,11', 'WmV0yDG12C,v6MAvr5LzH,Yc8QyJvvVW', 'asdasd', 'dasd', '', '', '', ''),
+(380722644, '../db_images/6313337c599d81.19833553.jpg', 'EwPSlfzSMga', '69', 'pGb5dZhoPx', 'bc8LXSqjLi', 'g4g9i@wit8.com', '1269438173', 'CEtNVqH7yv,,', 'J3jfyVw5cQ,,', 'j5dwPmkgld', 's,,', 's,,', 'CEtNVqH7yv,,', 'asdasd', 'asdasd', '1,2,3', 'Yy0dKrLDwI,rS3KvuO5tE,6CAQ71kmSs--', 'xv83MuVq0j,xv83MuVq0j,xv83MuVq0j', '21312,123,123', '123123,123,123', 'V4sSSlw6Zi,l3y4X1Fzrl,zZjgZDmg7U', '123,123,3123', '123,123,11', 'WmV0yDG12C,v6MAvr5LzH,Yc8QyJvvVW', 'asdasd', 'dasd', '', '', '', ''),
 (415798655, 's', 'EwPSlfzSMg', 's2', 'pGb5dZhoPx', 'bc8LXSqjLi', 'g4g9i@wit8.com', '1269438173', 'CEtNVqH7yv,,', 'J3jfyVw5cQ,,', 'j5dwPmkgld', 's,,', 's,,', 'CEtNVqH7yv,,', '', '', '1,2,3', 'Yy0dKrLDwI,rS3KvuO5tE,6CAQ71kmSs--', 'xv83MuVq0j,xv83MuVq0j,xv83MuVq0j', '21312,123,123', '123123,123,123', 'V4sSSlw6Zi,l3y4X1Fzrl,zZjgZDmg7U', '123,123,3123', '123,123,11', 'WmV0yDG12C,v6MAvr5LzH,Yc8QyJvvVW', '', '', NULL, NULL, NULL, NULL),
 (418602584, '../db_images/63132dac423828.33774244.png', 'EwPSlfzSMga', '5', 'pGb5dZhoPx', 'bc8LXSqjLi', 'g4g9i@wit8.com', '1269438173', 'CEtNVqH7yv,,', 'J3jfyVw5cQ,,', 'j5dwPmkgld', 's,,', 's,,', 'CEtNVqH7yv,,', '', '', '1,2,3', 'Yy0dKrLDwI,rS3KvuO5tE,6CAQ71kmSs--', 'xv83MuVq0j,xv83MuVq0j,xv83MuVq0j', '21312,123,123', '123123,123,123', 'V4sSSlw6Zi,l3y4X1Fzrl,zZjgZDmg7U', '123,123,3123', '123,123,11', 'WmV0yDG12C,v6MAvr5LzH,Yc8QyJvvVW', '', '', NULL, NULL, NULL, NULL),
 (431758939, '../db_images/631330364850c2.13316406.jpg', 'EwPSlfzSMga', '65', 'pGb5dZhoPx', 'bc8LXSqjLi', 'g4g9i@wit8.com', '1269438173', 'CEtNVqH7yv,,', 'J3jfyVw5cQ,,', 'j5dwPmkgld', 's,,', 's,,', 'CEtNVqH7yv,,', '', '', '1,2,3', 'Yy0dKrLDwI,rS3KvuO5tE,6CAQ71kmSs--', 'xv83MuVq0j,xv83MuVq0j,xv83MuVq0j', '21312,123,123', '123123,123,123', 'V4sSSlw6Zi,l3y4X1Fzrl,zZjgZDmg7U', '123,123,3123', '123,123,11', 'WmV0yDG12C,v6MAvr5LzH,Yc8QyJvvVW', '', '', NULL, NULL, NULL, NULL),
 (468979283, '../db_images/6313260f7c80c5.74582299.jpg', 'EwPSlfzSMg', 'ss', 'pGb5dZhoPx', 'bc8LXSqjLi', 'g4g9i@wit8.com', '1269438173', 'CEtNVqH7yv,,', 'J3jfyVw5cQ,,', 'j5dwPmkgld', 's,,', 's,,', 'CEtNVqH7yv,,', '', '', '1,2,3', 'Yy0dKrLDwI,rS3KvuO5tE,6CAQ71kmSs--', 'xv83MuVq0j,xv83MuVq0j,xv83MuVq0j', '21312,123,123', '123123,123,123', 'V4sSSlw6Zi,l3y4X1Fzrl,zZjgZDmg7U', '123,123,3123', '123,123,12', 'WmV0yDG12C,v6MAvr5LzH,Yc8QyJvvVW', '', '', NULL, NULL, NULL, NULL),
 (470067001, NULL, 'EwPSlfzSMg', 'ss', 'pGb5dZhoPx', 'bc8LXSqjLi', 'g4g9i@wit8.com', '1269438173', 'CEtNVqH7yv', 'J3jfyVw5cQ', 'j5dwPmkgld', 's', 's', 'dfntntdTds', 'O2Ys8Ws0Td', '3XGcxoS4xH', '1,2,3', 'Yy0dKrLDwI,rS3KvuO5tE,6CAQ71kmSs', 'xv83MuVq0j,xv83MuVq0j,xv83MuVq0j', '21312,123,123', '123123,123,123', 'V4sSSlw6Zi,l3y4X1Fzrl,zZjgZDmg7U', '123,123,3123', '123,123,12', 'WmV0yDG12C,v6MAvr5LzH,Yc8QyJvvVW', 'aZbUyBWNZb', 'uxBE26Gdi8', NULL, NULL, NULL, NULL),
 (478118045, 's', 'EwPSlfzSMg', 'ss', 'pGb5dZhoPx', 'bc8LXSqjLi', 'g4g9i@wit8.com', '1269438173', 'CEtNVqH7yv,,', 'J3jfyVw5cQ,,', 'j5dwPmkgld', 's,,', 's,,', 'CEtNVqH7yv,,', 'O2Ys8Ws0Td', '3XGcxoS4xH', '1,2,3', 'Yy0dKrLDwI,rS3KvuO5tE,6CAQ71kmSs--', 'xv83MuVq0j,xv83MuVq0j,xv83MuVq0j', '21312,123,123', '123123,123,123', 'V4sSSlw6Zi,l3y4X1Fzrl,zZjgZDmg7U', '123,123,3123', '123,123,12', 'WmV0yDG12C,v6MAvr5LzH,Yc8QyJvvVW', 'aZbUyBWNZb', 'uxBE26Gdi8', NULL, NULL, NULL, NULL),
+(493278162, '../db_images/6313337c599d81.19833553.jpg', 'EwPSlfzSMga', '69', 'pGb5dZhoPx', 'bc8LXSqjLi', 'g4g9i@wit8.com', '1269438173', 'CEtNVqH7yv,,', 'J3jfyVw5cQ,,', 'j5dwPmkgld', 's,,', 's,,', 'CEtNVqH7yv,,', 'asdasd', 'asdasd', '1,2,3', 'Yy0dKrLDwI,rS3KvuO5tE,6CAQ71kmSs--', 'xv83MuVq0j,xv83MuVq0j,xv83MuVq0j', '21312,123,123', '123123,123,123', 'V4sSSlw6Zi,l3y4X1Fzrl,zZjgZDmg7U', '123,123,3123', '123,123,11', 'WmV0yDG12C,v6MAvr5LzH,Yc8QyJvvVW', 'asdasd', 'dasd', '', '', '', ''),
 (502388735, '../db_images/63132569d18792.38302325.jpg', 'EwPSlfzSMg', 'ss', 'pGb5dZhoPx', 'bc8LXSqjLi', 'g4g9i@wit8.com', '1269438173', 'CEtNVqH7yv,,', 'J3jfyVw5cQ,,', 'j5dwPmkgld', 's,,', 's,,', 'CEtNVqH7yv,,', 'O2Ys8Ws0Td', '3XGcxoS4xH', '1,2,3', 'Yy0dKrLDwI,rS3KvuO5tE,6CAQ71kmSs--', 'xv83MuVq0j,xv83MuVq0j,xv83MuVq0j', '21312,123,123', '123123,123,123', 'V4sSSlw6Zi,l3y4X1Fzrl,zZjgZDmg7U', '123,123,3123', '123,123,12', 'WmV0yDG12C,v6MAvr5LzH,Yc8QyJvvVW', 'aZbUyBWNZb', 'uxBE26Gdi8', NULL, NULL, NULL, NULL),
 (554736262, '../db_images/631330364850c2.13316406.jpg', 'EwPSlfzSMga', '66', 'pGb5dZhoPx', 'bc8LXSqjLi', 'g4g9i@wit8.com', '1269438173', 'CEtNVqH7yv,,', 'J3jfyVw5cQ,,', 'j5dwPmkgld', 's,,', 's,,', 'CEtNVqH7yv,,', '', '', '1,2,3', 'Yy0dKrLDwI,rS3KvuO5tE,6CAQ71kmSs--', 'xv83MuVq0j,xv83MuVq0j,xv83MuVq0j', '21312,123,123', '123123,123,123', 'V4sSSlw6Zi,l3y4X1Fzrl,zZjgZDmg7U', '123,123,3123', '123,123,11', 'WmV0yDG12C,v6MAvr5LzH,Yc8QyJvvVW', '', '', NULL, NULL, NULL, NULL),
 (568562313, '../db_images/6313337c599d81.19833553.jpg', 'EwPSlfzSMga', '69', 'pGb5dZhoPx', 'bc8LXSqjLi', 'g4g9i@wit8.com', '1269438173', 'CEtNVqH7yv,,', 'J3jfyVw5cQ,,', 'j5dwPmkgld', 's,,', 's,,', 'CEtNVqH7yv,,', '', '', '1,2,3', 'Yy0dKrLDwI,rS3KvuO5tE,6CAQ71kmSs--', 'xv83MuVq0j,xv83MuVq0j,xv83MuVq0j', '21312,123,123', '123123,123,123', 'V4sSSlw6Zi,l3y4X1Fzrl,zZjgZDmg7U', '123,123,3123', '123,123,11', 'WmV0yDG12C,v6MAvr5LzH,Yc8QyJvvVW', '', '', NULL, NULL, NULL, NULL),
+(582669509, '../db_images/6313337c599d81.19833553.jpg', 'EwPSlfzSMga', '69', 'pGb5dZhoPx', 'bc8LXSqjLi', 'g4g9i@wit8.com', '1269438173', 'CEtNVqH7yv,,', 'J3jfyVw5cQ,,', 'j5dwPmkgld', 's,,', 's,,', 'CEtNVqH7yv,,', 'asdasd', 'asdasd', '1,2,3', 'Yy0dKrLDwI,rS3KvuO5tE,6CAQ71kmSs--', 'xv83MuVq0j,xv83MuVq0j,xv83MuVq0j', '21312,123,123', '123123,123,123', 'V4sSSlw6Zi,l3y4X1Fzrl,zZjgZDmg7U', '123,123,3123', '123,123,11', 'WmV0yDG12C,v6MAvr5LzH,Yc8QyJvvVW', 'asdasd', 'dasd', '', '', '', ''),
 (590467446, '../db_images/63132bea284585.92127853.png', 'EwPSlfzSMg', '4', 'pGb5dZhoPx', 'bc8LXSqjLi', 'g4g9i@wit8.com', '1269438173', 'CEtNVqH7yv,,', 'J3jfyVw5cQ,,', 'j5dwPmkgld', 's,,', 's,,', 'CEtNVqH7yv,,', '', '', '1,2,3', 'Yy0dKrLDwI,rS3KvuO5tE,6CAQ71kmSs--', 'xv83MuVq0j,xv83MuVq0j,xv83MuVq0j', '21312,123,123', '123123,123,123', 'V4sSSlw6Zi,l3y4X1Fzrl,zZjgZDmg7U', '123,123,3123', '123,123,11', 'WmV0yDG12C,v6MAvr5LzH,Yc8QyJvvVW', '', '', NULL, NULL, NULL, NULL),
 (655302614, 's', 'EwPSlfzSMg', 'ss', 'pGb5dZhoPx', 'bc8LXSqjLi', 'g4g9i@wit8.com', '1269438173', 'CEtNVqH7yv,,', 'J3jfyVw5cQ,,', 'j5dwPmkgld', 's,,', 's,,', 'CEtNVqH7yv,,', 'O2Ys8Ws0Td,sss', '3XGcxoS4xH', '1,2,3', 'Yy0dKrLDwI,rS3KvuO5tE,6CAQ71kmSs--', 'xv83MuVq0j,xv83MuVq0j,xv83MuVq0j', '21312,123,123', '123123,123,123', 'V4sSSlw6Zi,l3y4X1Fzrl,zZjgZDmg7U', '123,123,3123', '123,123,12', 'WmV0yDG12C,v6MAvr5LzH,Yc8QyJvvVW', 'aZbUyBWNZb', 'uxBE26Gdi8', NULL, NULL, NULL, NULL),
 (670496504, 's', 'EwPSlfzSMg', 'ss', 'pGb5dZhoPx', 'bc8LXSqjLi', 'g4g9i@wit8.com', '1269438173', 'CEtNVqH7yv,,', 'J3jfyVw5cQ,,', 'j5dwPmkgld', 's,,', 's,,', 'CEtNVqH7yv,,', '', '', '1,2,3', 'Yy0dKrLDwI,rS3KvuO5tE,6CAQ71kmSs--', 'xv83MuVq0j,xv83MuVq0j,xv83MuVq0j', '21312,123,123', '123123,123,123', 'V4sSSlw6Zi,l3y4X1Fzrl,zZjgZDmg7U', '123,123,3123', '123,123,12', 'WmV0yDG12C,v6MAvr5LzH,Yc8QyJvvVW', '', '', NULL, NULL, NULL, NULL),
@@ -149,20 +153,26 @@ CREATE TABLE `internship_form` (
   `form_id` bigint(255) NOT NULL,
   `user_email` varchar(30) NOT NULL,
   `user_name` varchar(30) NOT NULL,
-  `user_phone_number` bigint(10) NOT NULL
+  `user_phone_number` bigint(10) NOT NULL,
+  `company_id` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `internship_form`
 --
 
-INSERT INTO `internship_form` (`form_id`, `user_email`, `user_name`, `user_phone_number`) VALUES
-(1, 'caZGjZjLRj', '82pnDoo1PX', 0),
-(2, 'caZGjZjLRj', '82pnDoo1PX', 0),
-(3, '8drZ0FDu8g', 's41Zk83ZDV', 0),
-(4, 'sYDOKG5isS', '2wXQeSpqZ9', 0),
-(5, 'radwansusan90@gmail.com', 'radwan susan', 0),
-(6, 'radwansusan90@gmail.com', 'radwan susan', 0);
+INSERT INTO `internship_form` (`form_id`, `user_email`, `user_name`, `user_phone_number`, `company_id`) VALUES
+(1, 'caZGjZjLRj', '82pnDoo1PX', 0, 0),
+(2, 'caZGjZjLRj', '82pnDoo1PX', 0, 0),
+(3, '8drZ0FDu8g', 's41Zk83ZDV', 0, 0),
+(4, 'sYDOKG5isS', '2wXQeSpqZ9', 0, 0),
+(5, 'radwansusan90@gmail.com', 'radwan susan', 0, 0),
+(6, 'radwansusan90@gmail.com', 'radwan susan', 0, 0),
+(7, 'OsKOi70TQU', 'yslsrZkgYo', 0, 0),
+(8, 'C9j4oAxg1Q', '7nM5OsAjlB', 0, 0),
+(9, 'zUftESyN6G', 'EPh1NLLfy6', 0, 0),
+(10, '4HAH7WvYVN', '5zJcSKiwWh', 0, 0),
+(11, 'ElU4ahf0Pt', 'rGzo37yhlX', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -175,16 +185,17 @@ CREATE TABLE `user_info` (
   `username` varchar(20) DEFAULT NULL,
   `password` varchar(30) DEFAULT NULL,
   `CV_done` int(1) NOT NULL DEFAULT 0,
-  `form_id` bigint(10) DEFAULT NULL
+  `form_id` bigint(10) DEFAULT NULL,
+  `account_type` int(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user_info`
 --
 
-INSERT INTO `user_info` (`ID`, `username`, `password`, `CV_done`, `form_id`) VALUES
-(1, 'radwan', '123', 0, NULL),
-(2, 'zaid', '123', 1, 374155707);
+INSERT INTO `user_info` (`ID`, `username`, `password`, `CV_done`, `form_id`, `account_type`) VALUES
+(4, 'radwan susan', '123', 0, NULL, 1),
+(5, 'zaid', '123', 0, NULL, 1);
 
 --
 -- Indexes for dumped tables
@@ -228,5 +239,11 @@ ALTER TABLE `courses_form`
 -- AUTO_INCREMENT for table `internship_form`
 --
 ALTER TABLE `internship_form`
-  MODIFY `form_id` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `form_id` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `user_info`
+--
+ALTER TABLE `user_info`
+  MODIFY `ID` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
