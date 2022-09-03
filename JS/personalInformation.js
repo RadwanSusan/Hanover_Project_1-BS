@@ -615,3 +615,13 @@ document.querySelector(".button").addEventListener("click", (e) => {
 	document.querySelector(".HiddenInput53").value = add_F3skill.join(",");
 	document.querySelector(".form1").submit();
 });
+
+const loadFile = function (event) {
+	const image = document.querySelector(".imageCV");
+	image.src = URL.createObjectURL(event.target.files[0]);
+	image.style.padding = "0px";
+};
+const imageCV = document.querySelector(".imageCV");
+if (imageCV.src.includes("imageCV.svg")) {
+	imageCV.style.padding = "16px";
+}

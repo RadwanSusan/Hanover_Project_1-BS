@@ -46,6 +46,7 @@ session_start();
                 $sql = "select * from cv_form where form_ID = '" . $row66["form_id"] . "'";
                 $result = mysqli_query($conn, $sql);
                 $rowV = mysqli_fetch_assoc($result);
+                $img_path = $rowV["img_path"];
                 $Personal_skills_array =  $rowV["Personal_skills"];
                 $Personal_skills_array = explode(',', $Personal_skills_array);
                 $Artistic_skills_array =  $rowV["Artistic_skills"];
@@ -82,9 +83,15 @@ session_start();
                 $Degree_array = explode(',', $Degree_array);
                 $achievements_array =  $rowV["achievements"];
                 $achievements_array = explode('-', $achievements_array);
-                $achievements_array_seperated_0 = explode(',', $achievements_array[0]);
-                $achievements_array_seperated_1 = explode(',', $achievements_array[1]);
-                $achievements_array_seperated_2 = explode(',', $achievements_array[2]);
+                if (isset($achievements_array[0])) {
+                    $achievements_array_seperated_0 = explode(',', $achievements_array[0]);
+                }
+                if (isset($achievements_array[1])) {
+                    $achievements_array_seperated_1 = explode(',', $achievements_array[1]);
+                }
+                if (isset($achievements_array[2])) {
+                    $achievements_array_seperated_2 = explode(',', $achievements_array[2]);
+                }
             } else {
                 $sql = "select * from cv_form where form_ID = '" . $row66["form_id"] . "'";
                 $result = mysqli_query($conn, $sql);
@@ -99,7 +106,7 @@ session_start();
                 $fileExt = explode('.', $fileName);
                 $fileActualExt = strtolower(end($fileExt));
                 $ext = $fileActualExt;
-                $fileDestination = "s";
+                $fileDestination = $_POST["formImgControl"];
                 if ($fileError === 0) {
                     if ($fileSize < 100000000) {
                         $fileNameNew = uniqid('', true) . "." . $fileActualExt;
@@ -217,13 +224,14 @@ session_start();
             }
             ?>
             <form class="form1" action="" method="POST" enctype="multipart/form-data" onkeydown="return event.key != 'Enter';">
+                <input class="formImgControl" name="formImgControl" type="hidden" value="<?php echo $img_path; ?>">
                 <ul class="caution" style="list-style-type:disc !important">
                     <li>الرجاء تعبئة البيانات باللغة الأنجليزية</li>
                 </ul>
                 <label for="fileimg">
-                    <img class="imageCV" src="../MEDIA/image/imageCV.svg" alt="imageCV">
+                    <img class="imageCV" src="<?php echo $img_path; ?>" alt="imageCV">
                 </label>
-                <input type="file" name="fileimg" id="fileimg" accept=".jpg,.png,.gif,jpeg" hidden />
+                <input type="file" name="fileimg" id="fileimg" accept=".jpg,.png,.gif,jpeg" hidden onchange="loadFile(event)" />
                 <div class="user-details">
                     <div class="input-box">
                         <input type="text" autocomplete="off" name="nationality" required value="<?php echo $rowV['nationality'] = $rowV['nationality'] ?? ''; ?>">
@@ -435,8 +443,8 @@ session_start();
                 <hr>
                 <div class="form3">
                     <div class="inc-pr">
-                    <p> الخبرات العملية #1 </p>
-                    <i class="fa-solid fa-plus inc inc1 dir"></i>
+                        <p> الخبرات العملية #1 </p>
+                        <i class="fa-solid fa-plus inc inc1 dir"></i>
                     </div>
                     <div class="user-details3">
                         <div class="left-user">
