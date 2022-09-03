@@ -42,7 +42,12 @@ session_start();
     </header>
     <div class="landing-info">
         <div class="container">
-            <div class="title">مرحبا عبدالله</div>
+            <?php
+            $sql = "SELECT username from user_info where ID = " . $_SESSION['ID'] . "";
+            $result = mysqli_query($conn, $sql);
+            $rowA = mysqli_fetch_assoc($result);
+            ?>
+            <div class="title"><?php echo $rowA['username']; ?> مرحبا</div>
             <div class="landing-content">
                 <div class="square">
                     <div class="info">
