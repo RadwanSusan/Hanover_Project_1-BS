@@ -11,6 +11,11 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
     <link rel="stylesheet" href="../CSS/Admin.css">
     <script type="text/javascript">
         function alert(message) {
@@ -21,25 +26,12 @@ session_start();
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <a href="#" class="logo">
-                <img src="../MEDIA/image/Logo.svg" alt="logo">
-                <p>business city</p>
-            </a>
-            <nav>
-                <i class="toggle-menu">
-                    <img class="image1" src="../MEDIA/image/bi_list.svg" alt="menu">
-                </i>
-                <ul class="list">
-                    <li class="list1"><a href="#" class="hvr-pulse-shrink">تواصل معنا</a></li>
-                    <li class="list1"><a href="#" class="hvr-pulse-shrink">من نحن</a></li>
-                    <li class="list1"><a href="#" class="hvr-pulse-shrink">خدماتنا</a></li>
-                    <li class="Active list1"><a href="#" class="hvr-pulse-shrink">الرئيسية</a></li>
-                </ul>
-            </nav>
+    <div class="navBar_box">
+        <div class="logoBox">
+            <a href="home.php"><img src="../MEDIA/Logo(chooseT).svg" alt="logo" class="logo"></a>
+            <a href="home.php">Business City</a>
         </div>
-    </header>
+    </div>
     <div class="landing-info">
         <div class="container">
             <?php
@@ -106,45 +98,103 @@ session_start();
                         <div class="info">
                             <h2>اضافه فرص تدريب</h2>
                         </div>
-                        <form class="form2" action="" method="post">
+                        <?php
+                        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submitCompany"])) {
+                            $companyName = $_POST["companyName"];
+                            $companyBio = $_POST["companyBio"];
+                            $companyPhone = $_POST["companyPhone"];
+                            $companyEmail = $_POST["companyEmail"];
+                            $LOGOfile = $_FILES['LOGOfileimg'];
+                            $IMGfile = $_FILES['IMGfileimg'];
+                            $LOGOName = $_FILES['LOGOfileimg']['name'];
+                            $IMGName = $_FILES['IMGfileimg']['name'];
+                            $LOGOTmpName = $_FILES['LOGOfileimg']['tmp_name'];
+                            $IMGTmpName = $_FILES['IMGfileimg']['tmp_name'];
+                            $LOGOfileSize = $_FILES['LOGOfileimg']['size'];
+                            $IMGfileSize = $_FILES['IMGfileimg']['size'];
+                            $LOGOfileSize = $_FILES['LOGOfileimg']['size'];
+                            $IMGfileSize = $_FILES['IMGfileimg']['size'];
+                            $LOGOfileError = $_FILES['LOGOfileimg']['error'];
+                            $IMGfileError = $_FILES['IMGfileimg']['error'];
+                            $LOGOfileExt = explode('.', $LOGOName);
+                            $IMGfileExt = explode('.', $IMGName);
+                            $LOGOfileActualExt = strtolower(end($LOGOfileExt));
+                            $IMGfileActualExt = strtolower(end($IMGfileExt));
+                            if ($LOGOfileError === 0) {
+                                if ($LOGOfileSize < 100000000) {
+                                    $LOGONameNew = uniqid('', true) . "." . $LOGOfileActualExt;
+                                    $LOGOfileDestination = '../db_images/' . $LOGONameNew;
+                                    move_uploaded_file($LOGOTmpName, $LOGOfileDestination);
+                                } else {
+                                    echo "<script>alert('Your LOGO file is too big!')</script>";
+                                }
+                            }
+                            if ($IMGfileError === 0) {
+                                if ($IMGfileSize < 100000000) {
+                                    $IMGNameNew = uniqid('', true) . "." . $IMGfileActualExt;
+                                    $IMGfileDestination = '../db_images/' . $IMGNameNew;
+                                    move_uploaded_file($IMGTmpName, $IMGfileDestination);
+                                } else {
+                                    echo "<script>alert('Your IMG file is too big!')</script>";
+                                }
+                            }
+                            $sql = "INSERT INTO company_list (company_name,logo_path,img_path,company_bio,company_phone,company_email) VALUES ('$companyName','$LOGOfileDestination','$IMGfileDestination','$companyBio','$companyPhone','$companyEmail')";
+                            mysqli_query($conn, $sql);
+                        }
+                        ?>
+                        <form class="form2" action="" method="post" enctype="multipart/form-data" onkeydown="return event.key != 'Enter';">
                             <div class="user-details">
                                 <div class="input-box">
-                                    <input type="text" required />
+                                    <input type="text" name="companyName" required />
                                     <label class="user-label2 label3">اسم الشركة</label>
                                 </div>
                                 <div class="input-box">
-                                    <input class="pass" type="text" required />
-                                    <label class="user-label2 label4">شعار الشركة</label>
+                                    <label for="fileimg" user-label2 label4>
+                                        <p>شعار الشركة</p>
+                                        <i class="fa fa-upload"></i>
+                                    </label>
+                                    <input class="pass" type="file" name="LOGOfileimg" id="fileimg" accept=".jpg,.png,.gif,.jpeg,.svg" hidden />
                                 </div>
+                                <hr>
                                 <div class="input-box">
-                                    <input class="pass" type="text" required />
-                                    <label class="user-label2 label4">صورة الشركة</label>
+                                    <label for="fileimg2" user-label2 label4>
+                                        <p>صورة الشركة</p>
+                                        <i class="fa fa-upload"></i>
+                                    </label>
+                                    <input class="pass" type="file" name="IMGfileimg" id="fileimg2" accept=".jpg,.png,.gif,.jpeg,.svg" hidden />
                                 </div>
+                                <hr>
                                 <div class="input-box">
-                                    <input class="pass details-company" type="text" required />
+                                    <input class="pass details-company" name="companyBio" type="text" required />
                                     <label class="user-label2 label4 ">تفاصيل الشركة</label>
                                 </div>
                                 <div class="input-box">
-                                    <input class="pass" type="text" required />
+                                    <input class="pass" type="text" name="companyPhone" required />
                                     <label class="user-label2 label4">رقم هاتف الشركة</label>
                                 </div>
                                 <div class="input-box">
-                                    <input class="pass" type="text" required />
+                                    <input class="pass" name="companyEmail" type="text" required />
                                     <label class="user-label2 label4">ايميل الشركة</label>
                                 </div>
                             </div>
-                            <button class="sub-comp">اضافة</button>
+                            <button type="submit" name="submitCompany" class="sub-comp">اضافة</button>
                         </form>
                     </div>
                     <div class="square2">
                         <div class="info">
-                            <h2> فرص تدريب الحالية</h2>
+                            <h2>شركات التدريب المدرجة</h2>
                         </div>
                         <ul>
-                            <li class="Hanover-company">شركة هنوفر</li>
-                            <li class="Hanover-company">شركة هنوفر</li>
-                            <li class="Hanover-company">شركة هنوفر</li>
-                            <li class="Hanover-company">شركة هنوفر</li>
+                            <?php
+                            $sql = "SELECT * FROM company_list";
+                            $result = mysqli_query($conn, $sql);
+                            if (mysqli_num_rows($result) > 0) {
+                                while ($rowV = mysqli_fetch_assoc($result)) {
+                                    echo "<li class='Hanover-company' company_id ='" . $rowV['company_id'] . "'>";
+                                    echo "<p>" . $rowV['company_name'] . "</p><i class='fa fa-close companyDelete'></i></li>";
+                                }
+                            }
+                            ?>
                         </ul>
                     </div>
                 </div>
@@ -157,26 +207,56 @@ session_start();
                         <div class="info">
                             <h2>اضافه دورة</h2>
                         </div>
-                        <form class="form2" action="" method="post">
+                        <?php
+                        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submitCourse"])) {
+                            $course_name = $_POST["course_name"];
+                            $course_bio = $_POST["course_bio"];
+                            $course_phone = $_POST["course_phone"];
+                            $file = $_FILES['courseimg'];
+                            $fileName = $_FILES['courseimg']['name'];
+                            $fileTmpName = $_FILES['courseimg']['tmp_name'];
+                            $fileSize = $_FILES['courseimg']['size'];
+                            $fileError = $_FILES['courseimg']['error'];
+                            $fileExt = explode('.', $fileName);
+                            $fileActualExt = strtolower(end($fileExt));
+                            $ext = $fileActualExt;
+                            if ($fileError === 0) {
+                                if ($fileSize < 100000000) {
+                                    $fileNameNew = uniqid('', true) . "." . $fileActualExt;
+                                    $fileDestination = '../db_images/' . $fileNameNew;
+                                    move_uploaded_file($fileTmpName, $fileDestination);
+                                } else {
+                                    echo "<script>alert('Your file is too big!')</script>";
+                                }
+                            }
+                            $sql2 = "INSERT INTO courses_list (course_name,img_path,course_bio,course_phone) VALUES
+                            ('$course_name','$fileDestination','$course_bio','$course_phone')";
+                            mysqli_query($conn, $sql2);
+                        }
+                        ?>
+                        <form class="form2" action="" method="post" enctype="multipart/form-data" onkeydown="return event.key != 'Enter';">
                             <div class="user-details">
                                 <div class="input-box">
-                                    <input type="text" required />
+                                    <input type="text" required name="course_name" />
                                     <label class="user-label2 label3">اسم الدورة</label>
                                 </div>
                                 <div class="input-box">
-                                    <input class="pass" type="text" required />
-                                    <label class="user-label2 label4">صورة الدورة</label>
+                                    <label for="courseLabel" label2 label4>
+                                        <p>صورة الدورة</p>
+                                        <i class="fa fa-upload"></i>
+                                    </label>
+                                    <input class="pass" type="file" name="courseimg" id="courseLabel" accept=".jpg,.png,.gif,.jpeg,.svg" hidden />
                                 </div>
                                 <div class="input-box">
-                                    <input class="pass details-company" type="text" required />
+                                    <input class="pass details-company" type="text" required name="course_bio" />
                                     <label class="user-label2 label4 ">تفاصيل الدورة</label>
                                 </div>
                                 <div class="input-box">
-                                    <input class="pass" type="text" required />
+                                    <input class="pass" type="text" required name="course_phone" />
                                     <label class="user-label2 label4 phone-label4">رقم هاتف مسوؤل الدورة</label>
                                 </div>
                             </div>
-                            <button class="sub-comp">اضافة</button>
+                            <button type="submit" name="submitCourse" class="sub-comp">اضافة</button>
                         </form>
                     </div>
                     <div class="square2 square2-hight">
@@ -184,10 +264,16 @@ session_start();
                             <h2> الدورات الحالية</h2>
                         </div>
                         <ul>
-                            <li class="Hanover-company">PHP</li>
-                            <li class="Hanover-company">PHP</li>
-                            <li class="Hanover-company">PHP</li>
-                            <li class="Hanover-company">PHP</li>
+                            <?php
+                            $sql = "SELECT * FROM courses_list";
+                            $result = mysqli_query($conn, $sql);
+                            if (mysqli_num_rows($result) > 0) {
+                                while ($rowV = mysqli_fetch_assoc($result)) {
+                                    echo "<li class='Hanover-company' course_id='" . $rowV['course_id'] . "'>";
+                                    echo "<p>" . $rowV['course_name'] . "</p><i class='fa fa-close courseDelete'></i></li>";
+                                }
+                            }
+                            ?>
                         </ul>
                     </div>
                 </div>
@@ -289,6 +375,7 @@ session_start();
                 </div>
             </div>
         </div>
+        <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
         <script src="../JS/Admin.js"></script>
 </body>
 

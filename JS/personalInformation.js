@@ -1,4 +1,3 @@
-// jshint esversion: 6
 function removeFirst(arr, idx) {
 	if (idx > -1) {
 		delete arr[idx];
@@ -618,7 +617,7 @@ document.querySelector(".button").addEventListener("click", (e) => {
 	add_F3skill = add_F3skill.split(",");
 	add_F3skill = add_F3skill.filter((n) => n);
 	document.querySelector(".HiddenInput53").value = add_F3skill.join(",");
-	document.querySelector(".form1").submit();
+	document.getElementById("inputSubmit").click();
 });
 
 const loadFile = function (event) {

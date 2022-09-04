@@ -654,7 +654,8 @@ session_start();
                 </div>
                 <hr>
                 <br>
-                <button class="button" type="submit" name="imageUpload">حفظ</button>
+                <input type="submit" id="inputSubmit" hidden>
+                <button class="button" name="imageUpload" id="formButton">حفظ</button>
             </form>
         </div>
     </div>

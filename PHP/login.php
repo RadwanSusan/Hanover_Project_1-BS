@@ -39,14 +39,18 @@ session_start();
       <div class="card"></div>
       <div class="card">
          <h1 class="title">Login</h1>
-         <?php if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["loginSubmit"])) {
+         <?php
+         $count = 0;
+         if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["loginSubmit"])) {
             $userName = mysqli_real_escape_string($conn, $_POST["user_name"]);
             $mypassword = mysqli_real_escape_string($conn, $_POST["password"]);
             $sql = "SELECT * FROM user_info WHERE username = '$userName' and password = '$mypassword'";
             $result = mysqli_query($conn, $sql);
             $row = mysqli_fetch_assoc($result);
             $count = mysqli_num_rows($result);
-            $_SESSION["ID"] = $row["ID"];
+            if (isset($row["ID"])) {
+               $_SESSION["ID"] = $row["ID"];
+            }
             if ($count == 1) {
                header("Location: choose_template.php");
             } else {
@@ -54,7 +58,7 @@ session_start();
             }
          }
          ?>
-         <form action="" method="POST">
+         <form action="" method="POST" autocomplete="on">
             <div class="input-container">
                <input type="#{type}" id="#{label}" name="user_name" required="required" />
                <label for="#{label}">Email</label>
@@ -90,6 +94,7 @@ session_start();
                   $sql3 = "INSERT INTO user_info (username,password) VALUES ('$username','$password')";
                   mysqli_query($conn, $sql3);
                   echo '<script type="text/javascript">alert("Account Created Successfully");</script>';
+                  header("Location: choose_template.php");
                } else {
                   echo '<script type="text/javascript">alert("Account already exists!");</script>';
                }
@@ -98,7 +103,7 @@ session_start();
             }
          }
          ?>
-         <form action="" method="POST">
+         <form action="" method="POST" autocomplete="off">
             <div class="input-container">
                <input type="#{type}" id="#{label}" name="newUser" required="required" />
                <label for="#{label}">Email</label>
