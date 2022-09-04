@@ -239,7 +239,7 @@ session_start();
                                     <label class="user-label2 label3">اسم الدورة</label>
                                 </div>
                                 <div class="input-box">
-                                    <label for="courseLabel" label2 label4>
+                                    <label for="courseLabel"class="comp-lab2" label2 label4>
                                         <p>صورة الدورة</p>
                                         <i class="fa fa-upload"></i>
                                     </label>
@@ -323,6 +323,7 @@ session_start();
                         <div class="info1">
                             <h2>الأشخاص المسجلين بالدورة</h2>
                         </div>
+                        <div class="tableFixHead1">
                         <table>
                             <tr>
                                 <th>الأيميل</th>
@@ -346,6 +347,7 @@ session_start();
                             }
                             ?>
                         </table>
+                        </div>
                     </div>
                 </div>
             </div>

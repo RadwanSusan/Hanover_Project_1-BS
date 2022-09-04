@@ -283,6 +283,7 @@ ul li {
 }
 
 .form1 button {
+  cursor: pointer;
   transform: translateX(-110px);
   background: #F3F3F3;
   border: 1px solid #000000;
@@ -364,6 +365,7 @@ ul li {
 }
 
 .sub-comp {
+  cursor: pointer;
   transform: translateX(-110px);
   background: #F3F3F3;
   border: 1px solid #000000;
@@ -718,5 +720,16 @@ th {
 }
 .comp-lab2 i {
   margin-left: 7px;
+}
+.tableFixHead1 {
+  overflow-y: auto;
+}
+.tableFixHead1 th {
+  position: sticky;
+  top: 0;
+}
+.tableFixHead1 th {
+  position: sticky;
+  top: 0;
 }
 
