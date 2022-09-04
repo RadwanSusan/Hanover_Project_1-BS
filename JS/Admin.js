@@ -10,7 +10,6 @@ if (window.history.replaceState) {
 document.querySelectorAll(".companyDelete").forEach((element) => {
 	element.addEventListener("click", () => {
 		const company_id = element.parentElement.getAttribute("company_id");
-		console.log(company_id);
 		confirm(
 			"هل أنت متأكد أنك تريد حذف هذه الشركة؟<br/>لا يمكنك التراجع عن هذا الإجراء.",
 			() => {
@@ -69,6 +68,52 @@ document.querySelectorAll(".courseDelete").forEach((element) => {
 					},
 					success() {
 						element.parentElement.remove();
+					},
+				});
+			},
+			() => {},
+		);
+	});
+});
+
+document.querySelectorAll(".internDelete").forEach((element) => {
+	element.addEventListener("click", () => {
+		const form_id = element.parentElement.parentElement.getAttribute("form_id");
+		confirm(
+			"هل أنت متأكد أنك تريد حذف هذه المتدرب؟<br/>لا يمكنك التراجع عن هذا الإجراء.",
+			() => {
+				$.ajax({
+					url: "../PHP/backBone.php",
+					type: "post",
+					data: {
+						deleteIntern: 1,
+						form_id,
+					},
+					success() {
+						element.parentElement.parentElement.remove();
+					},
+				});
+			},
+			() => {},
+		);
+	});
+});
+
+document.querySelectorAll(".studentDelete").forEach((element) => {
+	element.addEventListener("click", () => {
+		const form_id = element.parentElement.parentElement.getAttribute("form_id");
+		confirm(
+			"هل أنت متأكد أنك تريد حذف هذا الطالب؟<br/>لا يمكنك التراجع عن هذا الإجراء.",
+			() => {
+				$.ajax({
+					url: "../PHP/backBone.php",
+					type: "post",
+					data: {
+						deleteStudent: 1,
+						form_id,
+					},
+					success() {
+						element.parentElement.parentElement.remove();
 					},
 				});
 			},

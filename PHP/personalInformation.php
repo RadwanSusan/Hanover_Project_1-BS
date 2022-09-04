@@ -427,7 +427,7 @@ session_start();
                         </div>
                         <div class="right-user">
                             <div class="input-box3">
-                                <input type="text" name="speciality2" placeholder="التخصص" value="<?php echo $speciality_array[1] = $speciality_array[1] ?? ''; ?>">
+                                <input type="text" class="speciality2" name="speciality2" placeholder="التخصص" value="<?php echo $speciality_array[1] = $speciality_array[1] ?? ''; ?>">
                             </div>
                             <div class="input-box3">
                                 <input type="text" name="university2" placeholder="الجامعة" value="<?php echo $university_array[1] = $university_array[1] ?? ''; ?>">
@@ -453,7 +453,7 @@ session_start();
                         </div>
                         <div class="right-user">
                             <div class="input-box3">
-                                <input type="text" name="speciality3" placeholder="التخصص" value="<?php echo $speciality_array[2] = $speciality_array[2] ?? ''; ?>">
+                                <input type="text" class="speciality3" name="speciality3" placeholder="التخصص" value="<?php echo $speciality_array[2] = $speciality_array[2] ?? ''; ?>">
                             </div>
                             <div class="input-box3">
                                 <input type="text" name="university3" placeholder="الجامعة" value="<?php echo $university_array[2] = $university_array[2] ?? ''; ?>">
@@ -542,7 +542,7 @@ session_start();
                         </div>
                         <div class="right-user">
                             <div class="input-box3">
-                                <input type="text" placeholder="الوظيفة" name="job2" value="<?php echo $jobs_array[1] = $jobs_array[1] ?? ''; ?>">
+                                <input type="text" class="job2" placeholder="الوظيفة" name="job2" value="<?php echo $jobs_array[1] = $jobs_array[1] ?? ''; ?>">
                             </div>
                             <div class="input-box3">
                                 <input type="text" placeholder="الشركة" name="company2" value="<?php echo $company_array[1] = $company_array[1] ?? ''; ?>">
@@ -584,7 +584,7 @@ session_start();
                         </div>
                         <div class="right-user">
                             <div class="input-box3">
-                                <input type="text" placeholder="الوظيفة" name="job3" value="<?php echo $jobs_array[2] = $jobs_array[2] ?? ''; ?>">
+                                <input type="text" class="job3" placeholder="الوظيفة" name="job3" value="<?php echo $jobs_array[2] = $jobs_array[2] ?? ''; ?>">
                             </div>
                             <div class="input-box3">
                                 <input type="text" placeholder="الشركة" name="company3" value="<?php echo $company_array[2] = $company_array[2] ?? ''; ?>">
@@ -625,7 +625,7 @@ session_start();
                             <input class="tow-aria" type="text" placeholder="الوصف" name="project_bio2" value="<?php echo $project_bio_array[1] = $project_bio_array[1] ?? ''; ?>">
                         </div>
                         <div class="input-box4">
-                            <input type="text" placeholder="الأسم" name="project_name2" value="<?php echo $project_name_array[1] = $project_name_array[1] ?? ''; ?>">
+                            <input type="text" class="project_name2" placeholder="الأسم" name="project_name2" value="<?php echo $project_name_array[1] = $project_name_array[1] ?? ''; ?>">
                         </div>
                         <div class="input-box4">
                             <input type="text" placeholder="بداية التاريخ" name="project_date_start2" value="<?php echo $project_date_start_array[1] = $project_date_start_array[1] ?? ''; ?>">
@@ -642,7 +642,7 @@ session_start();
                             <input class="tow-aria" type="text" placeholder="الوصف" name="project_bio3" value="<?php echo $project_bio_array[2] = $project_bio_array[2] ?? ''; ?>">
                         </div>
                         <div class="input-box4">
-                            <input type="text" placeholder="الأسم" name="project_name3" value="<?php echo $project_name_array[2] = $project_name_array[2] ?? ''; ?>">
+                            <input type="text" class="project_name3" placeholder="الأسم" name="project_name3" value="<?php echo $project_name_array[2] = $project_name_array[2] ?? ''; ?>">
                         </div>
                         <div class="input-box4">
                             <input type="text" placeholder="بداية التاريخ" name="project_date_start3" value="<?php echo $project_date_start_array[2] = $project_date_start_array[2] ?? ''; ?>">

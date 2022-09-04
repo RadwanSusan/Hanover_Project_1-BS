@@ -239,7 +239,7 @@ session_start();
                                     <label class="user-label2 label3">اسم الدورة</label>
                                 </div>
                                 <div class="input-box">
-                                    <label for="courseLabel"class="comp-lab2" label2 label4>
+                                    <label for="courseLabel" class="comp-lab2" label2 label4>
                                         <p>صورة الدورة</p>
                                         <i class="fa fa-upload"></i>
                                     </label>
@@ -285,32 +285,34 @@ session_start();
                             <h2>الأشخاص المسجلين بفرص التدريب</h2>
                         </div>
                         <div class="tableFixHead">
-                        <table>
-                            <tr>
-                                <th>الأيميل</th>
-                                <th>رقم الهاتف</th>
-                                <th>الشركة</th>
-                                <th>الأسم</th>
-                            </tr>
-                            
-                            
-                            <?php
-                            $sql = "SELECT * FROM internship_form";
-                            $result = mysqli_query($conn, $sql);
-                            if (mysqli_num_rows($result) > 0) {
-                                while ($rowV = mysqli_fetch_assoc($result)) {
-                                    echo "<tr>";
-                                    echo "<td>" . $rowV['user_email'] . "</td>";
-                                    echo "<td>" . $rowV['user_phone_number'] . "</td>";
-                                    echo "<td>hanover</td>";
-                                    echo "<td>" . $rowV['user_name'] . "</td>";
-                                    echo '<td><i class="fa fa-close"></i></td>';
-                                    echo "</tr>";
+                            <table>
+                                <tr>
+                                    <th>الأيميل</th>
+                                    <th>رقم الهاتف</th>
+                                    <th>الشركة</th>
+                                    <th>الأسم</th>
+                                </tr>
+                                <?php
+                                $sql = "SELECT * FROM internship_form";
+                                $result = mysqli_query($conn, $sql);
+                                if (mysqli_num_rows($result) > 0) {
+                                    while ($rowV = mysqli_fetch_assoc($result)) {
+                                        $sql2 = "SELECT * from company_list where company_id=" . $rowV['company_id'] . "";
+                                        $result2 = mysqli_query($conn, $sql2);
+                                        $rowV2 = mysqli_fetch_assoc($result2);
+                                        echo "<tr form_id='" . $rowV['form_id'] . "'>";
+                                        echo "<td>" . $rowV['user_email'] . "</td>";
+                                        echo "<td>" . $rowV['user_phone_number'] . "</td>";
+                                        if (isset($rowV2['company_name'])) {
+                                            echo "<td>" . $rowV2['company_name'] . "</td>";
+                                        }
+                                        echo "<td>" . $rowV['user_name'] . "</td>";
+                                        echo '<td><i class="fa fa-close internDelete"></i></td>';
+                                        echo "</tr>";
+                                    }
                                 }
-                            }
-                            ?>
-                            
-                        </table>
+                                ?>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -321,32 +323,37 @@ session_start();
                 <div class="landing-content3">
                     <div class="square3 square3-hight ">
                         <div class="info1">
-                            <h2>الأشخاص المسجلين بالدورة</h2>
+                            <h2>الأشخاص المسجلين بالدورات</h2>
                         </div>
                         <div class="tableFixHead1">
-                        <table>
-                            <tr>
-                                <th>الأيميل</th>
-                                <th>رقم الهاتف</th>
-                                <th>الدورة</th>
-                                <th>الأسم</th>
-                            </tr>
-                            <?php
-                            $sql = "SELECT * FROM courses_form";
-                            $result = mysqli_query($conn, $sql);
-                            if (mysqli_num_rows($result) > 0) {
-                                while ($rowV = mysqli_fetch_assoc($result)) {
-                                    echo "<tr>";
-                                    echo "<td>" . $rowV['user_email'] . "</td>";
-                                    echo "<td>" . $rowV['user_phone_number'] . "</td>";
-                                    echo "<td>hanover</td>";
-                                    echo "<td>" . $rowV['user_name'] . "</td>";
-                                    echo '<td><i class="fa fa-close"></i></td>';
-                                    echo "</tr>";
+                            <table>
+                                <tr>
+                                    <th>الأيميل</th>
+                                    <th>رقم الهاتف</th>
+                                    <th>الدورة</th>
+                                    <th>الأسم</th>
+                                </tr>
+                                <?php
+                                $sql = "SELECT * FROM courses_form";
+                                $result = mysqli_query($conn, $sql);
+                                if (mysqli_num_rows($result) > 0) {
+                                    while ($rowV = mysqli_fetch_assoc($result)) {
+                                        $sql3 = "SELECT * from courses_list where course_id=" . $rowV['course_id'] . "";
+                                        $result3 = mysqli_query($conn, $sql3);
+                                        $rowV3 = mysqli_fetch_assoc($result3);
+                                        echo "<tr form_id='" . $rowV['form_id'] . "'>";
+                                        echo "<td>" . $rowV['user_email'] . "</td>";
+                                        echo "<td>" . $rowV['user_phone_number'] . "</td>";
+                                        if (isset($rowV3['course_name'])) {
+                                            echo "<td>" . $rowV3['course_name'] . "</td>";
+                                        }
+                                        echo "<td>" . $rowV['user_name'] . "</td>";
+                                        echo '<td><i class="fa fa-close studentDelete"></i></td>';
+                                        echo "</tr>";
+                                    }
                                 }
-                            }
-                            ?>
-                        </table>
+                                ?>
+                            </table>
                         </div>
                     </div>
                 </div>

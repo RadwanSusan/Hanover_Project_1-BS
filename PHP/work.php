@@ -9,7 +9,7 @@ session_start();
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Work</title>
+   <title>Internship Search</title>
    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" />
    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -45,31 +45,40 @@ session_start();
       <p>فرص تدريب ميداني</p>
       <img src="../MEDIA/AfterLine.svg" alt="">
    </div>
-   <div class="contentBox">
-      <div class="topBox">
-         <img src="../MEDIA/Logo(chooseT).svg" alt="logo">
-         <p>شركة هانوفر للخدمات</p>
-      </div>
-      <div class="topLine"></div>
-      <div class="mainBox">
-         <div class="rightBox">
-            <img src="../MEDIA/company.jpg" alt="" srcset="">
-         </div>
-         <div class="leftBox">
-            <div class="leftTop">
-               <p class="companyDetails">.....................تفاصيل الشركة</p>
-               <p class="phoneNum">رقم الهاتف : 0799999999</p>
-               <p class="companyEmail">Hanover@gmail.com</p>
-            </div>
-            <div class="leftBot">
-               <div class="buttonsBox">
-                  <div class="detailsButton">التفاصيل</div>
-                  <div class="applyButton">تقديم طلب</div>
+   <?php
+   $sql = "SELECT * FROM company_list";
+   $result = mysqli_query($conn, $sql);
+   if (mysqli_num_rows($result) > 0) {
+      while ($rowV = mysqli_fetch_assoc($result)) {
+         echo "<div class='contentBox' company_id='" . $rowV['company_id'] . "'>
+      <div class='topBox'>
+               <img src='" . $rowV['logo_path'] . "' alt='logo'>
+               <p>" . $rowV['company_name'] . "</p>
                </div>
-            </div>
+            <div class='topLine'></div>
+            <div class='mainBox'>
+         <div class='rightBox'>
+         <img src='" . $rowV['img_path'] . "'' alt='' srcset=''>
          </div>
-      </div>
-   </div>
+         <div class='leftBox'>
+         <div class='leftTop'>
+         <p class='companyDetails'>" . $rowV['company_bio'] . "</p>
+         <p class='phoneNum'>رقم الهاتف : " . $rowV['company_phone'] . "</p>
+         <p class='companyEmail'>" . $rowV['company_email'] . "</p>
+         </div>
+         <div class='leftBot'>
+         <div class='buttonsBox'>
+         <div class='detailsButton'>التفاصيل</div>
+         <div class='companyApplyButton applyButton'>تقديم طلب</div>
+         </div>
+         </div>
+         </div>
+         </div>
+         </div>
+         ";
+      }
+   }
+   ?>
    <div class="footer">
       <div class="container">
          <div class="box-footer">
@@ -108,7 +117,8 @@ session_start();
          $email = $_POST['email'];
          $name = $_POST['name'];
          $phone = $_POST['phone'];
-         $sql = "INSERT INTO internship_form (user_email,user_name,user_phone_number) values ('$email', '$name', '$phone')";
+         $company_id = $_POST['company_id'];
+         $sql = "INSERT INTO internship_form (user_email,user_name,user_phone_number,company_id) values ('$email', '$name', '$phone','$company_id')";
          mysqli_query($conn, $sql);
          echo "<script>alert('تم إرسال طلبك بنجاح');</script>";
       }
@@ -122,6 +132,7 @@ session_start();
          <label id="icon" for="name"><i class="icon-phone"></i></label>
          <input type="text" name="phone" id="name" placeholder="رقم الهاتف" required />
          <button type="submit" name="submit1" class="button">تقديم</button>
+         <input type="text" class="company_id_hidden" hidden name="company_id">
       </form>
    </div>
    <script src="../JS/work.js"></script>

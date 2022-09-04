@@ -639,3 +639,21 @@ showTarget("click", ".showproject3", ".project3");
 if (window.history.replaceState) {
 	window.history.replaceState(null, null, window.location.href);
 }
+if (document.querySelector(".speciality2").value != "") {
+	document.querySelector(".edu2").style.display = "block";
+}
+if (document.querySelector(".speciality3").value != "") {
+	document.querySelector(".edu3").style.display = "block";
+}
+if (document.querySelector(".job2").value != "") {
+	document.querySelector(".work2").style.display = "block";
+}
+if (document.querySelector(".job3").value != "") {
+	document.querySelector(".work3").style.display = "block";
+}
+if (document.querySelector(".project_name2").value != "") {
+	document.querySelector(".project2").style.display = "block";
+}
+if (document.querySelector(".project_name3").value != "") {
+	document.querySelector(".project3").style.display = "block";
+}
