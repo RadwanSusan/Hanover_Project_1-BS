@@ -149,21 +149,19 @@ session_start();
                                     <label class="user-label2 label3">اسم الشركة</label>
                                 </div>
                                 <div class="input-box">
-                                    <label for="fileimg" user-label2 label4>
+                                    <label for="fileimg" class="comp-lab" user-label2 label4>
                                         <p>شعار الشركة</p>
                                         <i class="fa fa-upload"></i>
                                     </label>
                                     <input class="pass" type="file" name="LOGOfileimg" id="fileimg" accept=".jpg,.png,.gif,.jpeg,.svg" hidden />
                                 </div>
-                                <hr>
                                 <div class="input-box">
-                                    <label for="fileimg2" user-label2 label4>
+                                    <label for="fileimg2" class="comp-lab2" user-label2 label4>
                                         <p>صورة الشركة</p>
                                         <i class="fa fa-upload"></i>
                                     </label>
                                     <input class="pass" type="file" name="IMGfileimg" id="fileimg2" accept=".jpg,.png,.gif,.jpeg,.svg" hidden />
                                 </div>
-                                <hr>
                                 <div class="input-box">
                                     <input class="pass details-company" name="companyBio" type="text" required />
                                     <label class="user-label2 label4 ">تفاصيل الشركة</label>
@@ -184,7 +182,7 @@ session_start();
                         <div class="info">
                             <h2>شركات التدريب المدرجة</h2>
                         </div>
-                        <ul>
+                        <ul class="scroll-ul">
                             <?php
                             $sql = "SELECT * FROM company_list";
                             $result = mysqli_query($conn, $sql);
@@ -263,7 +261,7 @@ session_start();
                         <div class="info">
                             <h2> الدورات الحالية</h2>
                         </div>
-                        <ul>
+                        <ul class="scroll2-ul">
                             <?php
                             $sql = "SELECT * FROM courses_list";
                             $result = mysqli_query($conn, $sql);

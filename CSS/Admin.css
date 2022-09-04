@@ -515,7 +515,14 @@ tr:nth-child(even) {
     text-align: center;
   }
 }
-
+.scroll-ul {
+  overflow-y: auto;
+  height: 90%;
+}
+.scroll2-ul {
+  overflow-y: auto;
+  height: 86%;
+}
 
 .tableFixHead {
   overflow-y: auto;
@@ -643,6 +650,9 @@ th {
   .navBar_box {
     height: 80px;
   }
+  .square3-hight {
+    width: 340px;
+  }
 
   .navBar_buttons {
     height: 80px;
@@ -674,3 +684,39 @@ th {
     display: block;
   }
 }
+.comp-lab {
+  margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    padding: 10px;
+    border: solid 1.5px #9e9e9e;
+    border-radius: 0.5rem;
+    background: none;
+    font-size: 1rem;
+    color: rgb(176 159 159);
+    transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.comp-lab p {
+  margin-left: 25px;
+}
+.comp-lab i {
+  margin-left: 10px;
+}
+.comp-lab2 {
+  margin-top: 20px;
+    display: flex;
+    padding: 10px;
+    border: solid 1.5px #9e9e9e;
+    border-radius: 0.5rem;
+    background: none;
+    font-size: 1rem;
+    color: rgb(176 159 159);
+    transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.comp-lab2 p {
+  margin-left: 23px;
+}
+.comp-lab2 i {
+  margin-left: 7px;
+}
+
