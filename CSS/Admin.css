@@ -191,6 +191,7 @@ header nav ul li a:hover {
 
 
 .landing-content {
+  position: relative;
   padding-top: 25px;
   text-align: end;
   display: flex;
@@ -417,12 +418,12 @@ th {
   padding: 8px;
 }
 
-tr:nth-child(even) {
+tr:nth-child(odd) {
   background-color: #dddddd;
   text-align: center;
 }
 
-tr:nth-child(odd) {
+tr:nth-child(even) {
   text-align: center;
 }
 
@@ -516,16 +517,21 @@ tr:nth-child(odd) {
 }
 
 
-table tbody {
+.tableFixHead {
+  overflow-y: auto;
   height: 300px;
-  overflow-y: scroll;
-  display: inline-block;
 }
-
-table thead {
-  display: block;
+.tableFixHead th {
+  position: sticky;
+  top: 0;
 }
-
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th {
+  background: #eee;
+}
 
 .navBar_box {
   position: fixed;

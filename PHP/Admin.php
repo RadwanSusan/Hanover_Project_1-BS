@@ -286,6 +286,7 @@ session_start();
                         <div class="info1">
                             <h2>الأشخاص المسجلين بفرص التدريب</h2>
                         </div>
+                        <div class="tableFixHead">
                         <table>
                             <tr>
                                 <th>الأيميل</th>
@@ -293,6 +294,8 @@ session_start();
                                 <th>الشركة</th>
                                 <th>الأسم</th>
                             </tr>
+                            
+                            
                             <?php
                             $sql = "SELECT * FROM internship_form";
                             $result = mysqli_query($conn, $sql);
@@ -308,7 +311,9 @@ session_start();
                                 }
                             }
                             ?>
+                            
                         </table>
+                        </div>
                     </div>
                 </div>
             </div>
