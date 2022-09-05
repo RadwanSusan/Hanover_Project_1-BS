@@ -52,7 +52,11 @@ session_start();
                $_SESSION["ID"] = $row["ID"];
             }
             if ($count == 1) {
-               header("Location: choose_template.php");
+               if ($row["account_type"] == 1) {
+                  header("Location: admin.php");
+               } else {
+                  header("Location: choose_template.php");
+               }
             } else {
                echo "<script>alert('الايميل أو كلمة المرور غير صحيحة')</script>";
             }
